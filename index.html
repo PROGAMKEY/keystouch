@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key's Touch | AI Automation & Software Consulting Agency</title>
+    <meta name="description" content="We build AI agents and automation systems that replace manual work. Custom software, SaaS products, and workflow automation for companies that refuse to stay stuck.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://keystouch.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Key's Touch | AI Automation & Software Consulting">
+    <meta property="og:description" content="We build AI agents and automation systems that replace manual work. Custom software, SaaS products, and workflow automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keystouch.com/">
+    <meta property="og:site_name" content="Key's Touch">
+    <meta property="og:image" content="https://keystouch.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Key's Touch | AI Automation & Software Consulting">
+    <meta name="twitter:description" content="We build AI agents and automation systems that replace manual work.">
+    <meta name="twitter:image" content="https://keystouch.com/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Schema: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Key's Touch",
+        "url": "https://keystouch.com",
+        "logo": "https://keystouch.com/images/logo.png",
+        "description": "AI automation and software consulting agency.",
+        "sameAs": [
+            "https://www.linkedin.com/company/keystouch",
+            "https://www.instagram.com/keystouch"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@keystouch.com",
+            "contactType": "sales"
+        }
+    }
+    </script>
+
+    <!-- Schema: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Key's Touch",
+        "url": "https://keystouch.com",
+        "priceRange": "$$$$",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Agent Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation & Workflows" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Product Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website & Web App Development" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & Automation Consulting" } }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Page-specific overrides -->
+    <style>
+        /* ---- HERO: asymmetric split layout ---- */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 480px;
+            border-radius: 24px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.06);
+            overflow: hidden;
+        }
+
+        /* Animated terminal effect */
+        .terminal {
+            padding: 24px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--gray-300);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #FF5F57; }
+        .terminal-dot.yellow { background: #FFBD2E; }
+        .terminal-dot.green { background: #28C840; }
+
+        .terminal-line {
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: typeIn 0.3s ease forwards;
+        }
+
+        .terminal-line:nth-child(2) { animation-delay: 0.5s; }
+        .terminal-line:nth-child(3) { animation-delay: 1.2s; }
+        .terminal-line:nth-child(4) { animation-delay: 1.8s; }
+        .terminal-line:nth-child(5) { animation-delay: 2.5s; }
+        .terminal-line:nth-child(6) { animation-delay: 3.2s; }
+        .terminal-line:nth-child(7) { animation-delay: 3.8s; }
+        .terminal-line:nth-child(8) { animation-delay: 4.5s; }
+        .terminal-line:nth-child(9) { animation-delay: 5.2s; }
+        .terminal-line:nth-child(10) { animation-delay: 5.8s; }
+
+        @keyframes typeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .t-cyan { color: var(--cyan); }
+        .t-purple { color: var(--purple); }
+        .t-green { color: #28C840; }
+        .t-dim { color: var(--gray-500); }
+        .t-white { color: var(--white); }
+
+        /* ---- MARQUEE: scrolling text ---- */
+        .marquee-section {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marqueeScroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .marquee-item .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            opacity: 0.5;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ---- SPLIT CONTENT: text + visual side by side ---- */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .split-section--reversed {
+            direction: rtl;
+        }
+
+        .split-section--reversed > * {
+            direction: ltr;
+        }
+
+        /* ---- COUNTER: animated numbers ---- */
+        .counter-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            background: var(--dark);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+            overflow: hidden;
+        }
+
+        .counter-item {
+            padding: 48px 32px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .counter-item:last-child {
+            border-right: none;
+        }
+
+        .counter-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .counter-number .unit {
+            font-size: 1.5rem;
+            color: var(--cyan);
+        }
+
+        .counter-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* ---- SERVICE LIST: alternating, not grid ---- */
+        .service-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 1.2fr;
+            gap: 40px;
+            align-items: start;
+            padding: 48px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .service-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-number {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            padding-top: 4px;
+        }
+
+        .service-row h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service-row p {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .service-tag {
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--gray-300);
+        }
+
+        /* ---- TESTIMONIAL: large single quote ---- */
+        .quote-section {
+            padding: 100px 0;
+        }
+
+        .big-quote {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .big-quote .quote-mark {
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--cyan);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .big-quote blockquote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .big-quote .quote-author {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+        }
+
+        .big-quote .quote-author strong {
+            color: var(--gray-300);
+        }
+
+        /* ---- ROI CALCULATOR ---- */
+        .calc-section {
+            padding: 100px 0;
+        }
+
+        .calculator {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            padding: 48px;
+        }
+
+        .calc-field {
+            margin-bottom: 32px;
+        }
+
+        .calc-field label {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .calc-field .helper {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .calc-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--cyan);
+            cursor: pointer;
+        }
+
+        .calc-value {
+            text-align: right;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--cyan);
+            margin-top: 8px;
+        }
+
+        .calc-result {
+            background: rgba(0, 180, 216, 0.08);
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .calc-result .amount {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .calc-result p {
+            color: var(--gray-300);
+            margin-top: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* ---- CHAT WIDGET ---- */
+        .chat-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+        }
+
+        .chat-bubble {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(0, 180, 216, 0.4);
+        }
+
+        .chat-popup {
+            position: absolute;
+            bottom: 76px;
+            right: 0;
+            width: 360px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .chat-popup.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            padding: 20px 24px;
+            background: rgba(0, 180, 216, 0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .chat-header h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .chat-header p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .chat-body {
+            padding: 20px 24px;
+            min-height: 200px;
+        }
+
+        .chat-msg {
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px 12px 12px 4px;
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            color: var(--gray-300);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            max-width: 85%;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chat-option {
+            padding: 10px 16px;
+            background: transparent;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 10px;
+            color: var(--cyan);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-family: var(--font-body);
+        }
+
+        .chat-option:hover {
+            background: rgba(0, 180, 216, 0.1);
+            border-color: var(--cyan);
+        }
+
+        /* ---- EXIT-INTENT POPUP ---- */
+        .exit-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .exit-overlay.active {
+            display: flex;
+            animation: fadeOverlay 0.3s ease;
+        }
+
+        @keyframes fadeOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exit-popup {
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 520px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .exit-popup .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--gray-500);
+            font-size: 1.5rem;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .exit-popup h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .exit-popup p {
+            color: var(--gray-300);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .exit-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .exit-form input {
+            flex: 1;
+            padding: 14px 18px;
+            background: var(--black);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            min-height: 48px;
+        }
+
+        .exit-form input:focus {
+            border-color: var(--cyan);
+        }
+
+        .exit-form button {
+            white-space: nowrap;
+        }
+
+        /* ---- MOBILE OVERRIDES ---- */
+        @media (max-width: 1024px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-visual {
+                height: 350px;
+            }
+            .counter-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .counter-item:nth-child(2) {
+                border-right: none;
+            }
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .split-section--reversed {
+                direction: ltr;
+            }
+            .service-row {
+                grid-template-columns: 60px 1fr;
+                gap: 20px;
+            }
+            .service-row > *:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Why-us grid responsive */
+        @media (max-width: 1024px) {
+            [data-why-grid] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-visual {
+                height: 280px;
+            }
+            .counter-strip {
+                grid-template-columns: 1fr 1fr;
+                border-radius: 16px;
+            }
+            .counter-item {
+                padding: 28px 16px;
+            }
+            .counter-number {
+                font-size: 1.8rem;
+            }
+            .service-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 32px 0;
+            }
+            .service-number {
+                font-size: 0.85rem;
+            }
+            .service-row h3 {
+                font-size: 1.2rem;
+            }
+            .big-quote blockquote {
+                font-size: 1.2rem;
+            }
+            .calculator {
+                padding: 28px 20px;
+            }
+            .calc-result .amount {
+                font-size: 2rem;
+            }
+            .chat-popup {
+                width: calc(100vw - 32px);
+                right: -8px;
+            }
+            .exit-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .counter-strip {
+                grid-template-columns: 1fr;
+            }
+            .counter-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+            }
+            .counter-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-logo" aria-label="Key's Touch - Home">
+                <img src="/images/logo.png" alt="Key's Touch" width="40" height="39" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                Key's Touch
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#what-we-do">Services</a></li>
+                <li><a href="#proof">Results</a></li>
+                <li><a href="#calculator">ROI Calculator</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Free Automation Audit</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- ============ HERO: Split layout with animated terminal ============ -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-split">
+                <div class="hero-content">
+                    <h1 id="hero-heading">
+                        AI that replaces<br>
+                        <span class="gradient-text">the busywork.</span>
+                    </h1>
+                    <p>
+                        We build custom AI agents and automation systems so your
+                        team stops copying data, chasing follow-ups, and generating
+                        the same reports every Monday. You hired smart people &mdash;
+                        let them do smart work.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="/contact" class="btn-primary">
+                            Get a free automation audit &rarr;
+                        </a>
+                        <a href="#what-we-do" class="btn-secondary">
+                            What we do
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                        </div>
+                        <div class="terminal-line"><span class="t-dim">$</span> <span class="t-white">keystouch deploy --agent customer-support</span></div>
+                        <div class="terminal-line"><span class="t-cyan">&#10003;</span> Connected to client CRM (HubSpot)</div>
+                        <div class="terminal-line"><span class="t-cyan">&#10003;</span> Knowledge base indexed (2,847 articles)</div>
+                        <div class="terminal-line"><span class="t-cyan">&#10003;</span> Conversation flows loaded</div>
+                        <div class="terminal-line"><span class="t-cyan">&#10003;</span> Escalation rules configured</div>
+                        <div class="terminal-line"><span class="t-green">&#9679;</span> <span class="t-green">Agent live.</span> Handling tickets across 3 channels</div>
+                        <div class="terminal-line">&nbsp;</div>
+                        <div class="terminal-line"><span class="t-dim">// 4 hours later:</span></div>
+                        <div class="terminal-line"><span class="t-purple">REPORT</span> <span class="t-white">142 tickets resolved</span> &middot; <span class="t-green">94% satisfaction</span> &middot; <span class="t-cyan">0 human hours used</span></div>
+                        <div class="terminal-line"><span class="t-dim">$</span> <span class="t-white blink">_</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TECH PARTNER BAR (like Accenture's partner wall) ============ -->
+    <section class="marquee-section" aria-label="Technology partners">
+        <div class="container" style="margin-bottom: 20px;">
+            <p style="text-align: center; font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 2px;">Built with</p>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item"><span class="dot"></span> OpenAI</div>
+            <div class="marquee-item"><span class="dot"></span> Anthropic Claude</div>
+            <div class="marquee-item"><span class="dot"></span> AWS</div>
+            <div class="marquee-item"><span class="dot"></span> LangChain</div>
+            <div class="marquee-item"><span class="dot"></span> n8n</div>
+            <div class="marquee-item"><span class="dot"></span> Make</div>
+            <div class="marquee-item"><span class="dot"></span> React / Next.js</div>
+            <div class="marquee-item"><span class="dot"></span> Python</div>
+            <div class="marquee-item"><span class="dot"></span> Node.js</div>
+            <div class="marquee-item"><span class="dot"></span> PostgreSQL</div>
+            <div class="marquee-item"><span class="dot"></span> Stripe</div>
+            <div class="marquee-item"><span class="dot"></span> HubSpot</div>
+            <div class="marquee-item"><span class="dot"></span> Salesforce</div>
+            <div class="marquee-item"><span class="dot"></span> Vercel</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-item"><span class="dot"></span> OpenAI</div>
+            <div class="marquee-item"><span class="dot"></span> Anthropic Claude</div>
+            <div class="marquee-item"><span class="dot"></span> AWS</div>
+            <div class="marquee-item"><span class="dot"></span> LangChain</div>
+            <div class="marquee-item"><span class="dot"></span> n8n</div>
+            <div class="marquee-item"><span class="dot"></span> Make</div>
+            <div class="marquee-item"><span class="dot"></span> React / Next.js</div>
+            <div class="marquee-item"><span class="dot"></span> Python</div>
+            <div class="marquee-item"><span class="dot"></span> Node.js</div>
+            <div class="marquee-item"><span class="dot"></span> PostgreSQL</div>
+            <div class="marquee-item"><span class="dot"></span> Stripe</div>
+            <div class="marquee-item"><span class="dot"></span> HubSpot</div>
+            <div class="marquee-item"><span class="dot"></span> Salesforce</div>
+            <div class="marquee-item"><span class="dot"></span> Vercel</div>
+        </div>
+    </section>
+
+    <!-- ============ METRICS STRIP (not cards, a single unified bar) ============ -->
+    <section style="padding: 80px 0;" aria-label="Key metrics" id="proof">
+        <div class="container">
+            <div class="counter-strip">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="500">0<span class="unit">+</span></div>
+                    <div class="counter-label">Hours automated per month</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">4.2<span class="unit">x</span></div>
+                    <div class="counter-label">Average client ROI in 6 months</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">73<span class="unit">%</span></div>
+                    <div class="counter-label">Reduction in manual tasks</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">98<span class="unit">%</span></div>
+                    <div class="counter-label">Client retention rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROPRIETARY METHODOLOGY: The RAPID Framework ============ -->
+    <section class="problem-solution" aria-labelledby="method-heading">
+        <div class="container">
+            <div class="split-section">
+                <div>
+                    <span class="section-label">Our approach</span>
+                    <h2 class="section-title" id="method-heading">The RAPID&trade; Framework</h2>
+                    <p style="color: var(--gray-300); line-height: 1.8; margin-bottom: 24px;">
+                        Every agency says they "build custom solutions." We actually have
+                        a system for it. RAPID is how we go from "my team wastes 20 hours
+                        a week on this" to "that runs itself now" &mdash; in weeks, not months.
+                    </p>
+                    <p style="color: var(--gray-300); line-height: 1.8;">
+                        It's the same framework whether we're deploying an AI agent,
+                        automating a 15-step workflow, or building a full SaaS product.
+                        The scope changes. The discipline doesn't.
+                    </p>
+                </div>
+                <div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="min-width: 44px; height: 44px; background: var(--cyan-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--cyan); font-size: 1.1rem;">R</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Reconnaissance</h3>
+                            <p style="color: var(--gray-500); font-size: 0.85rem;">Map every process, tool, and bottleneck. Find the 20% of work causing 80% of waste.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="min-width: 44px; height: 44px; background: var(--purple-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--purple); font-size: 1.1rem;">A</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Architect</h3>
+                            <p style="color: var(--gray-500); font-size: 0.85rem;">Design the system. You see the blueprint, approve the logic, before any code is written.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="min-width: 44px; height: 44px; background: var(--cyan-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--cyan); font-size: 1.1rem;">P</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Prototype & Prove</h3>
+                            <p style="color: var(--gray-500); font-size: 0.85rem;">Build a working version fast. Test it with real data. Kill what doesn't work before you scale it.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="min-width: 44px; height: 44px; background: var(--purple-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--purple); font-size: 1.1rem;">I</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Integrate & Deploy</h3>
+                            <p style="color: var(--gray-500); font-size: 0.85rem;">Ship it into your live environment. Connect every system. Zero disruption to current operations.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="min-width: 44px; height: 44px; background: var(--cyan-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--cyan); font-size: 1.1rem;">D</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Data-Driven Optimization</h3>
+                            <p style="color: var(--gray-500); font-size: 0.85rem;">Monitor, measure, improve. Every system gets smarter over time. We don't launch and leave.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES: Numbered list, not grid cards ============ -->
+    <section class="services section-bg-dark" id="what-we-do" aria-labelledby="services-heading">
+        <div class="container">
+            <span class="section-label">What we do</span>
+            <h2 class="section-title" id="services-heading">Six ways we make your business faster.</h2>
+            <p class="section-subtitle" style="margin-bottom: 0;">Each one ships in weeks, not quarters. Pick your starting point.</p>
+
+            <div style="margin-top: 48px;">
+                <div class="service-row">
+                    <div class="service-number">01</div>
+                    <div>
+                        <h3><a href="/services/ai-agents" style="color: inherit;">AI Agents</a></h3>
+                        <p>Custom AI agents that answer customer questions, qualify leads, process documents, and run internal ops. One client cut support costs 52% in 6 weeks.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">Customer Support</span>
+                            <span class="service-tag">Lead Qualification</span>
+                            <span class="service-tag">Data Processing</span>
+                            <span class="service-tag">Internal Ops</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-number">02</div>
+                    <div>
+                        <h3><a href="/services/automation" style="color: inherit;">Workflow Automation</a></h3>
+                        <p>We connect your tools, kill the copy-paste, and build workflows that run themselves. Average result: 40+ hours saved per week, per client.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">n8n</span>
+                            <span class="service-tag">Make</span>
+                            <span class="service-tag">Zapier</span>
+                            <span class="service-tag">Custom Python</span>
+                            <span class="service-tag">API Integrations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-number">03</div>
+                    <div>
+                        <h3><a href="/services/saas" style="color: inherit;">SaaS Products</a></h3>
+                        <p>Napkin sketch to paying customers. Our last MVP launched in 8 weeks and hit 5,000 users in 90 days with zero infrastructure issues.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">React / Next.js</span>
+                            <span class="service-tag">Node.js / Python</span>
+                            <span class="service-tag">Stripe Billing</span>
+                            <span class="service-tag">Multi-tenant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-number">04</div>
+                    <div>
+                        <h3><a href="/services/software" style="color: inherit;">Custom Software</a></h3>
+                        <p>When off-the-shelf doesn't cut it. Internal tools, client portals, mobile apps, APIs &mdash; built to your exact spec, not somebody else's template.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">Web Apps</span>
+                            <span class="service-tag">Mobile (iOS/Android)</span>
+                            <span class="service-tag">APIs</span>
+                            <span class="service-tag">Legacy Modernization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-number">05</div>
+                    <div>
+                        <h3><a href="/services/websites" style="color: inherit;">Websites That Sell</a></h3>
+                        <p>Not just pretty &mdash; fast, SEO-optimized, and built to turn visitors into leads. If your website isn't generating revenue, it's a liability.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">Conversion Design</span>
+                            <span class="service-tag">SEO</span>
+                            <span class="service-tag">Analytics</span>
+                            <span class="service-tag">Speed Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row">
+                    <div class="service-number">06</div>
+                    <div>
+                        <h3><a href="/services/consulting" style="color: inherit;">AI Strategy Consulting</a></h3>
+                        <p>Not sure where to start with AI? We audit your operations, find the biggest opportunities, and hand you a roadmap you can actually execute.</p>
+                    </div>
+                    <div>
+                        <div class="service-tags">
+                            <span class="service-tag">AI Readiness</span>
+                            <span class="service-tag">Process Mapping</span>
+                            <span class="service-tag">ROI Analysis</span>
+                            <span class="service-tag">Implementation Plans</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL: Single big quote (not 3 identical cards) ============ -->
+    <section class="quote-section" aria-label="Client testimonial">
+        <div class="container">
+            <div class="big-quote">
+                <div class="quote-mark">"</div>
+                <blockquote>
+                    We used to spend 3 days onboarding every new customer. Key's Touch built an
+                    automation system that does it in 2 hours. Our team went from drowning in
+                    busywork to actually focusing on growth. That's not marketing speak &mdash;
+                    that's what happened.
+                </blockquote>
+                <div class="quote-author">
+                    <strong>James M.</strong> &mdash; COO, Enterprise SaaS Company
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ROI CALCULATOR: Interactive tool ============ -->
+    <section class="calc-section section-bg-dark" id="calculator" aria-labelledby="calc-heading">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <span class="section-label">See the math</span>
+                <h2 class="section-title" id="calc-heading">How much is manual work costing you?</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Drag the sliders. See what automation could save your business per year.</p>
+            </div>
+            <div class="calculator">
+                <div class="calc-field">
+                    <label for="employees">Team members doing repetitive tasks</label>
+                    <div class="helper">How many people spend time on work that could be automated?</div>
+                    <input type="range" id="employees" class="calc-slider" min="1" max="50" value="5" oninput="updateCalc()">
+                    <div class="calc-value" id="emp-display">5 people</div>
+                </div>
+                <div class="calc-field">
+                    <label for="hours">Hours per week on manual tasks (per person)</label>
+                    <div class="helper">Data entry, reports, follow-ups, copy-pasting between tools...</div>
+                    <input type="range" id="hours" class="calc-slider" min="5" max="40" value="15" oninput="updateCalc()">
+                    <div class="calc-value" id="hours-display">15 hours/week</div>
+                </div>
+                <div class="calc-field">
+                    <label for="rate">Average hourly cost per employee</label>
+                    <div class="helper">Include salary, benefits, overhead. Not sure? $40-60 is typical.</div>
+                    <input type="range" id="rate" class="calc-slider" min="20" max="150" value="50" oninput="updateCalc()">
+                    <div class="calc-value" id="rate-display">$50/hr</div>
+                </div>
+                <div class="calc-result">
+                    <div class="amount" id="annual-waste">$195,000</div>
+                    <p>per year spent on tasks AI can handle</p>
+                    <a href="/contact" class="btn-primary" style="margin-top: 20px;">
+                        Let's fix that &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROCESS: Simpler, less templated ============ -->
+    <section class="process" aria-labelledby="how-heading">
+        <div class="container">
+            <div class="split-section">
+                <div>
+                    <span class="section-label">What to expect</span>
+                    <h2 class="section-title" id="how-heading">From first call to live system.</h2>
+                    <p style="color: var(--gray-300); line-height: 1.8; margin-bottom: 32px;">
+                        No 6-month discovery phases. No 200-page requirements docs.
+                        Most clients see their first automation live within 4 weeks.
+                    </p>
+                    <a href="/contact" class="btn-primary">Start with a free audit &rarr;</a>
+                </div>
+                <div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 28px; align-items: start;">
+                        <div style="min-width: 36px; height: 36px; background: var(--cyan-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--cyan); font-weight: 700; font-size: 0.85rem;">1</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 4px;">We audit your operations</h3>
+                            <p style="color: var(--gray-500); font-size: 0.9rem;">Free. We look at your workflows, tools, and team. Find the biggest time-wasters.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 28px; align-items: start;">
+                        <div style="min-width: 36px; height: 36px; background: var(--cyan-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--cyan); font-weight: 700; font-size: 0.85rem;">2</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 4px;">We design the system</h3>
+                            <p style="color: var(--gray-500); font-size: 0.9rem;">You see the blueprint before we write a line of code. No surprises.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-bottom: 28px; align-items: start;">
+                        <div style="min-width: 36px; height: 36px; background: var(--cyan-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--cyan); font-weight: 700; font-size: 0.85rem;">3</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 4px;">We build and ship</h3>
+                            <p style="color: var(--gray-500); font-size: 0.9rem;">Weekly sprints, working demos, real progress. Most projects go live in 4-10 weeks.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="min-width: 36px; height: 36px; background: var(--cyan-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--cyan); font-weight: 700; font-size: 0.85rem;">4</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 4px;">We optimize and expand</h3>
+                            <p style="color: var(--gray-500); font-size: 0.9rem;">Live monitoring, performance tuning, and new automation opportunities as they emerge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHY US: Differentiators (like Toptal's exclusivity) ============ -->
+    <section style="padding: 80px 0;" aria-labelledby="why-heading">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <span class="section-label">Why Key's Touch</span>
+                <h2 class="section-title" id="why-heading">What you won't get from the other guys.</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">You own everything.</h3>
+                    <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">Full source code, documentation, and knowledge transfer. No vendor lock-in. No hostage situations. If you want to leave, you take it all with you.</p>
+                </div>
+                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">4-week average time to first value.</h3>
+                    <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">Not 4 months of discovery. Not a 60-page strategy deck. A working system deployed in your environment, saving your team real hours, within a month.</p>
+                </div>
+                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">We pick the right AI, not the trendy one.</h3>
+                    <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">GPT-4, Claude, open-source, or a simple rule-based workflow. We use what actually solves your problem. Sometimes the answer isn't AI at all &mdash; and we'll tell you that.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECOND TESTIMONIAL (different voice, adds depth) ============ -->
+    <section style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);" aria-label="Client testimonial">
+        <div class="container">
+            <div class="big-quote">
+                <blockquote style="font-size: clamp(1.1rem, 2.5vw, 1.5rem);">
+                    "I've worked with agencies that talk a big game and deliver a Zapier
+                    integration. Key's Touch built us a full AI support agent that handles
+                    80% of our tickets. Our NPS went up 15 points. These guys actually ship."
+                </blockquote>
+                <div class="quote-author">
+                    <strong>Sarah R.</strong> &mdash; VP of Operations, E-Commerce Company
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BOTTOM CTA: Direct, confident ============ -->
+    <section class="cta-section section-bg-dark" aria-labelledby="bottom-cta">
+        <div class="container">
+            <h2 id="bottom-cta">The audit is free.<br>The call is 30 minutes.<br>The ROI speaks for itself.</h2>
+            <p>
+                We'll look at your operations, find the biggest automation
+                opportunities, and tell you exactly what to do &mdash; whether
+                you hire us or not.
+            </p>
+            <a href="/contact" class="btn-primary">
+                Book the free audit &rarr;
+            </a>
+            <p style="font-size: 0.8rem; color: var(--gray-500); margin-top: 16px;">No pitch deck. No follow-up spam. Just the math.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="/images/logo.png" alt="" width="32" height="31">
+                        <span class="nav-logo" style="font-size: 1.2rem;">Key's Touch</span>
+                    </div>
+                    <p>AI automation and software consulting. We build the systems that let your team focus on work that actually matters.</p>
+                </div>
+                <nav aria-label="Services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/ai-agents">AI Agents</a></li>
+                        <li><a href="/services/automation">Automation</a></li>
+                        <li><a href="/services/saas">SaaS Development</a></li>
+                        <li><a href="/services/software">Custom Software</a></li>
+                        <li><a href="/services/websites">Websites</a></li>
+                        <li><a href="/services/consulting">Consulting</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/company/keystouch" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/keystouch" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="mailto:hello@keystouch.com">hello@keystouch.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Key's Touch. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ CHAT WIDGET ============ -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-header">
+                <h4>Hey, quick question for you.</h4>
+                <p>Typically replies in under 2 minutes</p>
+            </div>
+            <div class="chat-body">
+                <div class="chat-msg">
+                    What brought you here today? Pick the closest match and I'll point you in the right direction.
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" onclick="handleChat('automate')">I want to automate something specific</button>
+                    <button class="chat-option" onclick="handleChat('build')">I need software or an app built</button>
+                    <button class="chat-option" onclick="handleChat('ai')">I want to add AI to my business</button>
+                    <button class="chat-option" onclick="handleChat('browse')">Just browsing for now</button>
+                </div>
+            </div>
+        </div>
+        <button class="chat-bubble" onclick="toggleChat()" aria-label="Open chat">
+            &#128172;
+        </button>
+    </div>
+
+    <!-- ============ EXIT-INTENT POPUP ============ -->
+    <div class="exit-overlay" id="exit-overlay">
+        <div class="exit-popup">
+            <button class="close-btn" onclick="closeExit()" aria-label="Close popup">&times;</button>
+            <h3>Before you go &mdash;</h3>
+            <p>
+                Get our free guide: <strong>"10 Workflows Every Business Should Automate in 2026."</strong>
+                No fluff, just the exact automations that save 20+ hours a week.
+            </p>
+            <div class="exit-form">
+                <input type="email" placeholder="Your email" id="exit-email" aria-label="Email address">
+                <button class="btn-primary" onclick="captureExit()">Send it &rarr;</button>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 12px;">No spam. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ROI Calculator
+        function updateCalc() {
+            const emp = document.getElementById('employees').value;
+            const hrs = document.getElementById('hours').value;
+            const rate = document.getElementById('rate').value;
+            document.getElementById('emp-display').textContent = emp + ' people';
+            document.getElementById('hours-display').textContent = hrs + ' hours/week';
+            document.getElementById('rate-display').textContent = '$' + rate + '/hr';
+            const annual = emp * hrs * rate * 52;
+            document.getElementById('annual-waste').textContent = '$' + annual.toLocaleString();
+        }
+
+        // Chat Widget
+        function toggleChat() {
+            document.getElementById('chat-popup').classList.toggle('active');
+        }
+
+        function handleChat(choice) {
+            const body = document.querySelector('.chat-body');
+            const responses = {
+                automate: 'Nice. The fastest way to get started is a free automation audit. We\'ll look at your current workflows and show you exactly what to automate first. <a href="/contact" style="color: var(--cyan);">Book it here &rarr;</a>',
+                build: 'Got it. Whether it\'s a SaaS product, internal tool, or mobile app, let\'s talk scope. <a href="/contact" style="color: var(--cyan);">Schedule a call &rarr;</a>',
+                ai: 'Smart move. We do AI readiness assessments that show you where AI creates the highest ROI in your specific business. <a href="/services/consulting" style="color: var(--cyan);">Learn more &rarr;</a>',
+                browse: 'No pressure. Check out our <a href="/case-studies" style="color: var(--cyan);">case studies</a> to see what we\'ve built, or use the ROI calculator above to see what automation could save you.'
+            };
+            body.innerHTML = '<div class="chat-msg">' + responses[choice] + '</div>';
+        }
+
+        // Exit Intent
+        let exitShown = false;
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 5 && !exitShown && !sessionStorage.getItem('exitDismissed')) {
+                document.getElementById('exit-overlay').classList.add('active');
+                exitShown = true;
+            }
+        });
+
+        function closeExit() {
+            document.getElementById('exit-overlay').classList.remove('active');
+            sessionStorage.setItem('exitDismissed', 'true');
+        }
+
+        function captureExit() {
+            const email = document.getElementById('exit-email').value;
+            if (email && email.includes('@')) {
+                // INTEGRATION POINT: Send to your email service (Mailchimp, ConvertKit, etc.)
+                // Example: fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+                document.querySelector('.exit-popup').innerHTML = '<div style="padding: 40px; text-align: center;"><h3 style="font-family: var(--font-heading); margin-bottom: 12px;">Check your inbox.</h3><p style="color: var(--gray-300);">The guide is on its way.</p></div>';
+                setTimeout(closeExit, 3000);
+            }
+        }
+
+        // Counter Animation (on scroll)
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter-number');
+                    counters.forEach(counter => {
+                        const target = parseFloat(counter.textContent);
+                        if (isNaN(target)) return;
+                        const unit = counter.querySelector('.unit');
+                        const unitText = unit ? unit.textContent : '';
+                        let current = 0;
+                        const increment = target / 40;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            const display = Number.isInteger(target) ? Math.floor(current) : current.toFixed(1);
+                            counter.innerHTML = display + '<span class="unit">' + unitText + '</span>';
+                        }, 40);
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        const counterEl = document.querySelector('.counter-strip');
+        if (counterEl) counterObserver.observe(counterEl);
+
+        // Auto-show chat after 30 seconds
+        setTimeout(() => {
+            if (!document.getElementById('chat-popup').classList.contains('active')) {
+                document.getElementById('chat-popup').classList.add('active');
+            }
+        }, 30000);
+    </script>
+
+</body>
+</html>

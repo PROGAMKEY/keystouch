@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Key's Touch Results</title>
+    <meta name="description" content="Real results from real clients. See how Key's Touch AI automation and software solutions drive measurable business outcomes.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://keystouch.com/case-studies">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Case Studies | Key's Touch Results">
+    <meta property="og:description" content="Real results from real clients. See how Key's Touch AI automation and software solutions drive measurable business outcomes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keystouch.com/case-studies">
+    <meta property="og:site_name" content="Key's Touch">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Studies | Key's Touch Results">
+    <meta name="twitter:description" content="Real results from real clients. See how Key's Touch AI automation and software solutions drive measurable business outcomes.">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Case Studies",
+        "description": "Real results from real clients. See how Key's Touch AI automation and software solutions drive measurable business outcomes.",
+        "url": "https://keystouch.com/case-studies",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "SaaS Onboarding Automated End-to-End",
+                    "description": "93% time reduction and $180K annual savings for a mid-market SaaS company using n8n, Claude API, and HubSpot."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AI Support Agent Handles 80% of Tickets",
+                    "description": "Claude-powered AI agent deployed across live chat, email, and SMS for an e-commerce company."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "FinTech MVP to 5,000 Users in 12 Weeks",
+                    "description": "Full SaaS MVP built with React, Node.js, Stripe, and PostgreSQL in 8 weeks."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Workflow Automation for a Logistics Company",
+                    "description": "15-step manual process automated with n8n and custom Python, saving $240K per year."
+                }
+            ]
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <style>
+        /* Filter bar */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .filter-btn {
+            padding: 10px 22px;
+            border-radius: 100px;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--cyan);
+            color: var(--white);
+        }
+
+        .filter-btn.active {
+            background: var(--gradient-accent);
+            border-color: transparent;
+            color: var(--white);
+        }
+
+        /* Case study story structure */
+        .case-study-card h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .case-study-card p {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .case-study-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .case-study-label--problem {
+            background: rgba(239, 68, 68, 0.12);
+            color: #f87171;
+        }
+
+        .case-study-label--built {
+            background: var(--cyan-glow);
+            color: var(--cyan);
+        }
+
+        .case-study-label--results {
+            background: rgba(52, 211, 153, 0.12);
+            color: #34d399;
+        }
+
+        .case-study-story {
+            margin-bottom: 24px;
+        }
+
+        .case-study-story p {
+            margin-bottom: 12px;
+        }
+
+        .rapid-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--purple-glow);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-top: 12px;
+            margin-bottom: 16px;
+        }
+
+        .case-study-timeline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-300);
+            margin-top: 12px;
+            margin-bottom: 16px;
+            margin-left: 8px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--gray-300);
+        }
+
+        @media (max-width: 480px) {
+            .filter-bar {
+                gap: 6px;
+                margin-bottom: 32px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .rapid-tag,
+            .case-study-timeline {
+                display: flex;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ============ NAVIGATION (matches homepage) ============ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-logo" aria-label="Key's Touch - Home">
+                <img src="/images/logo.png" alt="Key's Touch" width="40" height="39" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                Key's Touch
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="/services/ai-agents">Services</a></li>
+                <li><a href="/case-studies">Results</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Free Automation Audit</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ============ HERO ============ -->
+        <section class="hero hero--compact" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="section-label">Case Studies</span>
+                    <h1 id="hero-heading">
+                        <span class="gradient-text">The receipts.</span>
+                    </h1>
+                    <p>
+                        No vague promises. Every project below shipped on time, hit its numbers,
+                        and paid for itself. Here's exactly how.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FILTER BAR ============ -->
+        <section aria-label="Filter case studies">
+            <div class="container">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ai-agents">AI Agents</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="saas">SaaS</button>
+                    <button class="filter-btn" data-filter="software">Software</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CASE STUDY CARDS ============ -->
+        <section aria-label="Case studies">
+            <div class="container">
+                <div class="stack-gap-xl">
+
+                    <!-- CASE STUDY 1: SaaS Onboarding -->
+                    <article class="case-study-card" data-category="automation">
+                        <div>
+                            <span class="section-label">AI Automation</span>
+                            <h2>A SaaS company was losing 3 days per customer onboarding. We got it down to 4 hours.</h2>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--problem">Problem</span>
+                                <p>
+                                    Their ops team was manually creating accounts, migrating data from spreadsheets,
+                                    sending welcome emails, and assigning training resources -- for every single new customer.
+                                    Three full days, every time. It was killing their ability to scale.
+                                </p>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--built">What we built</span>
+                                <p>
+                                    An end-to-end automation pipeline using <strong>n8n workflow orchestration + Claude API
+                                    for intelligent data mapping + HubSpot integration</strong> for CRM sync and personalized
+                                    welcome sequences. The system handles account provisioning, data migration, onboarding
+                                    emails, and training resource delivery -- zero human intervention needed.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">n8n</span>
+                                    <span class="tech-tag">Claude API</span>
+                                    <span class="tech-tag">HubSpot</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Webhooks</span>
+                                </div>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--results">Results</span>
+                            </div>
+
+                            <div class="flex-metrics">
+                                <div>
+                                    <div class="result-metric">93%</div>
+                                    <p>Time Reduction</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">$180K</div>
+                                    <p>Annual Savings</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">4.8x</div>
+                                    <p>ROI in 6 Months</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="rapid-tag">RAPID Phase: Prototype &amp; Prove &rarr; Deploy</span>
+                                <span class="case-study-timeline">Timeline: 4 weeks</span>
+                            </div>
+                            <p class="case-study-meta">Industry: SaaS &bull; Service: AI Automation</p>
+                        </div>
+                        <div class="case-study-image">
+                            [Project Screenshot / Diagram]
+                        </div>
+                    </article>
+
+                    <!-- CASE STUDY 2: AI Support Agent -->
+                    <article class="case-study-card case-study-card--reversed" data-category="ai-agents">
+                        <div class="case-study-image">
+                            [Project Screenshot / Diagram]
+                        </div>
+                        <div>
+                            <span class="section-label">AI Agents</span>
+                            <h2>Their support team was drowning. Now an AI agent handles 80% of tickets before a human even sees them.</h2>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--problem">Problem</span>
+                                <p>
+                                    An e-commerce company with 50K+ monthly orders was burning through support staff.
+                                    80% of tickets were the same five questions: order status, returns, refund timelines,
+                                    account resets, and shipping ETAs. Hiring more reps wasn't going to fix the math.
+                                </p>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--built">What we built</span>
+                                <p>
+                                    A custom AI support agent powered by <strong>Claude 3.5 Sonnet</strong>, deployed across
+                                    <strong>live chat (Intercom), email, and SMS</strong>. The agent pulls real-time order data
+                                    from Shopify, processes returns against policy rules, and handles account issues autonomously.
+                                    Built-in <strong>escalation logic</strong>: if sentiment drops below threshold, if the request
+                                    involves a refund over $200, or if the customer asks for a human -- it routes to the right
+                                    team member with full context attached. No cold handoffs.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Claude 3.5 Sonnet</span>
+                                    <span class="tech-tag">Intercom</span>
+                                    <span class="tech-tag">Shopify API</span>
+                                    <span class="tech-tag">Twilio SMS</span>
+                                    <span class="tech-tag">n8n</span>
+                                </div>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--results">Results</span>
+                            </div>
+
+                            <div class="flex-metrics">
+                                <div>
+                                    <div class="result-metric">80%</div>
+                                    <p>Tickets Automated</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">52%</div>
+                                    <p>Cost Reduction</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">+15</div>
+                                    <p>NPS Increase</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="rapid-tag">RAPID Phase: Assess &rarr; Prototype &amp; Prove &rarr; Deploy</span>
+                                <span class="case-study-timeline">Timeline: 6 weeks</span>
+                            </div>
+                            <p class="case-study-meta">Industry: E-Commerce &bull; Service: AI Agents</p>
+                        </div>
+                    </article>
+
+                    <!-- CASE STUDY 3: FinTech MVP -->
+                    <article class="case-study-card" data-category="saas">
+                        <div>
+                            <span class="section-label">SaaS Development</span>
+                            <h2>A FinTech founder had a 12-week window before a competitor closed the gap. We shipped the MVP in 8.</h2>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--problem">Problem</span>
+                                <p>
+                                    The founder had validated demand, had a waitlist of 800 people, and zero product.
+                                    A well-funded competitor was 3 months from launching the same thing. Speed wasn't
+                                    a nice-to-have -- it was the entire strategy.
+                                </p>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--built">What we built</span>
+                                <p>
+                                    A full SaaS MVP with AI-powered risk scoring, subscription billing, and a scalable
+                                    multi-tenant architecture. Tech stack: <strong>React frontend, Node.js backend,
+                                    Stripe for billing and payouts, PostgreSQL database</strong>. Deployed on AWS
+                                    with CI/CD from day one. Auth, role-based access, admin dashboard, and real-time
+                                    analytics -- all production-ready, not duct-taped together.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Stripe</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">CI/CD</span>
+                                </div>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--results">Results</span>
+                            </div>
+
+                            <div class="flex-metrics">
+                                <div>
+                                    <div class="result-metric">8wk</div>
+                                    <p>Time to Launch</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">5K+</div>
+                                    <p>Users in 90 Days</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">$0</div>
+                                    <p>Infrastructure Issues</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="rapid-tag">RAPID Phase: Research &rarr; Architect &rarr; Deploy &rarr; Iterate</span>
+                                <span class="case-study-timeline">Timeline: 8 weeks</span>
+                            </div>
+                            <p class="case-study-meta">Industry: FinTech &bull; Service: SaaS Development</p>
+                        </div>
+                        <div class="case-study-image">
+                            [Project Screenshot / Diagram]
+                        </div>
+                    </article>
+
+                    <!-- CASE STUDY 4: Logistics Automation -->
+                    <article class="case-study-card case-study-card--reversed" data-category="automation">
+                        <div class="case-study-image">
+                            [Project Screenshot / Diagram]
+                        </div>
+                        <div>
+                            <span class="section-label">Workflow Automation</span>
+                            <h2>A logistics company had a 15-step manual process eating $240K a year. We killed it in 3 weeks.</h2>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--problem">Problem</span>
+                                <p>
+                                    Every shipment required 15 manual steps: data entry across three systems, email confirmations
+                                    to carriers, rate comparisons in spreadsheets, invoice generation, and compliance document
+                                    uploads. Four full-time employees did nothing but process paperwork. Errors were constant.
+                                    Late shipments were costing them clients.
+                                </p>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--built">What we built</span>
+                                <p>
+                                    A fully automated shipment processing pipeline using <strong>n8n for workflow orchestration
+                                    + custom Python scripts</strong> for rate optimization, carrier API integrations, and
+                                    compliance document generation. The system ingests shipment requests, compares carrier
+                                    rates in real time, auto-generates invoices, sends confirmations, and files compliance
+                                    docs -- all triggered by a single form submission.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">n8n</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Carrier APIs</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">PDF Generation</span>
+                                </div>
+                            </div>
+
+                            <div class="case-study-story">
+                                <span class="case-study-label case-study-label--results">Results</span>
+                            </div>
+
+                            <div class="flex-metrics">
+                                <div>
+                                    <div class="result-metric">$240K</div>
+                                    <p>Annual Savings</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">15&rarr;1</div>
+                                    <p>Steps Remaining</p>
+                                </div>
+                                <div>
+                                    <div class="result-metric">97%</div>
+                                    <p>Error Reduction</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="rapid-tag">RAPID Phase: Assess &rarr; Prototype &amp; Prove &rarr; Deploy</span>
+                                <span class="case-study-timeline">Timeline: 3 weeks</span>
+                            </div>
+                            <p class="case-study-meta">Industry: Logistics &bull; Service: Workflow Automation</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section class="cta-section" aria-label="Call to action">
+            <div class="container">
+                <h2>Want to be the next case study?</h2>
+                <p>
+                    Book a free automation audit. We'll map your biggest time sink,
+                    spec the fix, and show you exactly what the ROI looks like --
+                    before you spend a dollar.
+                </p>
+                <a href="/contact" class="btn-primary">
+                    Book Your Free Automation Audit &rarr;
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER (matches homepage) ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="/images/logo.png" alt="" width="32" height="31">
+                        <span class="nav-logo" style="font-size: 1.2rem;">Key's Touch</span>
+                    </div>
+                    <p>AI automation and software consulting. We build the systems that let your team focus on work that actually matters.</p>
+                </div>
+                <nav aria-label="Services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/ai-agents">AI Agents</a></li>
+                        <li><a href="/services/automation">Automation</a></li>
+                        <li><a href="/services/saas">SaaS Development</a></li>
+                        <li><a href="/services/software">Custom Software</a></li>
+                        <li><a href="/services/websites">Websites</a></li>
+                        <li><a href="/services/consulting">Consulting</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/company/keystouch" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/keystouch" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="mailto:hello@keystouch.com">hello@keystouch.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Key's Touch. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter bar interaction (visual only for now) -->
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

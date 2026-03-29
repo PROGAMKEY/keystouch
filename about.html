@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Key's Touch | AI Automation & Software Agency</title>
+    <meta name="description" content="Key's Touch is an AI automation and software consulting agency that engineers intelligent systems to eliminate manual work and scale revenue for businesses.">
+    <link rel="canonical" href="https://keystouch.com/about">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Key's Touch | AI Automation & Software Agency">
+    <meta property="og:description" content="Key's Touch is an AI automation and software consulting agency that engineers intelligent systems to eliminate manual work and scale revenue for businesses.">
+    <meta property="og:url" content="https://keystouch.com/about">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Key's Touch">
+    <meta property="og:image" content="https://keystouch.com/images/og-about.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Key's Touch | AI Automation & Software Agency">
+    <meta name="twitter:description" content="Key's Touch is an AI automation and software consulting agency that engineers intelligent systems to eliminate manual work and scale revenue for businesses.">
+    <meta name="twitter:image" content="https://keystouch.com/images/og-about.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Key's Touch",
+        "description": "Key's Touch is an AI automation and software consulting agency that engineers intelligent systems to eliminate manual work and scale revenue for businesses.",
+        "url": "https://keystouch.com/about",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Key's Touch",
+            "description": "AI automation and software consulting agency",
+            "foundingDate": "2026",
+            "url": "https://keystouch.com"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* ---- MARQUEE: scrolling tech bar ---- */
+        .marquee-section {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marqueeScroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .marquee-item .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            opacity: 0.5;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ---- BY THE NUMBERS: counter strip ---- */
+        .counter-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            background: var(--dark);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+            overflow: hidden;
+        }
+
+        .counter-item {
+            padding: 48px 32px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .counter-item:last-child {
+            border-right: none;
+        }
+
+        .counter-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .counter-number .unit {
+            font-size: 1.5rem;
+            color: var(--cyan);
+        }
+
+        .counter-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* ---- RAPID STEPS ---- */
+        .rapid-step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: start;
+        }
+
+        .rapid-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .rapid-letter {
+            min-width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .rapid-letter.cyan {
+            background: var(--cyan-glow);
+            color: var(--cyan);
+        }
+
+        .rapid-letter.purple {
+            background: var(--purple-glow);
+            color: var(--purple);
+        }
+
+        .rapid-step h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .rapid-step p {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+
+        /* ---- FOUNDER SECTION ---- */
+        .founder-creds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .founder-tag {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--gray-300);
+            font-family: var(--font-heading);
+            font-weight: 500;
+        }
+
+        /* ---- MOBILE OVERRIDES ---- */
+        @media (max-width: 1024px) {
+            .counter-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .counter-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .counter-strip {
+                grid-template-columns: 1fr 1fr;
+                border-radius: 16px;
+            }
+            .counter-item {
+                padding: 28px 16px;
+            }
+            .counter-number {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .counter-strip {
+                grid-template-columns: 1fr;
+            }
+            .counter-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+            }
+            .counter-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-logo" aria-label="Key's Touch - Home">
+                <img src="/images/logo.png" alt="Key's Touch" width="40" height="39" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                Key's Touch
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="/#what-we-do">Services</a></li>
+                <li><a href="/#proof">Results</a></li>
+                <li><a href="/about" aria-current="page">About</a></li>
+                <li><a href="/contact" class="nav-cta">Free Automation Audit</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ============ ABOUT HERO ============ -->
+        <section class="hero hero--compact" aria-label="About hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="section-label">About Us</span>
+                    <h1>
+                        We build it.<br>
+                        <span class="gradient-text">You own it.</span>
+                    </h1>
+                    <p>
+                        Key's Touch is an AI automation and software agency that builds
+                        things you keep. No vendor lock-in, no recurring platform fees,
+                        no mystery code you can't read. We hand you the keys and the docs
+                        when the work is done.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TECH PARTNER BAR ============ -->
+        <section class="marquee-section" aria-label="Technology partners">
+            <div class="container" style="margin-bottom: 20px;">
+                <p style="text-align: center; font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 2px;">Built with</p>
+            </div>
+            <div class="marquee-track">
+                <div class="marquee-item"><span class="dot"></span> OpenAI</div>
+                <div class="marquee-item"><span class="dot"></span> Anthropic Claude</div>
+                <div class="marquee-item"><span class="dot"></span> AWS</div>
+                <div class="marquee-item"><span class="dot"></span> LangChain</div>
+                <div class="marquee-item"><span class="dot"></span> n8n</div>
+                <div class="marquee-item"><span class="dot"></span> Make</div>
+                <div class="marquee-item"><span class="dot"></span> React / Next.js</div>
+                <div class="marquee-item"><span class="dot"></span> Python</div>
+                <div class="marquee-item"><span class="dot"></span> Node.js</div>
+                <div class="marquee-item"><span class="dot"></span> PostgreSQL</div>
+                <div class="marquee-item"><span class="dot"></span> Stripe</div>
+                <div class="marquee-item"><span class="dot"></span> HubSpot</div>
+                <div class="marquee-item"><span class="dot"></span> Salesforce</div>
+                <div class="marquee-item"><span class="dot"></span> Vercel</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><span class="dot"></span> OpenAI</div>
+                <div class="marquee-item"><span class="dot"></span> Anthropic Claude</div>
+                <div class="marquee-item"><span class="dot"></span> AWS</div>
+                <div class="marquee-item"><span class="dot"></span> LangChain</div>
+                <div class="marquee-item"><span class="dot"></span> n8n</div>
+                <div class="marquee-item"><span class="dot"></span> Make</div>
+                <div class="marquee-item"><span class="dot"></span> React / Next.js</div>
+                <div class="marquee-item"><span class="dot"></span> Python</div>
+                <div class="marquee-item"><span class="dot"></span> Node.js</div>
+                <div class="marquee-item"><span class="dot"></span> PostgreSQL</div>
+                <div class="marquee-item"><span class="dot"></span> Stripe</div>
+                <div class="marquee-item"><span class="dot"></span> HubSpot</div>
+                <div class="marquee-item"><span class="dot"></span> Salesforce</div>
+                <div class="marquee-item"><span class="dot"></span> Vercel</div>
+            </div>
+        </section>
+
+        <!-- ============ BY THE NUMBERS ============ -->
+        <section style="padding: 80px 0;" aria-labelledby="numbers-heading">
+            <div class="container">
+                <span class="section-label">By the numbers</span>
+                <h2 id="numbers-heading" class="section-title" style="margin-bottom: 40px;">We track outcomes, not hours.</h2>
+                <div class="counter-strip">
+                    <div class="counter-item">
+                        <div class="counter-number">52<span class="unit">%</span></div>
+                        <div class="counter-label">Cost reduction (best client result)</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number">5,000</div>
+                        <div class="counter-label">Users in 90 days (SaaS MVP)</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number">4<span class="unit">wk</span></div>
+                        <div class="counter-label">Average time to value</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number">100<span class="unit">%</span></div>
+                        <div class="counter-label">Client code ownership</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MISSION ============ -->
+        <section class="problem-solution" aria-labelledby="mission-heading">
+            <div class="container">
+                <div class="grid-2col">
+                    <div>
+                        <span class="section-label">Why we exist</span>
+                        <h2 id="mission-heading" class="section-title">AI shouldn't require a billion-dollar budget.</h2>
+                        <p class="section-subtitle">
+                            Most businesses know they need AI. They just don't have a dedicated
+                            ML team, a six-month runway to figure it out, or the patience for
+                            another consultant who delivers a PDF instead of working software.
+                        </p>
+                        <p class="section-subtitle">
+                            We close that gap. We take the same AI models and automation tools
+                            that Fortune 500 companies use and wire them into your actual
+                            business &mdash; your CRM, your ops, your revenue engine. Working
+                            systems, not strategy decks.
+                        </p>
+                    </div>
+                    <div class="stack-gap-md">
+                        <div class="result-card">
+                            <div class="result-metric">2026</div>
+                            <h3>Born in the AI era</h3>
+                            <p>Not a legacy dev shop bolting on AI as an afterthought. Every system we build starts with intelligence baked in.</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-metric">100%</div>
+                            <h3>Yours to keep</h3>
+                            <p>Full source code, documentation, and knowledge transfer. We never hold your business hostage with proprietary lock-in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHAT YOU WON'T GET ============ -->
+        <section class="services" aria-labelledby="stances-heading">
+            <div class="container">
+                <span class="section-label">What you won't get from us</span>
+                <h2 id="stances-heading" class="section-title">Opinionated? Absolutely.</h2>
+                <div class="problem-grid">
+                    <article class="problem-card">
+                        <h3>No 100-page strategy decks</h3>
+                        <p>We don't get paid to think about your problems. We get paid to fix them. You'll get working software, not a binder collecting dust on a shelf.</p>
+                    </article>
+                    <article class="problem-card">
+                        <h3>No mystery pricing</h3>
+                        <p>You'll know the cost before we write a line of code. Fixed-scope, fixed-price. If we underestimate, that's on us, not your budget.</p>
+                    </article>
+                    <article class="problem-card">
+                        <h3>No vendor lock-in</h3>
+                        <p>You own everything. The code, the infrastructure, the deployment. If you fire us tomorrow, you walk away with all of it. That's how confident we are you won't.</p>
+                    </article>
+                    <article class="problem-card">
+                        <h3>No "we'll circle back"</h3>
+                        <p>Weekly updates. Async demos. If something breaks, you hear from us first &mdash; not three months later buried in a status report.</p>
+                    </article>
+                    <article class="problem-card">
+                        <h3>No AI theater</h3>
+                        <p>If your problem is better solved with a simple script, we'll tell you. We don't bolt a chatbot onto things that don't need one just to look smart.</p>
+                    </article>
+                    <article class="problem-card">
+                        <h3>No "just ship it" shortcuts</h3>
+                        <p>Fast doesn't mean sloppy. We deploy in weeks because we have a system, not because we skip testing. Every build gets docs, monitoring, and a handoff you can actually follow.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ RAPID FRAMEWORK ============ -->
+        <section class="problem-solution section-bg-dark" aria-labelledby="rapid-heading">
+            <div class="container">
+                <div class="grid-2col">
+                    <div>
+                        <span class="section-label">Our approach</span>
+                        <h2 class="section-title" id="rapid-heading">The RAPID&trade; Framework</h2>
+                        <p class="section-subtitle">
+                            Every agency says they "build custom." We actually have a system
+                            for it. RAPID is how we go from "my team wastes 20 hours a week
+                            on this" to "that runs itself now" &mdash; in weeks, not months.
+                        </p>
+                        <p class="section-subtitle">
+                            Same framework whether we're deploying an AI agent, automating a
+                            15-step workflow, or building a full SaaS product. The scope changes.
+                            The discipline doesn't.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="rapid-step">
+                            <div class="rapid-letter cyan">R</div>
+                            <div>
+                                <h3>Reconnaissance</h3>
+                                <p>Map every process, tool, and bottleneck. Find the 20% of work causing 80% of waste.</p>
+                            </div>
+                        </div>
+                        <div class="rapid-step">
+                            <div class="rapid-letter purple">A</div>
+                            <div>
+                                <h3>Architect</h3>
+                                <p>Design the system. You see the blueprint, approve the logic, before any code is written.</p>
+                            </div>
+                        </div>
+                        <div class="rapid-step">
+                            <div class="rapid-letter cyan">P</div>
+                            <div>
+                                <h3>Prototype &amp; Prove</h3>
+                                <p>Build a working version fast. Test it with real data. Kill what doesn't work before you scale it.</p>
+                            </div>
+                        </div>
+                        <div class="rapid-step">
+                            <div class="rapid-letter purple">I</div>
+                            <div>
+                                <h3>Integrate &amp; Deploy</h3>
+                                <p>Ship it into your live environment. Connect every system. Zero disruption to current operations.</p>
+                            </div>
+                        </div>
+                        <div class="rapid-step">
+                            <div class="rapid-letter cyan">D</div>
+                            <div>
+                                <h3>Data-Driven Optimization</h3>
+                                <p>Monitor, measure, improve. Every system gets smarter over time. We don't launch and leave.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FOUNDER ============ -->
+        <section class="problem-solution" aria-labelledby="founder-heading">
+            <div class="container text-center">
+                <span class="section-label">Leadership</span>
+                <h2 id="founder-heading" class="section-title">Built by someone who's shipped real products.</h2>
+                <p class="section-subtitle" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Key's Touch wasn't started by a business guy who hired engineers.
+                    It was started by an engineer who runs the business. PMP-certified
+                    project manager, AI/data governance specialist, and full-stack
+                    developer who's been in the room where ops decisions are made &mdash;
+                    not just the room where code gets written.
+                </p>
+                <p class="section-subtitle" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    That means you get someone who understands your P&amp;L, not just your
+                    API. Someone who asks "what does this save you per month?" before
+                    "what framework should we use?"
+                </p>
+                <div class="founder-creds" style="justify-content: center;">
+                    <span class="founder-tag">PMP Certified</span>
+                    <span class="founder-tag">AI / Data Governance</span>
+                    <span class="founder-tag">Full-Stack Engineering</span>
+                    <span class="founder-tag">Operator + Builder</span>
+                </div>
+                <a href="/contact" class="btn-primary">Work With Us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section class="cta-section" aria-label="Call to action">
+            <div class="container">
+                <h2>Done reading about us?<br>Let's talk about you.</h2>
+                <p>
+                    Book a call. No pitch decks, no sales pressure. Just a straight
+                    conversation about what's broken and how to fix it.
+                </p>
+                <a href="/contact" class="btn-primary">
+                    Get a free automation audit &rarr;
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="/images/logo.png" alt="" width="32" height="31">
+                        <span class="nav-logo" style="font-size: 1.2rem;">Key's Touch</span>
+                    </div>
+                    <p>AI automation and software consulting. We build the systems that let your team focus on work that actually matters.</p>
+                </div>
+                <nav aria-label="Services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/ai-agents">AI Agents</a></li>
+                        <li><a href="/services/automation">Automation</a></li>
+                        <li><a href="/services/saas">SaaS Development</a></li>
+                        <li><a href="/services/software">Custom Software</a></li>
+                        <li><a href="/services/websites">Websites</a></li>
+                        <li><a href="/services/consulting">Consulting</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/company/keystouch" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/keystouch" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="mailto:hello@keystouch.com">hello@keystouch.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Key's Touch. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

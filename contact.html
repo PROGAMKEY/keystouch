@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Book a Free Automation Audit | Key's Touch</title>
+    <meta name="description" content="Book a free automation audit with Key's Touch. We'll map your operations, find the waste, and show you the math. 30 minutes. Zero obligation.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://keystouch.com/contact">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Book a Free Automation Audit | Key's Touch">
+    <meta property="og:description" content="Book a free automation audit with Key's Touch. We'll map your operations, find the waste, and show you the math. 30 minutes. Zero obligation.">
+    <meta property="og:url" content="https://keystouch.com/contact">
+    <meta property="og:site_name" content="Key's Touch">
+    <meta property="og:image" content="https://keystouch.com/images/og-contact.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Book a Free Automation Audit | Key's Touch">
+    <meta name="twitter:description" content="Book a free automation audit with Key's Touch. We'll map your operations, find the waste, and show you the math.">
+    <meta name="twitter:image" content="https://keystouch.com/images/og-contact.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- JSON-LD: ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Key's Touch",
+        "description": "Book a free automation audit with Key's Touch. We'll map your operations, find the waste, and show you the math.",
+        "url": "https://keystouch.com/contact",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Key's Touch",
+            "url": "https://keystouch.com",
+            "email": "hello@keystouch.com",
+            "sameAs": [
+                "https://linkedin.com/company/keystouch"
+            ]
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Projects start at $10K. Most automation builds land between $10K-$50K depending on scope. The audit is free — we'll give you a number before any work starts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does a typical project take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "4 weeks to first value for most automation projects. MVPs: 6-10 weeks. Full platforms: 3-6 months. We'll give you an exact timeline after Reconnaissance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you work with startups?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Pre-revenue to enterprise. If you have a real problem and real urgency, we're in."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What industries do you work with?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Healthcare, fintech, e-commerce, logistics, professional services, and SaaS. The common thread is manual processes that shouldn't be manual. If your team spends hours on repeatable work, we can help."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer ongoing support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We offer monthly retainers for monitoring, optimization, and new automation builds. Most clients stay because the ROI keeps compounding — we find new things to automate every quarter."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Page-specific styles -->
+    <style>
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 48px 24px;
+            background: var(--dark);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 16px;
+        }
+        .form-success.active {
+            display: block;
+        }
+        .form-success h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        .form-success p {
+            color: var(--gray-300);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .form-success .check-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--cyan-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            color: var(--cyan);
+        }
+        .start-here {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .start-here-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .start-here-card {
+            padding: 32px;
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .start-here-card:hover {
+            border-color: rgba(0, 180, 216, 0.2);
+            transform: translateY(-4px);
+        }
+        .start-here-card .card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cyan-glow);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        .start-here-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .start-here-card p {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .start-here-card .card-link {
+            color: var(--cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+        .start-here-card .card-link:hover {
+            gap: 12px;
+        }
+        .calendly-implementation-note {
+            display: none; /* Hidden in production — visible only in source */
+        }
+        .faq-item {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============ NAVIGATION (matches homepage) ============ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-logo" aria-label="Key's Touch - Home">
+                <img src="/images/logo.png" alt="Key's Touch" width="40" height="39" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                Key's Touch
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="/#what-we-do">Services</a></li>
+                <li><a href="/#proof">Results</a></li>
+                <li><a href="/#calculator">ROI Calculator</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Free Automation Audit</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ============ CONTACT HERO ============ -->
+        <section class="hero hero--compact" aria-label="Contact hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="section-label">Contact</span>
+                    <h1>
+                        Let's talk.
+                    </h1>
+                    <p>
+                        No pitch deck. No follow-up spam. Just a 30-minute conversation
+                        about what's costing you time and whether we can fix it.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT CONTENT ============ -->
+        <section aria-label="Contact form and information">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- LEFT: BOOKING / FORM -->
+                    <div>
+                        <h2 class="section-title">Book Your Free Automation Audit</h2>
+                        <p class="section-subtitle">Pick a time. 30 minutes. We show you the math.</p>
+
+                        <!-- CALENDLY EMBED -->
+                        <!--
+                            ============================================================
+                            CALENDLY IMPLEMENTATION INSTRUCTIONS
+                            ============================================================
+
+                            Option 1 — Inline embed (recommended):
+                            1. Go to https://calendly.com and copy your scheduling link
+                            2. Replace the placeholder below with:
+
+                            <div class="calendly-inline-widget"
+                                 data-url="https://calendly.com/YOUR-USERNAME/automation-audit"
+                                 style="min-width:320px;height:630px;">
+                            </div>
+                            <script type="text/javascript"
+                                    src="https://assets.calendly.com/assets/external/widget.js"
+                                    async>
+                            </script>
+
+                            Option 2 — Popup widget (lighter page load):
+                            1. Add to <head>:
+                               <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                               <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                            2. Replace the placeholder with a button:
+                               <button class="btn-primary" style="width:100%;"
+                                       onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR-USERNAME/automation-audit'});return false;">
+                                   Pick a time &rarr;
+                               </button>
+
+                            Option 3 — Use Cal.com or another scheduler:
+                            Replace the div below with your provider's embed snippet.
+                            Ensure min-height of 630px for a good UX.
+
+                            IMPORTANT: After embedding, delete this comment block
+                            and the placeholder div below.
+                            ============================================================
+                        -->
+                        <div class="calendly-placeholder">
+                            <p style="text-align: center; padding: 40px 20px;">
+                                <strong style="color: var(--cyan);">Scheduling widget loads here</strong><br><br>
+                                <span style="color: var(--gray-500); font-size: 0.85rem;">
+                                    See HTML source comments above for Calendly/Cal.com setup instructions.
+                                </span>
+                            </p>
+                        </div>
+
+                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 40px;">Or send a message</h3>
+
+                        <!-- CONTACT FORM -->
+                        <form class="contact-form" id="contact-form" role="form" aria-label="Contact form">
+                            <div class="form-row">
+                                <div>
+                                    <label for="first-name" class="sr-only">First Name</label>
+                                    <input type="text" id="first-name" name="first_name" placeholder="First Name" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label for="last-name" class="sr-only">Last Name</label>
+                                    <input type="text" id="last-name" name="last_name" placeholder="Last Name" class="form-input" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Business Email</label>
+                                <input type="email" id="email" name="email" placeholder="Business Email" class="form-input" required>
+                            </div>
+                            <div>
+                                <label for="company" class="sr-only">Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Company Name" class="form-input">
+                            </div>
+                            <div>
+                                <label for="interest" class="sr-only">What are you interested in?</label>
+                                <select id="interest" name="interest" class="form-input">
+                                    <option value="">What are you interested in?</option>
+                                    <option value="ai-agents">AI Agent Development</option>
+                                    <option value="ai-automation">AI Automation &amp; Workflows</option>
+                                    <option value="saas">SaaS Product Development</option>
+                                    <option value="custom-software">Custom Software Development</option>
+                                    <option value="websites">Website Development</option>
+                                    <option value="consulting">AI &amp; Automation Consulting</option>
+                                    <option value="guidance">Not sure yet &mdash; help me figure it out</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">Tell us about your project or challenge</label>
+                                <textarea id="message" name="message" placeholder="What's the problem you're trying to solve?" rows="5" class="form-input"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%;">
+                                Send Message &rarr;
+                            </button>
+                        </form>
+
+                        <!-- FORM SUCCESS STATE -->
+                        <div class="form-success" id="form-success">
+                            <div class="check-icon" aria-hidden="true">&#10003;</div>
+                            <h3>Got it. We'll be in touch within 24 hours.</h3>
+                            <p>
+                                No auto-generated drip sequence. A real person will read your message
+                                and reply with something useful &mdash; usually a couple of questions
+                                and a suggested time to talk.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: INFO -->
+                    <div class="stack-gap-lg">
+                        <div class="info-card">
+                            <h3>What Happens Next</h3>
+                            <div class="stack-gap-md">
+                                <div style="display: flex; gap: 16px;">
+                                    <div class="step-indicator" aria-hidden="true">R</div>
+                                    <div>
+                                        <h4>Reconnaissance (30 min call)</h4>
+                                        <p>Step 1 of our RAPID&trade; Framework. We map your processes, tools, and bottlenecks. We find the 20% of work causing 80% of the waste. No slides, no sales pitch &mdash; just questions.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px;">
+                                    <div class="step-indicator" aria-hidden="true">2</div>
+                                    <div>
+                                        <h4>The Automation Audit</h4>
+                                        <p>We deliver a ranked list of your highest-ROI automation opportunities with estimated savings. Clients typically see 3-5 areas where they're burning $50K+/year on manual work.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px;">
+                                    <div class="step-indicator" aria-hidden="true">3</div>
+                                    <div>
+                                        <h4>Scope, Timeline, Number</h4>
+                                        <p>If there's a fit, you get a detailed proposal. Exact scope, exact timeline, exact cost. 4-week time to value on most projects. No surprises.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Contact Info</h3>
+                            <div class="stack-gap-sm">
+                                <div>
+                                    <p class="section-label" style="margin-bottom: 4px;">Email</p>
+                                    <a href="mailto:hello@keystouch.com" style="color: var(--cyan);">hello@keystouch.com</a>
+                                </div>
+                                <div>
+                                    <p class="section-label" style="margin-bottom: 4px;">LinkedIn</p>
+                                    <a href="https://linkedin.com/company/keystouch" style="color: var(--cyan);" target="_blank" rel="noopener noreferrer">linkedin.com/company/keystouch</a>
+                                </div>
+                                <div>
+                                    <p class="section-label" style="margin-bottom: 4px;">Response Time</p>
+                                    <p style="color: var(--gray-300);">Under 24 hours. Usually same day.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>FAQ</h3>
+                            <div class="stack-gap-sm">
+                                <div class="faq-item">
+                                    <h4>How much does it cost?</h4>
+                                    <p>Projects start at $10K. Most automation builds land between $10K&ndash;$50K depending on scope. The audit is free &mdash; we'll give you a number before any work starts.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>How long does a typical project take?</h4>
+                                    <p>4 weeks to first value for most automation projects. MVPs: 6&ndash;10 weeks. Full platforms: 3&ndash;6 months. We'll give you an exact timeline after Reconnaissance.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>Do you work with startups?</h4>
+                                    <p>Yes. Pre-revenue to enterprise. If you have a real problem and real urgency, we're in.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>What industries do you work with?</h4>
+                                    <p>Healthcare, fintech, e-commerce, logistics, professional services, and SaaS. The common thread is manual processes that shouldn't be manual. If your team spends hours on repeatable work, we can help.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>Do you offer ongoing support?</h4>
+                                    <p>Yes. Monthly retainers for monitoring, optimization, and new automation builds. Most clients stay because the ROI keeps compounding &mdash; we find new things to automate every quarter.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ NOT READY TO TALK? START HERE ============ -->
+        <section class="start-here" aria-labelledby="start-here-heading">
+            <div class="container">
+                <span class="section-label">Not ready to talk?</span>
+                <h2 class="section-title" id="start-here-heading">Start here.</h2>
+                <p class="section-subtitle">No forms, no follow-ups. Just useful stuff.</p>
+
+                <div class="start-here-grid">
+                    <a href="/#calculator" class="start-here-card">
+                        <div class="card-icon" aria-hidden="true">&#9000;</div>
+                        <h4>ROI Calculator</h4>
+                        <p>Plug in your numbers and see what manual work is actually costing you per year. Takes 30 seconds.</p>
+                        <span class="card-link">Calculate your savings &rarr;</span>
+                    </a>
+
+                    <a href="/case-studies" class="start-here-card">
+                        <div class="card-icon" aria-hidden="true">&#9878;</div>
+                        <h4>Case Studies</h4>
+                        <p>Real projects, real numbers. See how we delivered 52% cost reduction and 4-week time to value for companies like yours.</p>
+                        <span class="card-link">Read case studies &rarr;</span>
+                    </a>
+
+                    <a href="/guides/automation-playbook" class="start-here-card">
+                        <div class="card-icon" aria-hidden="true">&#8615;</div>
+                        <h4>Free Guide: The Automation Playbook</h4>
+                        <p>10 workflows every business should automate in 2026. No fluff &mdash; just the exact automations that save 20+ hours a week.</p>
+                        <span class="card-link">Download free &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER (matches homepage) ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="/images/logo.png" alt="" width="32" height="31">
+                        <span class="nav-logo" style="font-size: 1.2rem;">Key's Touch</span>
+                    </div>
+                    <p>AI automation and software consulting. We build the systems that let your team focus on work that actually matters.</p>
+                </div>
+                <nav aria-label="Services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/ai-agents">AI Agents</a></li>
+                        <li><a href="/services/automation">Automation</a></li>
+                        <li><a href="/services/saas">SaaS Development</a></li>
+                        <li><a href="/services/software">Custom Software</a></li>
+                        <li><a href="/services/websites">Websites</a></li>
+                        <li><a href="/services/consulting">Consulting</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Company">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://linkedin.com/company/keystouch" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/keystouch" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="mailto:hello@keystouch.com">hello@keystouch.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Key's Touch. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ CHAT WIDGET (matches homepage) ============ -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-header">
+                <h4>Hey, quick question for you.</h4>
+                <p>Typically replies in under 2 minutes</p>
+            </div>
+            <div class="chat-body">
+                <div class="chat-msg">
+                    What brought you here today? Pick the closest match and I'll point you in the right direction.
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" onclick="handleChat('automate')">I want to automate something specific</button>
+                    <button class="chat-option" onclick="handleChat('build')">I need software or an app built</button>
+                    <button class="chat-option" onclick="handleChat('ai')">I want to add AI to my business</button>
+                    <button class="chat-option" onclick="handleChat('browse')">Just browsing for now</button>
+                </div>
+            </div>
+        </div>
+        <button class="chat-bubble" onclick="toggleChat()" aria-label="Open chat">
+            &#128172;
+        </button>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // Contact form submission with success state
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            /*
+                ============================================================
+                FORM SUBMISSION INTEGRATION POINT
+                ============================================================
+                Replace the setTimeout below with your actual submission logic.
+
+                Examples:
+
+                // Formspree:
+                fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(r => { if (r.ok) showSuccess(); });
+
+                // Custom API:
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(r => { if (r.ok) showSuccess(); });
+
+                // Netlify Forms:
+                Just add netlify attribute to the <form> tag.
+                The success state will trigger on native submission.
+                ============================================================
+            */
+
+            // Simulate successful submission (replace with real endpoint)
+            showSuccess();
+        });
+
+        function showSuccess() {
+            contactForm.style.display = 'none';
+            formSuccess.classList.add('active');
+            // Scroll the success message into view
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Chat Widget
+        function toggleChat() {
+            document.getElementById('chat-popup').classList.toggle('active');
+        }
+
+        function handleChat(choice) {
+            const body = document.querySelector('.chat-body');
+            const responses = {
+                automate: 'Nice. The fastest way to get started is the free automation audit. We\'ll look at your current workflows and show you exactly what to automate first. You\'re already on the right page &mdash; <a href="#contact-form" style="color: var(--cyan);">grab a time above</a>.',
+                build: 'Got it. Whether it\'s a SaaS product, internal tool, or mobile app &mdash; fill out the form above and tell us what you\'re building. We\'ll reply with the right questions.',
+                ai: 'Smart move. We do AI readiness assessments that show you where AI creates the highest ROI in your specific business. <a href="/services/consulting" style="color: var(--cyan);">Learn more &rarr;</a>',
+                browse: 'No pressure. Check out our <a href="/case-studies" style="color: var(--cyan);">case studies</a> to see what we\'ve built, or use the <a href="/#calculator" style="color: var(--cyan);">ROI calculator</a> to see what automation could save you.'
+            };
+            body.innerHTML = '<div class="chat-msg">' + responses[choice] + '</div>';
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
