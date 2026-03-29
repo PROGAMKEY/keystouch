@@ -1538,8 +1538,15 @@
         function captureExit() {
             const email = document.getElementById('exit-email').value;
             if (email && email.includes('@')) {
-                // INTEGRATION POINT: Send to your email service (Mailchimp, ConvertKit, etc.)
-                // Example: fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+                fetch('https://formspree.io/f/xzdkedov', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        message: '[Guide Request] 10 Workflows Every Business Should Automate',
+                        _subject: 'Guide Download Request'
+                    })
+                });
                 document.querySelector('.exit-popup').innerHTML = '<div style="padding: 40px; text-align: center;"><h3 style="font-family: var(--font-heading); margin-bottom: 12px;">Check your inbox.</h3><p style="color: var(--gray-300);">The guide is on its way.</p></div>';
                 setTimeout(closeExit, 3000);
             }
