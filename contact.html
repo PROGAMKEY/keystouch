@@ -638,22 +638,34 @@
             const name = document.getElementById('chat-name').value;
             const email = document.getElementById('chat-email').value;
             const message = document.getElementById('chat-message').value;
-            if (!email || !email.includes('@')) return;
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('message', '[Chat handoff] ' + message);
+            if (!email || !email.includes('@')) {
+                addMsg('Please enter a valid email address.', 'bot');
+                return;
+            }
             fetch('https://formspree.io/f/xzdkedov', {
-                method: 'POST', body: formData,
-                headers: { 'Accept': 'application/json' }
+                method: 'POST',
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: '[Chat handoff] ' + message,
+                    _subject: 'Chat Handoff from ' + (name || 'Website Visitor')
+                })
             }).then(r => {
                 const body = document.getElementById('chat-body');
                 body.querySelectorAll('.chat-email-form').forEach(f => f.remove());
                 if (r.ok) {
                     addMsg('Sent! The team will be in touch within 24 hours.', 'bot');
                 } else {
+                    r.json().then(d => console.error('Formspree error:', d));
                     addMsg('Something went wrong. Email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');
                 }
+                document.getElementById('chat-input-area').style.display = 'flex';
+            }).catch(err => {
+                console.error('Chat email error:', err);
+                const body = document.getElementById('chat-body');
+                body.querySelectorAll('.chat-email-form').forEach(f => f.remove());
+                addMsg('Connection error. Email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');
                 document.getElementById('chat-input-area').style.display = 'flex';
             });
         }
