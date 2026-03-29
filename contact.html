@@ -513,40 +513,15 @@
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Collect form data
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
 
-            /*
-                ============================================================
-                FORM SUBMISSION INTEGRATION POINT
-                ============================================================
-                Replace the setTimeout below with your actual submission logic.
-
-                Examples:
-
-                // Formspree:
-                fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                }).then(r => { if (r.ok) showSuccess(); });
-
-                // Custom API:
-                fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                }).then(r => { if (r.ok) showSuccess(); });
-
-                // Netlify Forms:
-                Just add netlify attribute to the <form> tag.
-                The success state will trigger on native submission.
-                ============================================================
-            */
-
-            // Simulate successful submission (replace with real endpoint)
-            showSuccess();
+            fetch('https://formspree.io/f/xzdkedov', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(r => {
+                if (r.ok) showSuccess();
+            });
         });
 
         function showSuccess() {
