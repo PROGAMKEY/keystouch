@@ -529,6 +529,106 @@
             border-color: var(--cyan);
         }
 
+        .chat-body {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .user-msg {
+            background: rgba(0, 180, 216, 0.15);
+            border-radius: 12px 12px 4px 12px;
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            max-width: 85%;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .bot-msg {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 8px;
+            padding: 12px 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #fff;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            outline: none;
+        }
+
+        .chat-input-area input:focus {
+            border-color: var(--cyan);
+        }
+
+        .chat-input-area button {
+            background: var(--cyan);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .chat-email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .chat-email-form input, .chat-email-form textarea {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #fff;
+            font-size: 0.82rem;
+            font-family: var(--font-body);
+            outline: none;
+        }
+
+        .chat-email-form textarea {
+            resize: none;
+            height: 60px;
+        }
+
+        .chat-email-form input:focus, .chat-email-form textarea:focus {
+            border-color: var(--cyan);
+        }
+
+        .chat-email-form button {
+            background: var(--cyan);
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+        }
+
         /* ---- EXIT-INTENT POPUP ---- */
         .exit-overlay {
             position: fixed;
@@ -1226,19 +1326,23 @@
     <div class="chat-widget" id="chat-widget">
         <div class="chat-popup" id="chat-popup">
             <div class="chat-header">
-                <h4>Hey, quick question for you.</h4>
-                <p>Typically replies in under 2 minutes</p>
+                <h4>Key's Touch Assistant</h4>
+                <p>Ask me anything about our services</p>
             </div>
-            <div class="chat-body">
-                <div class="chat-msg">
-                    What brought you here today? Pick the closest match and I'll point you in the right direction.
+            <div class="chat-body" id="chat-body">
+                <div class="chat-msg bot-msg">
+                    Hey! I'm the Key's Touch assistant. I can help with questions about our services, process, or pricing. What can I help you with?
                 </div>
-                <div class="chat-options">
-                    <button class="chat-option" onclick="handleChat('automate')">I want to automate something specific</button>
-                    <button class="chat-option" onclick="handleChat('build')">I need software or an app built</button>
-                    <button class="chat-option" onclick="handleChat('ai')">I want to add AI to my business</button>
-                    <button class="chat-option" onclick="handleChat('browse')">Just browsing for now</button>
+                <div class="chat-options" id="chat-quick-options">
+                    <button class="chat-option" onclick="sendQuick('What services do you offer?')">What services do you offer?</button>
+                    <button class="chat-option" onclick="sendQuick('How does your process work?')">How does your process work?</button>
+                    <button class="chat-option" onclick="sendQuick('How much does it cost?')">How much does it cost?</button>
+                    <button class="chat-option" onclick="sendQuick('I want to talk to someone')">Talk to a real person</button>
                 </div>
+            </div>
+            <div class="chat-input-area" id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                <button id="chat-send" onclick="sendMessage()" aria-label="Send message">&rarr;</button>
             </div>
         </div>
         <button class="chat-bubble" onclick="toggleChat()" aria-label="Open chat">
@@ -1290,16 +1394,121 @@
             document.getElementById('chat-popup').classList.toggle('active');
         }
 
-        function handleChat(choice) {
-            const body = document.querySelector('.chat-body');
-            const responses = {
-                automate: 'Nice. The fastest way to get started is a free automation audit. We\'ll look at your current workflows and show you exactly what to automate first. <a href="/contact" style="color: var(--cyan);">Book it here &rarr;</a>',
-                build: 'Got it. Whether it\'s a SaaS product, internal tool, or mobile app, let\'s talk scope. <a href="/contact" style="color: var(--cyan);">Schedule a call &rarr;</a>',
-                ai: 'Smart move. We do AI readiness assessments that show you where AI creates the highest ROI in your specific business. <a href="/services/consulting" style="color: var(--cyan);">Learn more &rarr;</a>',
-                browse: 'No pressure. Check out our <a href="/case-studies" style="color: var(--cyan);">case studies</a> to see what we\'ve built, or use the ROI calculator above to see what automation could save you.'
-            };
-            body.innerHTML = '<div class="chat-msg">' + responses[choice] + '</div>';
+        const chatKB = [
+            { keys: ['service', 'offer', 'do you do', 'what do you', 'help with'],
+              reply: 'We offer 6 core services:<br><br>1. <b>AI Agent Development</b> — custom AI agents<br>2. <b>AI Automation & Workflows</b> — eliminate manual tasks<br>3. <b>SaaS Product Development</b> — build & launch SaaS<br>4. <b>Custom Software</b> — internal tools & platforms<br>5. <b>Websites & Web Apps</b> — high-converting sites<br>6. <b>AI Consulting</b> — strategy & readiness<br><br><a href="/services/ai-agents.html" style="color:var(--cyan)">Explore services &rarr;</a>' },
+            { keys: ['process', 'how does it work', 'how do you work', 'rapid', 'steps', 'methodology'],
+              reply: 'We use our <b>RAPID Framework</b>:<br><br><b>R</b> — Reconnaissance (audit your ops)<br><b>A</b> — Architecture (design the solution)<br><b>P</b> — Production (build it)<br><b>I</b> — Integration (deploy & train)<br><b>D</b> — Data-driven optimization<br><br>First step is always a free 30-min audit. <a href="/contact.html" style="color:var(--cyan)">Book one &rarr;</a>' },
+            { keys: ['cost', 'price', 'pricing', 'how much', 'budget', 'expensive', 'afford', 'invest'],
+              reply: 'Every project is scoped individually based on complexity. Most automation projects start delivering value in <b>4 weeks</b>. MVPs: 6-10 weeks. Full platforms: 3-6 months.<br><br>The best way to get a number is the free audit — we\'ll give you an exact scope and timeline. <a href="/contact.html" style="color:var(--cyan)">Book the free audit &rarr;</a>' },
+            { keys: ['case stud', 'portfolio', 'examples', 'proof', 'results', 'worked on', 'built'],
+              reply: 'Check out our case studies — real projects with real ROI numbers.<br><br><a href="/case-studies.html" style="color:var(--cyan)">See the receipts &rarr;</a>' },
+            { keys: ['automat', 'workflow', 'manual', 'repetitive', 'streamline'],
+              reply: 'Automation is our bread and butter. We build AI-powered workflows that eliminate repetitive tasks — data entry, reporting, customer follow-ups, you name it.<br><br>On average, our clients see <b>4.2x ROI</b> and save <b>73% of manual hours</b>.<br><br><a href="/services/automation.html" style="color:var(--cyan)">Learn more &rarr;</a>' },
+            { keys: ['ai agent', 'chatbot', 'bot', 'assistant'],
+              reply: 'We build custom AI agents that handle real work — customer support, lead qualification, data analysis, internal ops. Not just chatbots, but agents that take action.<br><br><a href="/services/ai-agents.html" style="color:var(--cyan)">See AI Agent services &rarr;</a>' },
+            { keys: ['saas', 'software product', 'app', 'platform', 'mvp'],
+              reply: 'We build SaaS products from concept to launch. MVP in 6-10 weeks, full platforms in 3-6 months. You own all the code and IP.<br><br><a href="/services/saas.html" style="color:var(--cyan)">SaaS development &rarr;</a>' },
+            { keys: ['website', 'web app', 'landing page', 'redesign'],
+              reply: 'We build high-converting websites and web applications — fast, responsive, SEO-optimized.<br><br><a href="/services/websites.html" style="color:var(--cyan)">Website services &rarr;</a>' },
+            { keys: ['consult', 'strateg', 'readiness', 'assess'],
+              reply: 'Our AI & Automation Consulting helps you figure out <b>where</b> AI creates the highest ROI in your specific business before building anything.<br><br><a href="/services/consulting.html" style="color:var(--cyan)">Learn about consulting &rarr;</a>' },
+            { keys: ['about', 'who are you', 'team', 'founder', 'company'],
+              reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it — no recurring fees for the tools we create.<br><br><a href="/about.html" style="color:var(--cyan)">About us &rarr;</a>' },
+            { keys: ['contact', 'email', 'phone', 'reach', 'get in touch'],
+              reply: 'You can reach us at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a> or book a free 30-minute audit directly:<br><br><a href="/contact.html" style="color:var(--cyan)">Contact page &rarr;</a>' },
+            { keys: ['book', 'call', 'meeting', 'schedule', 'audit', 'free'],
+              reply: 'The audit is free, 30 minutes, zero obligation. We\'ll map your operations, find the waste, and show you the math.<br><br><a href="/contact.html" style="color:var(--cyan)">Book your free audit &rarr;</a>' },
+            { keys: ['human', 'person', 'real person', 'speak', 'talk to', 'someone', 'representative', 'rep'],
+              reply: 'HUMAN_HANDOFF' },
+            { keys: ['hi', 'hello', 'hey', 'sup', 'yo'],
+              reply: 'Hey! How can I help you today? I can answer questions about our services, process, pricing, or connect you with the team.' },
+            { keys: ['thank', 'thanks', 'appreciate'],
+              reply: 'You\'re welcome! Let me know if there\'s anything else. If you\'re ready to move forward, the <a href="/contact.html" style="color:var(--cyan)">free audit</a> is the best next step.' }
+        ];
+
+        function getBotReply(msg) {
+            const lower = msg.toLowerCase();
+            for (const item of chatKB) {
+                if (item.keys.some(k => lower.includes(k))) return item.reply;
+            }
+            return 'FALLBACK';
         }
+
+        function addMsg(text, type) {
+            const body = document.getElementById('chat-body');
+            const div = document.createElement('div');
+            div.className = type === 'user' ? 'user-msg' : 'chat-msg bot-msg';
+            div.innerHTML = text;
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function showEmailForm() {
+            const body = document.getElementById('chat-body');
+            addMsg('Absolutely — let me connect you. Drop your details below and someone from the team will get back to you within 24 hours.', 'bot');
+            const form = document.createElement('div');
+            form.className = 'chat-email-form';
+            form.innerHTML = '<input type="text" id="chat-name" placeholder="Your name"><input type="email" id="chat-email" placeholder="Your email" required><textarea id="chat-message" placeholder="What do you need help with?"></textarea><button onclick="submitChatEmail()">Send to team &rarr;</button>';
+            body.appendChild(form);
+            body.scrollTop = body.scrollHeight;
+            document.getElementById('chat-input-area').style.display = 'none';
+        }
+
+        function submitChatEmail() {
+            const name = document.getElementById('chat-name').value;
+            const email = document.getElementById('chat-email').value;
+            const message = document.getElementById('chat-message').value;
+            if (!email || !email.includes('@')) { return; }
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', '[Chat handoff] ' + message);
+            fetch('https://formspree.io/f/xzdkedov', {
+                method: 'POST', body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(r => {
+                const body = document.getElementById('chat-body');
+                const forms = body.querySelectorAll('.chat-email-form');
+                forms.forEach(f => f.remove());
+                if (r.ok) {
+                    addMsg('Sent! The team will be in touch within 24 hours. In the meantime, feel free to <a href="/case-studies.html" style="color:var(--cyan)">check out our work</a>.', 'bot');
+                } else {
+                    addMsg('Something went wrong. You can email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');
+                }
+                document.getElementById('chat-input-area').style.display = 'flex';
+            });
+        }
+
+        function processMessage(msg) {
+            const quickOpts = document.getElementById('chat-quick-options');
+            if (quickOpts) quickOpts.remove();
+            addMsg(msg, 'user');
+            setTimeout(() => {
+                const reply = getBotReply(msg);
+                if (reply === 'HUMAN_HANDOFF') {
+                    showEmailForm();
+                } else if (reply === 'FALLBACK') {
+                    addMsg('I\'m not sure about that one. I can help with info about our <b>services</b>, <b>process</b>, <b>pricing</b>, or <b>case studies</b>. Or I can <a href="#" onclick="showEmailForm();return false;" style="color:var(--cyan)">connect you with the team</a>.', 'bot');
+                } else {
+                    addMsg(reply, 'bot');
+                }
+            }, 500);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const msg = input.value.trim();
+            if (!msg) return;
+            input.value = '';
+            processMessage(msg);
+        }
+
+        function sendQuick(msg) { processMessage(msg); }
+
+        document.getElementById('chat-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
 
         // Exit Intent
         let exitShown = false;
