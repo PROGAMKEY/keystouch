@@ -521,13 +521,13 @@ img { max-width: 100%; display: block; height: auto; }
     overflow: hidden;
     position: relative;
     background: var(--ink);
-    margin-bottom: 0;
+    margin: 0 0 64px;
     border-bottom: 1px solid var(--ash-700);
 }
 
 .hero-banner img {
     width: 100%;
-    height: clamp(260px, 38vw, 480px);
+    height: clamp(220px, 32vw, 420px);
     object-fit: cover;
     display: block;
     filter: saturate(0.95) contrast(1.02);
@@ -540,6 +540,15 @@ img { max-width: 100%; display: block; height: auto; }
     background:
         linear-gradient(180deg, rgba(15,14,12,0.55) 0%, transparent 22%, transparent 60%, rgba(15,14,12,1) 100%);
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        margin: 0 0 40px;
+    }
+    .hero-banner img {
+        height: clamp(180px, 48vw, 280px);
+    }
 }
 
 /* Wide social-banner ratio (key on wood) */
