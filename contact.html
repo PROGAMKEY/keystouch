@@ -294,10 +294,33 @@
             <div class="container">
                 <div class="contact-grid">
 
-                    <!-- LEFT: FORM (top) → BOOKING (below) -->
+                    <!-- LEFT: BOOKING (top) → FORM (below) -->
                     <div>
-                        <h2 class="section-title">Send a message</h2>
-                        <p class="section-subtitle">Tell us what you're trying to solve. We'll reply within 24 hours with questions and a suggested time.</p>
+                        <h2 class="section-title">Book Your Free Automation Audit</h2>
+                        <p class="section-subtitle">Pick a time. 30 minutes. We show you the math.</p>
+
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
+                             data-auto-load="false"
+                             style="min-width:320px;height:720px;">
+                        </div>
+                        <script type="text/javascript"
+                                src="https://assets.calendly.com/assets/external/widget.js"
+                                async>
+                        </script>
+                        <script>
+                        window.addEventListener('message', function (e) {
+                            if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
+                                if (e.data.payload && typeof e.data.payload.height === 'number') {
+                                    var widget = document.querySelector('.calendly-inline-widget');
+                                    if (widget) widget.style.height = e.data.payload.height + 'px';
+                                }
+                            }
+                        });
+                        </script>
+
+                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 56px;">Or send a message</h3>
+                        <p class="section-subtitle" style="margin-bottom: 16px;">Tell us what you're trying to solve. We'll reply within 24 hours.</p>
 
                         <!-- CONTACT FORM -->
                         <form class="contact-form" id="contact-form" role="form" aria-label="Contact form">
@@ -352,32 +375,6 @@
                             </p>
                         </div>
 
-                        <!-- BOOKING (Calendly Automation Intake) -->
-                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 56px;">Or pick a time directly</h3>
-                        <p class="section-subtitle" style="margin-bottom: 16px;">30 minutes. Free. Zero pitch.</p>
-
-                        <div class="calendly-inline-widget"
-                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             data-auto-load="false"
-                             style="min-width:320px;height:720px;">
-                        </div>
-                        <script type="text/javascript"
-                                src="https://assets.calendly.com/assets/external/widget.js"
-                                async>
-                        </script>
-                        <script>
-                        // Calendly posts iframe height messages — adapt the wrapper
-                        // so the embed grows when the date/time picker expands and
-                        // shrinks back when collapsed (no dead vertical space).
-                        window.addEventListener('message', function (e) {
-                            if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
-                                if (e.data.payload && typeof e.data.payload.height === 'number') {
-                                    var widget = document.querySelector('.calendly-inline-widget');
-                                    if (widget) widget.style.height = e.data.payload.height + 'px';
-                                }
-                            }
-                        });
-                        </script>
                     </div>
 
                     <!-- RIGHT: INFO -->
