@@ -301,7 +301,7 @@
 
                         <div class="calendly-inline-widget"
                              data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:320px;height:700px;">
+                             style="min-width:320px;height:1100px;">
                         </div>
                         <script type="text/javascript"
                                 src="https://assets.calendly.com/assets/external/widget.js"
@@ -370,10 +370,10 @@
                             <h3>What Happens Next</h3>
                             <div class="stack-gap-md">
                                 <div style="display: flex; gap: 16px;">
-                                    <div class="step-indicator" aria-hidden="true">R</div>
+                                    <div class="step-indicator" aria-hidden="true">T</div>
                                     <div>
-                                        <h4>Reconnaissance (30 min call)</h4>
-                                        <p>Step 1 of our RAPID&trade; Framework. We map your processes, tools, and bottlenecks. We find the 20% of work causing 80% of the waste. No slides, no sales pitch &mdash; just questions.</p>
+                                        <h4>Triage (30 min call)</h4>
+                                        <p>Step 1 of our TOUCH Framework. We map your processes, tools, and bottlenecks. We find the 20% of work causing 80% of the waste. No slides, no sales pitch &mdash; just questions.</p>
                                     </div>
                                 </div>
                                 <div style="display: flex; gap: 16px;">
@@ -554,28 +554,60 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script>
-        // Contact form submission with success state
+        // Contact form submission — Formspree + dataLayer lead tracking
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
+        const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
 
-        contactForm.addEventListener('submit', function(e) {
+        // Surface error inline (avoids alert + preserves user input)
+        const contactErr = document.createElement('p');
+        contactErr.id = 'contact-error';
+        contactErr.style.cssText = 'color:#ff6b6b;font-size:0.9rem;margin-top:12px;display:none;';
+        contactErr.innerHTML = "Couldn't send. Email us directly: <a href=\"mailto:key@keystouch.com\" style=\"color:var(--ember);\">key@keystouch.com</a>";
+        contactForm.appendChild(contactErr);
+
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            contactErr.style.display = 'none';
+            contactSubmitBtn.disabled = true;
+            const originalLabel = contactSubmitBtn.innerHTML;
+            contactSubmitBtn.textContent = 'Sending...';
 
-            const formData = new FormData(contactForm);
+            const fd = new FormData(contactForm);
+            const interest = fd.get('interest') || 'unspecified';
+            fd.append('_subject', `Contact form — ${interest}`);
+            fd.append('source', 'contact-page-form');
 
-            fetch('https://formspree.io/f/xzdkedov', {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(r => {
-                if (r.ok) showSuccess();
-            });
+            try {
+                const r = await fetch('https://formspree.io/f/xzdkedov', {
+                    method: 'POST',
+                    body: fd,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!r.ok) throw new Error('Submit failed: ' + r.status);
+
+                try {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'lead_submit',
+                        lead_source: 'contact-form',
+                        lead_interest: interest,
+                        form_id: 'contact-form'
+                    });
+                } catch (_) { /* analytics non-blocking */ }
+
+                showSuccess();
+            } catch (err) {
+                console.error('Contact form submit error:', err);
+                contactErr.style.display = 'block';
+                contactSubmitBtn.disabled = false;
+                contactSubmitBtn.innerHTML = originalLabel;
+            }
         });
 
         function showSuccess() {
             contactForm.style.display = 'none';
             formSuccess.classList.add('active');
-            // Scroll the success message into view
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
