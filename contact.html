@@ -358,11 +358,25 @@
 
                         <div class="calendly-inline-widget"
                              data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:320px;height:1100px;">
+                             data-auto-load="false"
+                             style="min-width:320px;height:720px;">
                         </div>
                         <script type="text/javascript"
                                 src="https://assets.calendly.com/assets/external/widget.js"
                                 async>
+                        </script>
+                        <script>
+                        // Calendly posts iframe height messages — adapt the wrapper
+                        // so the embed grows when the date/time picker expands and
+                        // shrinks back when collapsed (no dead vertical space).
+                        window.addEventListener('message', function (e) {
+                            if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
+                                if (e.data.payload && typeof e.data.payload.height === 'number') {
+                                    var widget = document.querySelector('.calendly-inline-widget');
+                                    if (widget) widget.style.height = e.data.payload.height + 'px';
+                                }
+                            }
+                        });
                         </script>
                     </div>
 
