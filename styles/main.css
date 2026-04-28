@@ -9,20 +9,46 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --black: #0A0A0A;
-    --dark: #111113;
-    --dark-surface: #1A1A2E;
-    --cyan: #00B4D8;
-    --cyan-glow: rgba(0, 180, 216, 0.15);
-    --purple: #7C3AED;
-    --purple-glow: rgba(124, 58, 237, 0.15);
-    --white: #FFFFFF;
-    --gray-100: #F0F0F5;
-    --gray-300: #B0B0C0;
-    --gray-500: #6B6B80;
-    --gradient-accent: linear-gradient(135deg, var(--cyan), var(--purple));
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    /* ----------------------------------------------------------------
+       BRAND v1 — Ink + Ember palette (locked 2026-04-28)
+       Source-of-truth: ~/Documents/2026/Keys Touch/Brand Guidelines/brand-book.md
+       ---------------------------------------------------------------- */
+    --ink:          #0F0E0C;
+    --ink-soft:     #1B1916;
+    --surface-warm: #252119;
+    --ember:        #D27D4A;
+    --ember-deep:   #A85B2F;
+    --ember-glow:   rgba(210, 125, 74, 0.18);
+    --clay:         #8C5E3C;
+    --clay-glow:    rgba(140, 94, 60, 0.18);
+    --gold-leaf:    #C9A36A;
+    --ivory:        #F6F1E7;
+    --ivory-dim:    #E5DFD2;
+    --ash-700:      #3A372F;
+    --ash-500:      #7A766A;
+    --ash-300:      #B3AEA0;
+    --success:      #6B8E5A;
+    --warning:      #C58B3D;
+    --danger:       #A85245;
+
+    /* Backwards-compat aliases — legacy code paths still resolve */
+    --black:        var(--ink);
+    --dark:         var(--ink-soft);
+    --dark-surface: var(--surface-warm);
+    --cyan:         var(--ember);
+    --cyan-glow:    var(--ember-glow);
+    --purple:       var(--clay);
+    --purple-glow:  var(--clay-glow);
+    --white:        var(--ivory);
+    --gray-100:     var(--ivory-dim);
+    --gray-300:     var(--ash-300);
+    --gray-500:     var(--ash-500);
+    --gradient-accent: linear-gradient(135deg, var(--ember), var(--gold-leaf));
+
+    /* Type — Inter Tight (display) + Inter (body), free, Apple/Linear-adjacent */
+    --font-heading: 'Inter Tight', 'Inter', -apple-system, system-ui, sans-serif;
+    --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+    --font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
