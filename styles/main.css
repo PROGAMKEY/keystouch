@@ -1484,6 +1484,157 @@ textarea.form-input {
 /* ============================================
    PRINT STYLES
    ============================================ */
+/* ============================================
+   RESPONSIVE FIX PASS — Brand v1 audit (2026-04-28)
+   Targets specific defects found in mobile/tablet audit.
+   ============================================ */
+
+/* Eliminate horizontal scroll caused by stray fixed-width grids on small screens */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Ensure media never overflows its container */
+img, picture, video, iframe { max-width: 100%; height: auto; }
+.calendly-inline-widget { max-width: 100%; }
+
+/* Hero — keep h1 from overflowing fold + line-height fix */
+@media (max-width: 768px) {
+    .hero { min-height: auto; padding-top: 96px; padding-bottom: 32px; }
+    .hero h1 { font-size: clamp(1.7rem, 7vw, 2.4rem); line-height: 1.12; }
+    .hero p { font-size: 0.98rem; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.55rem; line-height: 1.15; }
+}
+
+/* Why-us 3-up grid stacks on mobile (matches the [data-why-grid] page-level override) */
+@media (max-width: 1024px) {
+    [data-why-grid] { grid-template-columns: 1fr 1fr !important; }
+}
+
+@media (max-width: 720px) {
+    [data-why-grid] { grid-template-columns: 1fr !important; }
+}
+
+/* Counter strip — 4 → 2 (≤1024) → 2 (≤768, already) → keep tighter labels */
+@media (max-width: 768px) {
+    .counter-label { font-size: 0.78rem; line-height: 1.35; }
+    .counter-number { font-size: 2.2rem; }
+}
+
+/* Marquee — re-enable animation on mobile (was disabled in some prior overrides) */
+@media (max-width: 768px) {
+    .marquee-track { animation: marqueeScroll 35s linear infinite !important; }
+    .marquee-item { font-size: 0.85rem; gap: 8px; }
+    .marquee-item .dot { margin: 0 4px; }
+}
+
+/* Hero banner photographic crops — keep faces / focal point in frame on small screens */
+@media (max-width: 768px) {
+    .hero-banner img { object-position: 50% 30%; height: clamp(180px, 48vw, 260px); }
+}
+
+/* About-page founder portrait — keep eyes in frame */
+@media (max-width: 768px) {
+    body.about .hero-banner img,
+    .hero-banner img[src*="founder-portrait"] { object-position: 50% 22%; }
+}
+
+/* AI-Agents workspace — pull crop right so the dashboard isn't cut */
+@media (max-width: 768px) {
+    .hero-banner img[src*="workspace-hero"],
+    .hero-banner img[src*="hero-workspace"] { object-position: 30% 50%; }
+}
+
+/* Service / framework grids — stack at tablet */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .split-section { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+}
+
+/* Calendly — give it room when narrow so it doesn't render tiny */
+@media (max-width: 900px) {
+    .calendly-inline-widget { min-height: 980px !important; }
+}
+
+@media (max-width: 480px) {
+    .calendly-inline-widget { min-height: 1080px !important; }
+}
+
+/* Tech-pills horizontal scroll affordance + keep from running off edge */
+.tech-pills, .footer-tech, [data-tech-pills] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .tech-pills, .footer-tech {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 32px;
+        position: relative;
+    }
+    .tech-pills::-webkit-scrollbar, .footer-tech::-webkit-scrollbar { display: none; }
+    .tech-pills > *, .footer-tech > * { flex: 0 0 auto; scroll-snap-align: start; }
+}
+
+/* Form fields — single column at narrow + breathing room from chat bubble */
+@media (max-width: 540px) {
+    .form-row { grid-template-columns: 1fr; gap: 12px; }
+    .contact-form { padding-bottom: 96px; }
+    .form-input { font-size: 16px; /* prevents iOS zoom on focus */ }
+}
+
+/* Chat widget — smaller offset on phones; lift above Ketch but not on top of CTAs */
+@media (max-width: 540px) {
+    .chat-widget { bottom: 88px; right: 14px; }
+    .chat-bubble { width: 52px; height: 52px; font-size: 1.3rem; }
+    .chat-popup { width: calc(100vw - 28px); right: -6px; }
+}
+
+/* Case-studies hero/card images — maintain ratio on narrow viewports */
+@media (max-width: 768px) {
+    .case-study-image { height: 220px; }
+    .case-study-image img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* CTA pair — equal heights when stacked */
+.hero-ctas .btn-primary, .hero-ctas .btn-secondary { min-height: 52px; }
+
+/* Tap targets — bring hamburger to ≥44px */
+.nav-toggle { min-width: 44px; min-height: 44px; padding: 10px; }
+
+/* Footer — 2-col on small phones, single only at very narrow */
+@media (max-width: 768px) and (min-width: 481px) {
+    .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px; }
+}
+
+/* Scroll lock when modal active — prevent body scroll behind audit modal */
+body:has(.exit-overlay.active) { overflow: hidden; }
+
+/* Headline rhythm — consistent h2 / h3 scaling on mobile */
+@media (max-width: 768px) {
+    h2, .section-title { font-size: clamp(1.4rem, 5.5vw, 2rem); line-height: 1.18; }
+    h3 { font-size: 1.1rem; line-height: 1.25; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.14em; }
+}
+
+/* Nav-cta on mobile dropdown — already styled, ensure ember background visible */
+@media (max-width: 768px) {
+    .nav-links.active .nav-cta {
+        background: var(--ember);
+        color: var(--ink);
+    }
+}
+
 @media print {
     .nav, .cta-section, .footer { display: none; }
     body { background: white; color: black; }
