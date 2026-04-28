@@ -837,7 +837,7 @@
                 <li><a href="#proof">Results</a></li>
                 <li><a href="#calculator">ROI Calculator</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/contact" class="nav-cta">Free Automation Audit</a></li>
+                <li><a href="#" class="nav-cta" onclick="openAuditModal(); return false;">Free Automation Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
                 <span></span><span></span><span></span>
@@ -863,7 +863,7 @@
                         let them do smart work.
                     </p>
                     <div class="hero-ctas">
-                        <a href="/contact" class="btn-primary">
+                        <a href="#" class="btn-primary" onclick="openAuditModal(); return false;">
                             Get a free automation audit &rarr;
                         </a>
                         <a href="#what-we-do" class="btn-secondary">
@@ -1171,7 +1171,7 @@
                 <div class="calc-result">
                     <div class="amount" id="annual-waste">$195,000</div>
                     <p>per year spent on tasks AI can handle</p>
-                    <a href="/contact" class="btn-primary" style="margin-top: 20px;">
+                    <a href="#" class="btn-primary" style="margin-top: 20px;" onclick="openAuditModal(); return false;">
                         Let's fix that &rarr;
                     </a>
                 </div>
@@ -1190,7 +1190,7 @@
                         No 6-month discovery phases. No 200-page requirements docs.
                         Most clients see their first automation live within 4 weeks.
                     </p>
-                    <a href="/contact" class="btn-primary">Start with a free audit &rarr;</a>
+                    <a href="#" class="btn-primary" onclick="openAuditModal(); return false;">Start with a free audit &rarr;</a>
                 </div>
                 <div>
                     <div style="display: flex; gap: 16px; margin-bottom: 28px; align-items: start;">
@@ -1275,7 +1275,7 @@
                 opportunities, and tell you exactly what to do &mdash; whether
                 you hire us or not.
             </p>
-            <a href="/contact" class="btn-primary">
+            <a href="#" class="btn-primary" onclick="openAuditModal(); return false;">
                 Book the free audit &rarr;
             </a>
             <p style="font-size: 0.8rem; color: var(--gray-500); margin-top: 16px;">No pitch deck. No follow-up spam. Just the math.</p>
@@ -1374,6 +1374,26 @@
                 <input type="email" placeholder="Your email" id="exit-email" aria-label="Email address">
                 <button class="btn-primary" onclick="captureExit()">Send it &rarr;</button>
             </div>
+            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 12px;">No spam. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <!-- ============ FREE AI AUDIT MODAL (lead magnet) ============ -->
+    <div class="exit-overlay" id="audit-overlay" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title">
+        <div class="exit-popup" id="audit-popup">
+            <button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>
+            <h3 id="audit-modal-title">Get your free AI Audit Guide.</h3>
+            <p>
+                The exact playbook we use to find the biggest automation wins in any business.
+                Drop your email &mdash; we'll send the PDF over and follow up with your free 30-min audit call (zero pressure).
+            </p>
+            <form class="exit-form" id="audit-form" onsubmit="submitAuditModal(event)" novalidate>
+                <input type="email" id="audit-email" placeholder="Your email" required aria-label="Email address" autocomplete="email">
+                <button type="submit" class="btn-primary" id="audit-submit">Send the guide &rarr;</button>
+            </form>
+            <p id="audit-error" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 12px; display: none;">
+                Couldn't send. Email us directly: <a href="mailto:hello@keystouch.com" style="color: var(--cyan);">hello@keystouch.com</a>
+            </p>
             <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 12px;">No spam. Unsubscribe anytime.</p>
         </div>
     </div>
@@ -1598,6 +1618,75 @@
                 document.getElementById('chat-popup').classList.add('active');
             }
         }, 30000);
+
+        // ===== FREE AI AUDIT MODAL =====
+        function openAuditModal() {
+            document.getElementById('audit-overlay').classList.add('active');
+            setTimeout(() => {
+                const el = document.getElementById('audit-email');
+                if (el) el.focus();
+            }, 100);
+        }
+
+        function closeAuditModal() {
+            document.getElementById('audit-overlay').classList.remove('active');
+        }
+
+        async function submitAuditModal(e) {
+            e.preventDefault();
+            const emailEl = document.getElementById('audit-email');
+            const btn = document.getElementById('audit-submit');
+            const errEl = document.getElementById('audit-error');
+            const email = emailEl.value.trim();
+            if (!email || !email.includes('@')) {
+                emailEl.focus();
+                return;
+            }
+            errEl.style.display = 'none';
+            btn.disabled = true;
+            const originalLabel = btn.textContent;
+            btn.textContent = 'Sending...';
+            try {
+                const pdfUrl = 'https://keystouch.com/assets/free-ai-audit.pdf';
+                const res = await fetch('https://formspree.io/f/xzdkedov', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        _subject: 'Free AI Audit Guide Request',
+                        message: '[Lead Magnet] Free AI Audit Guide download requested from keystouch.com',
+                        source: 'audit-modal',
+                        pdf_url: pdfUrl
+                    })
+                });
+                if (!res.ok) throw new Error('Submit failed: ' + res.status);
+                const safeEmail = email.replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
+                document.getElementById('audit-popup').innerHTML =
+                    '<button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>' +
+                    '<h3>Check your inbox.</h3>' +
+                    '<p>The AI Audit Guide is on its way to <strong>' + safeEmail + '</strong>. ' +
+                    'We\'ll follow up within 1 business day to schedule your free 30-min audit call.</p>' +
+                    '<p style="margin-top: 24px;"><a href="' + pdfUrl + '" class="btn-primary" download style="display: inline-block;">Download the PDF now &rarr;</a></p>' +
+                    '<p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 16px;">No pitch deck. No follow-up spam. Just the math.</p>';
+            } catch (err) {
+                console.error('Audit modal submit error:', err);
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+                errEl.style.display = 'block';
+            }
+        }
+
+        // Close audit modal on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('audit-overlay').classList.contains('active')) {
+                closeAuditModal();
+            }
+        });
+
+        // Close audit modal when clicking backdrop
+        document.getElementById('audit-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeAuditModal();
+        });
     </script>
 
 </body>
