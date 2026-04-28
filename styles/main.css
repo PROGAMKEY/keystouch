@@ -515,6 +515,53 @@ img { max-width: 100%; display: block; height: auto; }
     stroke-linejoin: round;
 }
 
+/* ---- HERO BANNER (Brand v1: photographic on-brand banners) ---- */
+.hero-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: var(--ink);
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.95) contrast(1.02);
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(15,14,12,0.55) 0%, transparent 22%, transparent 78%, rgba(15,14,12,0.92) 100%);
+    pointer-events: none;
+}
+
+/* Wide social-banner ratio (key on wood) */
+.hero-banner.banner--wide img {
+    max-height: 380px;
+}
+
+/* Section feature image (e.g. TOUCH framework) */
+.section-feature-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 32px 0 0;
+    border: 1px solid var(--ash-700);
+    background: var(--ink-soft);
+}
+
+.section-feature-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .service-icon.cyan {
     background: var(--ember-glow);
     color: var(--ember);
