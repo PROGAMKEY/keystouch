@@ -162,6 +162,48 @@
         .t-dim { color: var(--gray-500); }
         .t-white { color: var(--white); }
 
+        /* ---- HERO trust strip + secondary CTA ---- */
+        .hero-trust {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 24px;
+        }
+
+        .hero-trust li {
+            font-size: 0.82rem;
+            color: var(--gray-300);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .hero-trust li span {
+            color: var(--cyan);
+            font-size: 0.55rem;
+            line-height: 1;
+        }
+
+        .hero-secondary-cta {
+            margin-top: 18px;
+            font-size: 0.88rem;
+            color: var(--gray-500);
+        }
+
+        .hero-secondary-cta a {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero-secondary-cta a:hover,
+        .hero-secondary-cta a:focus {
+            text-decoration: underline;
+        }
+
         /* ---- MARQUEE: scrolling text ---- */
         .marquee-section {
             padding: 40px 0;
@@ -853,23 +895,30 @@
             <div class="hero-split">
                 <div class="hero-content">
                     <h1 id="hero-heading">
-                        AI that replaces<br>
-                        <span class="gradient-text">the busywork.</span>
+                        Cut 20+ hours of busywork a week.<br>
+                        <span class="gradient-text">Live in 4 weeks.</span> You own everything.
                     </h1>
                     <p>
-                        We build custom AI agents and automation systems so your
-                        team stops copying data, chasing follow-ups, and generating
-                        the same reports every Monday. You hired smart people &mdash;
-                        let them do smart work.
+                        Custom AI agents and automation systems for ops-heavy teams.
+                        We ship working software in weeks &mdash; not slide decks in
+                        months &mdash; and hand you full source code, documentation, and the keys.
                     </p>
                     <div class="hero-ctas">
                         <a href="#" class="btn-primary" onclick="openAuditModal(); return false;">
-                            Get a free automation audit &rarr;
+                            Get a free 30-min audit &rarr;
                         </a>
                         <a href="#what-we-do" class="btn-secondary">
                             What we do
                         </a>
                     </div>
+                    <ul class="hero-trust" aria-label="Why teams choose Key's Touch">
+                        <li><span aria-hidden="true">&#9679;</span> 4-week average to first live system</li>
+                        <li><span aria-hidden="true">&#9679;</span> You own all source code</li>
+                        <li><span aria-hidden="true">&#9679;</span> 30-min audit, zero pitch deck</li>
+                    </ul>
+                    <p class="hero-secondary-cta">
+                        Not ready to talk? <a href="#" onclick="openAuditModal(); return false;">Grab the free AI Audit Guide (PDF) &rarr;</a>
+                    </p>
                 </div>
                 <div class="hero-visual" aria-hidden="true">
                     <div class="terminal">
@@ -1578,6 +1627,15 @@
                         _subject: 'Guide Download Request'
                     })
                 });
+                try {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'lead_submit',
+                        lead_source: 'exit-intent',
+                        lead_magnet: '10-workflows-guide',
+                        form_id: 'exit-form'
+                    });
+                } catch (_) { /* analytics non-blocking */ }
                 document.querySelector('.exit-popup').innerHTML = '<div style="padding: 40px; text-align: center;"><h3 style="font-family: var(--font-heading); margin-bottom: 12px;">Check your inbox.</h3><p style="color: var(--gray-300);">The guide is on its way.</p></div>';
                 setTimeout(closeExit, 3000);
             }
@@ -1660,6 +1718,16 @@
                     })
                 });
                 if (!res.ok) throw new Error('Submit failed: ' + res.status);
+                // GA4 / GTM key event — wire `lead_submit` as a key event in GA4 admin to track lead acquisition.
+                try {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'lead_submit',
+                        lead_source: 'audit-modal',
+                        lead_magnet: 'free-ai-audit',
+                        form_id: 'audit-form'
+                    });
+                } catch (_) { /* analytics non-blocking */ }
                 const safeEmail = email.replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
                 document.getElementById('audit-popup').innerHTML =
                     '<button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>' +
@@ -1687,6 +1755,15 @@
         document.getElementById('audit-overlay').addEventListener('click', function(e) {
             if (e.target === this) closeAuditModal();
         });
+
+        // Auto-open audit modal when arriving with ?audit=open (from service / about / case-study pages)
+        try {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('audit') === 'open') {
+                // Defer so the rest of the page paints first
+                setTimeout(openAuditModal, 250);
+            }
+        } catch (_) { /* SSR/older browser fallback */ }
     </script>
 
 </body>
