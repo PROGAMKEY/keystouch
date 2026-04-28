@@ -488,7 +488,7 @@ img { max-width: 100%; display: block; height: auto; }
 .service-card:hover::before { opacity: 1; }
 
 .service-card:hover {
-    border-color: rgba(0, 180, 216, 0.15);
+    border-color: rgba(210, 125, 74, 0.18);
     transform: translateY(-6px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
@@ -502,10 +502,28 @@ img { max-width: 100%; display: block; height: auto; }
     border-radius: 14px;
     margin-bottom: 24px;
     font-size: 1.6rem;
+    /* Brand v1: monoline SVG icons, ember-tinted via currentColor */
 }
 
-.service-icon.cyan { background: var(--cyan-glow); }
-.service-icon.purple { background: var(--purple-glow); }
+.service-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.service-icon.cyan {
+    background: var(--ember-glow);
+    color: var(--ember);
+}
+
+.service-icon.purple {
+    background: var(--clay-glow);
+    color: var(--gold-leaf);
+}
 
 .service-card h3 {
     font-family: var(--font-heading);
