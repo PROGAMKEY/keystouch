@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240">
+  <title>Key's Touch — wordmark</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&amp;display=swap');
+    .wm { font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 160px; letter-spacing: -0.02em; }
+    .ink   { fill: #0F0E0C; }
+    .ivory { fill: #F6F1E7; }
+    .ember { fill: #D27D4A; }
+  </style>
+  <text x="0" y="170" class="wm ink">Key&#8217;s Touch</text>
+</svg>
