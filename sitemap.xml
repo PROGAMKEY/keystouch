@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <url>
+        <loc>https://keystouch.com/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/og-image.jpg</image:loc>
+            <image:title>Key's Touch — AI Automation Agency</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://keystouch.com/images/touch-framework.jpg</image:loc>
+            <image:title>The TOUCH Framework — Key's Touch methodology</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/about</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/founder-portrait.jpg</image:loc>
+            <image:title>Key Scales — Founder, Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/contact</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/case-studies</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/case-study-cover.jpg</image:loc>
+            <image:title>Case Studies — Real client transformations</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/ai-agents</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/workspace-hero.jpg</image:loc>
+            <image:title>AI Agent Development — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/automation</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/hero-person.jpg</image:loc>
+            <image:title>AI Automation &amp; Workflows — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/saas</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/touch-framework.jpg</image:loc>
+            <image:title>SaaS Product Development — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/software</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/cta-edison.jpg</image:loc>
+            <image:title>Custom Software Development — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/websites</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/social-banner.jpg</image:loc>
+            <image:title>Website Development — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/services/consulting</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://keystouch.com/images/hero-workspace.jpg</image:loc>
+            <image:title>AI &amp; Automation Consulting — Key's Touch</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/assets/free-ai-audit.pdf</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/privacy</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://keystouch.com/terms</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

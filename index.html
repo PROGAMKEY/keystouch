@@ -43,47 +43,205 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/main.css">
 
-    <!-- Schema: Organization -->
+    <!-- Schema: Organization + ProfessionalService (combined entity) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://keystouch.com/#organization",
         "name": "Key's Touch",
+        "alternateName": ["Keys Touch", "KeysTouch"],
         "url": "https://keystouch.com",
-        "logo": "https://keystouch.com/images/logo.png",
-        "description": "AI automation and software consulting agency.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://keystouch.com/images/logo.png",
+            "width": 103,
+            "height": 100
+        },
+        "image": "https://keystouch.com/images/og-image.jpg",
+        "description": "Key's Touch is an AI automation and software consulting agency that ships working systems in weeks, not slide decks in months. We speak business. We build AI.",
+        "slogan": "We speak business. We build AI.",
+        "foundingDate": "2025",
+        "founder": { "@id": "https://keystouch.com/#founder" },
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "AI Agent Development",
+            "Workflow Automation",
+            "SaaS Product Development",
+            "Custom Software Development",
+            "AI Governance",
+            "Data Governance",
+            "Business Process Automation",
+            "Large Language Model Integration",
+            "Retrieval Augmented Generation"
+        ],
+        "areaServed": [
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "Canada" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "Country", "name": "Singapore" }
+        ],
+        "priceRange": "$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Credit Card", "Wire Transfer", "ACH"],
         "sameAs": [
             "https://www.linkedin.com/company/keystouch",
-            "https://www.instagram.com/keystouch"
+            "https://www.linkedin.com/in/keym",
+            "https://www.instagram.com/keystouch",
+            "https://github.com/PROGAMKEY"
         ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "key@keystouch.com",
-            "contactType": "sales"
-        }
-    }
-    </script>
-
-    <!-- Schema: ProfessionalService -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Key's Touch",
-        "url": "https://keystouch.com",
-        "priceRange": "$$$$",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "email": "key@keystouch.com",
+                "contactType": "sales",
+                "availableLanguage": ["English"],
+                "areaServed": "Worldwide"
+            },
+            {
+                "@type": "ContactPoint",
+                "email": "key@keystouch.com",
+                "contactType": "customer support",
+                "availableLanguage": ["English"]
+            }
+        ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Services",
             "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Agent Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation & Workflows" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Product Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website & Web App Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & Automation Consulting" } }
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI Agent Development",
+                        "description": "Custom AI agents that handle customer questions, qualify leads, process documents, and run internal ops 24/7.",
+                        "url": "https://keystouch.com/services/ai-agents"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI Automation & Workflows",
+                        "description": "End-to-end automation of repetitive operations using LLMs, integrations, and rule-based workflows.",
+                        "url": "https://keystouch.com/services/automation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "SaaS Product Development",
+                        "description": "From validated idea to shipped MVP in 6–10 weeks. Full source code ownership.",
+                        "url": "https://keystouch.com/services/saas"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Software Development",
+                        "description": "Bespoke web applications, internal tools, and integrations engineered for ownership and longevity.",
+                        "url": "https://keystouch.com/services/software"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Website & Web App Development",
+                        "description": "High-performance, SEO-optimized, brand-aligned websites and web applications.",
+                        "url": "https://keystouch.com/services/websites"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI & Automation Consulting",
+                        "description": "Free 30-minute audit plus paid engagements for AI strategy, governance, and team upskilling.",
+                        "url": "https://keystouch.com/services/consulting"
+                    }
+                }
             ]
+        },
+        "makesOffer": {
+            "@type": "Offer",
+            "name": "Free 30-Minute AI Automation Audit",
+            "description": "We map your operations, find the biggest automation opportunities, and tell you exactly what to do — whether you hire us or not.",
+            "price": "0",
+            "priceCurrency": "USD",
+            "url": "https://keystouch.com/contact",
+            "availability": "https://schema.org/InStock"
+        },
+        "award": [
+            "PMP-certified project management",
+            "AI / data governance specialist"
+        ]
+    }
+    </script>
+
+    <!-- Schema: WebSite (enables sitelinks search box) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://keystouch.com/#website",
+        "url": "https://keystouch.com",
+        "name": "Key's Touch",
+        "description": "AI automation and software consulting agency — We speak business. We build AI.",
+        "publisher": { "@id": "https://keystouch.com/#organization" },
+        "inLanguage": "en-US",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://keystouch.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
         }
+    }
+    </script>
+
+    <!-- Schema: Person (founder) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://keystouch.com/#founder",
+        "name": "Key Scales",
+        "givenName": "Key",
+        "familyName": "Scales",
+        "jobTitle": "Founder & Chief AI Officer",
+        "image": "https://keystouch.com/images/founder-portrait.jpg",
+        "url": "https://keystouch.com/about",
+        "email": "key@keystouch.com",
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "AI Agents",
+            "Workflow Automation",
+            "Data Governance",
+            "Full-Stack Development",
+            "Project Management"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "Professional Certification",
+                "name": "Project Management Professional (PMP)"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "Professional Certification",
+                "name": "AI / Data Governance Specialist"
+            }
+        ],
+        "worksFor": { "@id": "https://keystouch.com/#organization" },
+        "sameAs": [
+            "https://www.linkedin.com/in/keym",
+            "https://github.com/PROGAMKEY"
+        ]
     }
     </script>
 
