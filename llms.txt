@@ -1,0 +1,84 @@
+# Key's Touch
+
+> Key's Touch is a corporate AI automation and software consulting agency that builds custom AI agents, workflow automation systems, and SaaS products for mid-market and enterprise companies. Clients go live in 4 weeks on average and own all source code.
+
+## About
+
+Tagline: We speak business. We build AI.
+
+Key's Touch was founded by Key Scales, an engineer who runs the business — PMP-certified project manager, AI/data governance specialist, and full-stack developer. The agency operates on the **TOUCH Framework** (Triage → Outline → Unify → Calibrate → Hone), a repeatable methodology for shipping AI automations in weeks, not months.
+
+Core beliefs:
+- AI augments people, it does not replace them. We're explicitly anti-headcount-cut.
+- Clients should own their code, data, and integrations — never lease them.
+- Governance and responsible adoption are baked in from day one, not bolted on.
+- The right AI is not always the trendy one. Sometimes the answer is a regex.
+
+## Services
+
+- [AI Agent Development](https://keystouch.com/services/ai-agents): 24/7 autonomous AI agents for customer service, lead qualification, data processing, and operations.
+- [AI Automation & Workflows](https://keystouch.com/services/automation): End-to-end automation of repetitive operations using LLMs, integrations, and rule-based workflows.
+- [SaaS Product Development](https://keystouch.com/services/saas): Idea → MVP shipped in 6–10 weeks. Full source code ownership, no vendor lock-in.
+- [Custom Software Development](https://keystouch.com/services/software): Bespoke web apps, internal tools, and integrations engineered for ownership and longevity.
+- [Website Development](https://keystouch.com/services/websites): High-performance, SEO-optimized, brand-aligned websites and web apps.
+- [AI & Automation Consulting](https://keystouch.com/services/consulting): Strategy, governance, team upskilling. Free 30-min audit available.
+
+## Methodology — The TOUCH Framework
+
+- **T**riage: Map every workflow, tool, and bottleneck. Rank by pain × frequency. Find the 20% of work causing 80% of the waste.
+- **O**utline: Design the system. Client sees the blueprint, approves the logic, and locks the data-governance plan before any code is written.
+- **U**nify: Build it. Integrate cleanly with existing tools. Prove it works on real data before scaling.
+- **C**alibrate: Deploy with monitoring, training, and governance baked in. Team learns the system as it goes live.
+- **H**one: Measure, iterate, expand. Every system gets sharper over time. We don't launch and leave.
+
+## Proof
+
+- 500+ hours automated per month across the client base
+- 4.2× average client ROI in 6 months
+- 73% reduction in manual tasks
+- 98% client retention rate
+- 4-week average time to first live system
+
+## Founder
+
+- [Key Scales](https://keystouch.com/about) — Founder & Chief AI Officer
+- Pronouns: she / her
+- Credentials: PMP-certified project manager, AI/data governance specialist, full-stack developer
+- LinkedIn: https://www.linkedin.com/in/keym
+
+## Contact
+
+- Sales: sales@keystouch.com
+- Phone: +1-682-246-1901
+- Free 30-minute AI audit: https://keystouch.com/contact
+- Schedule a call: https://calendly.com/key-keystouch/discussion
+
+## Lead magnet
+
+- [Free AI Audit Guide (PDF)](https://keystouch.com/assets/free-ai-audit.pdf) — 10 things every business should know before automating with AI. 7-page guide covering ROI math, vendor selection, governance, and where to start.
+
+## Brand assets
+
+Public, downloadable for partner co-marketing and citations:
+
+- Logo + wordmark + lockup at multiple sizes: https://keystouch.com/brand-assets/
+- Open Graph card: https://keystouch.com/images/og-image.jpg
+- Brand colors: Ink `#0F0E0C`, Ember `#D27D4A`, Ivory `#F6F1E7`
+
+## Pages
+
+- [Home](https://keystouch.com/)
+- [About](https://keystouch.com/about)
+- [Case Studies](https://keystouch.com/case-studies)
+- [Contact](https://keystouch.com/contact)
+
+## Service area
+
+United States (primary), Canada, United Kingdom, Germany, Singapore.
+
+## Optional
+
+- [Privacy Policy](https://keystouch.com/privacy)
+- [Terms of Service](https://keystouch.com/terms)
+- [Sitemap](https://keystouch.com/sitemap.xml)
+- [Robots](https://keystouch.com/robots.txt)
