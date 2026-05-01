@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TPHS3RKV');</script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security &amp; Compliance | Key's Touch</title>
+    <meta name="description" content="How Key's Touch handles client data, AI architecture, RAG isolation, vector databases, token management, and compliance for enterprise engagements.">
+    <link rel="canonical" href="https://keystouch.com/security">
+    <meta property="og:title" content="Security & Compliance | Key's Touch">
+    <meta property="og:description" content="How Key's Touch handles client data, RAG isolation, vector databases, token management, and compliance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keystouch.com/security">
+    <meta property="og:image" content="https://keystouch.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Security & Compliance | Key's Touch">
+    <meta name="twitter:description" content="How we handle client data, RAG isolation, vector DBs, and token management.">
+    <meta name="twitter:image" content="https://keystouch.com/images/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=new URLSearchParams(document.location.search),n=document.createElement("script");n.type="text/javascript", n.src="https://global.ketchcdn.com/web/v3/config/keys_touch/website_smart_tag/boot.js", n.defer=n.async=!0,document.getElementsByTagName("head")[0].appendChild(n)}();</script>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPHS3RKV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-logo" aria-label="Key's Touch - Home">
+                <img src="/images/logo.png" alt="Key's Touch" width="40" height="39" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                Key's Touch
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="/#what-we-do">Services</a></li>
+                <li><a href="/services/enterprise.html">Enterprise</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <section class="hero hero--short" aria-label="Security and compliance overview">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Security &amp; Compliance</div>
+                <h1>Your data. Your model. Your control.</h1>
+                <p class="hero-sub">
+                    Every engagement is built with governance and security designed in from day one &mdash; not bolted on at launch.
+                    Below is how we handle data isolation, RAG architecture, vector databases, token management, and compliance for clients in regulated and enterprise environments.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/?audit=open" class="btn-primary">Request a Security &amp; Compliance Audit</a>
+                    <a href="mailto:sales@keystouch.com?subject=Security%20questionnaire%20request" class="btn-secondary">Email a security questionnaire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-label="Technical architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Technical Architecture</span>
+                <h2>Production-grade AI infrastructure, not prompt-stitching.</h2>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-top:48px;">
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">Vector Databases &amp; RAG Isolation</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        Each client gets a dedicated, isolated vector database (Pinecone, Weaviate, pgvector, or Qdrant &mdash; chosen per engagement). Embeddings are namespaced per client, never co-mingled. Retrieval-Augmented Generation (RAG) pipelines run inside your VPC or our SOC 2-aligned environment &mdash; you pick.
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Per-tenant namespace isolation</li>
+                        <li style="padding:4px 0;">&rarr; Encryption at rest (AES-256) + in transit (TLS 1.3)</li>
+                        <li style="padding:4px 0;">&rarr; Source documents never leave approved storage</li>
+                        <li style="padding:4px 0;">&rarr; Configurable retention + right-to-delete</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">Token Management &amp; Cost Controls</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        AI cost-per-call adds up fast. We instrument token consumption at the application layer with hard budgets, per-user rate limits, model routing (cheap models for cheap tasks), and cost alerts wired into your existing observability stack. You always know what you are spending and why.
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Per-tenant + per-feature token budgets with hard caps</li>
+                        <li style="padding:4px 0;">&rarr; Model routing (small models for routing, large models for reasoning)</li>
+                        <li style="padding:4px 0;">&rarr; Prompt + context caching to reduce duplicate token spend</li>
+                        <li style="padding:4px 0;">&rarr; Cost dashboards exported to Datadog, Grafana, or your tool of choice</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">PII Handling &amp; Data Classification</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        Personally Identifiable Information is classified, redacted, or tokenized at ingest. We never feed raw PII to third-party model providers without explicit DPA coverage and client sign-off. Data flows are documented and reviewable.
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Automated PII detection at ingest (regex + ML classifiers)</li>
+                        <li style="padding:4px 0;">&rarr; Redaction or tokenization before LLM calls</li>
+                        <li style="padding:4px 0;">&rarr; Documented data flow diagrams for every engagement</li>
+                        <li style="padding:4px 0;">&rarr; HIPAA + GDPR + CCPA-aware patterns where relevant</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">Access Control &amp; Audit Logging</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        Every action against your AI infrastructure is logged with actor, timestamp, action, and outcome. Role-based access control with least-privilege defaults. SSO via your IdP (Okta, Azure AD, Google Workspace).
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Immutable audit logs (90-day default, configurable)</li>
+                        <li style="padding:4px 0;">&rarr; SSO + MFA enforced</li>
+                        <li style="padding:4px 0;">&rarr; Role-based access with least-privilege defaults</li>
+                        <li style="padding:4px 0;">&rarr; Automated quarterly access reviews</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">Model Evaluation &amp; Drift Monitoring</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        We benchmark every AI agent on a labeled eval set before launch and re-run quarterly. Production accuracy, hallucination rate, and latency are tracked per workflow. Drift triggers retraining or prompt refinement, not silent degradation.
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Pre-launch eval suite tied to business KPIs</li>
+                        <li style="padding:4px 0;">&rarr; Continuous accuracy + hallucination monitoring</li>
+                        <li style="padding:4px 0;">&rarr; Quarterly model + prompt re-evaluation</li>
+                        <li style="padding:4px 0;">&rarr; Automated rollback on regression</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:32px;">
+                    <h3 style="color:var(--ember);font-size:1.3rem;margin-bottom:12px;">Security &amp; Compliance Audit</h3>
+                    <p style="color:var(--ivory-dim);margin-bottom:16px;">
+                        Before any production deployment, we run a structured Security &amp; Compliance Audit covering data flows, access controls, third-party model exposure, retention policies, and incident response. Output: a written diagnostic plus remediation checklist your CISO can sign off on.
+                    </p>
+                    <ul style="list-style:none;padding:0;margin:0;color:var(--ash-300);font-size:0.95rem;">
+                        <li style="padding:4px 0;">&rarr; Pre-deployment security review</li>
+                        <li style="padding:4px 0;">&rarr; Third-party LLM exposure mapping</li>
+                        <li style="padding:4px 0;">&rarr; Data retention + deletion policy review</li>
+                        <li style="padding:4px 0;">&rarr; Incident response playbook customized per client</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--ink-soft);" aria-label="Compliance posture">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Compliance Posture</span>
+                <h2>Aligned with the standards your buyers ask about.</h2>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px;">
+                <div style="background:var(--ink);border-radius:12px;padding:24px;text-align:center;">
+                    <h4 style="color:var(--ember);">SOC 2 Type II</h4>
+                    <p style="color:var(--ash-300);font-size:0.9rem;">Aligned posture; report available under NDA on request.</p>
+                </div>
+                <div style="background:var(--ink);border-radius:12px;padding:24px;text-align:center;">
+                    <h4 style="color:var(--ember);">HIPAA-ready</h4>
+                    <p style="color:var(--ash-300);font-size:0.9rem;">BAA available for healthcare engagements.</p>
+                </div>
+                <div style="background:var(--ink);border-radius:12px;padding:24px;text-align:center;">
+                    <h4 style="color:var(--ember);">GDPR + CCPA</h4>
+                    <p style="color:var(--ash-300);font-size:0.9rem;">Data subject rights workflows built in.</p>
+                </div>
+                <div style="background:var(--ink);border-radius:12px;padding:24px;text-align:center;">
+                    <h4 style="color:var(--ember);">NDA on every engagement</h4>
+                    <p style="color:var(--ash-300);font-size:0.9rem;">Mutual NDA standard before discovery starts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-label="Documentation requests">
+        <div class="container" style="max-width:800px;text-align:center;">
+            <h2 style="font-size:2rem;margin-bottom:16px;">Need documentation for procurement?</h2>
+            <p style="color:var(--ash-300);font-size:1.1rem;margin-bottom:32px;">
+                We provide signed NDA, security questionnaire (SIG Lite, CAIQ, or custom), data flow diagrams, and a Security &amp; Compliance Audit summary on request. Most procurement teams get what they need in 48 hours.
+            </p>
+            <a href="mailto:sales@keystouch.com?subject=Procurement%20documentation%20request" class="btn-primary">Email procurement docs request</a>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Key's Touch</h4>
+                    <p>We speak business. We build AI.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/enterprise.html">Enterprise Solutions</a></li>
+                        <li><a href="/services/ai-agents.html">AI Agents</a></li>
+                        <li><a href="/services/automation.html">Automation</a></li>
+                        <li><a href="/services/saas.html">SaaS Development</a></li>
+                        <li><a href="/services/consulting.html">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                        <li><a href="/security.html">Security</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/keys-touch/" rel="me">LinkedIn</a></li>
+                        <li><a href="mailto:sales@keystouch.com">sales@keystouch.com</a></li>
+                        <li><a href="tel:+16822461901">+1 (682) 246-1901</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-bottom">&copy; 2026 Key's Touch. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

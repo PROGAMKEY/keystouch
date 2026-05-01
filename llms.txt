@@ -22,6 +22,7 @@ Core beliefs:
 - [Custom Software Development](https://keystouch.com/services/software): Bespoke web apps, internal tools, and integrations engineered for ownership and longevity.
 - [Website Development](https://keystouch.com/services/websites): High-performance, SEO-optimized, brand-aligned websites and web apps.
 - [AI & Automation Consulting](https://keystouch.com/services/consulting): Strategy, governance, team upskilling. Free 30-min audit available.
+- [Enterprise AI Solutions](https://keystouch.com/services/enterprise): Three productized enterprise solutions for national-scale operators — Autonomous Operations Engine (from $75K), Intelligent Data Architecture (from $120K), Digital Workforce Managed Services (from $25K/mo).
 
 ## Methodology — The TOUCH Framework
 
@@ -70,7 +71,22 @@ Public, downloadable for partner co-marketing and citations:
 - [Home](https://keystouch.com/)
 - [About](https://keystouch.com/about)
 - [Case Studies](https://keystouch.com/case-studies)
+- [Pricing](https://keystouch.com/pricing) — Three flat-rate tiers ($4.5K / $11K / $14K + retainer) plus add-ons. Enterprise on a separate page.
+- [Enterprise Solutions](https://keystouch.com/services/enterprise) — Three packaged enterprise offerings for national-scale operators
+- [Security & Compliance](https://keystouch.com/security) — Vector database isolation, RAG architecture, token management, PII handling, SOC 2-aligned posture, HIPAA/GDPR/CCPA-ready, Security & Compliance Audit available
 - [Contact](https://keystouch.com/contact)
+
+## Technical Capabilities (for buyers asking how it works)
+
+Production-grade AI infrastructure, not prompt-stitching:
+- Per-tenant isolated vector databases (Pinecone, Weaviate, pgvector, Qdrant)
+- Production RAG pipelines with retrieval, eval, and re-ranking
+- Token management — hard budgets, model routing, prompt caching, cost dashboards
+- PII handling — detection at ingest, redaction or tokenization before LLM calls
+- Security & Compliance Audit — pre-deployment review with written diagnostic
+- Access control — SSO, MFA, role-based with least-privilege defaults, immutable audit logs
+- Model evaluation — pre-launch eval suite tied to business KPIs, continuous accuracy + hallucination monitoring, automated rollback on regression
+- Compliance posture — SOC 2 Type II aligned, HIPAA-ready (BAA available), GDPR + CCPA, NDA on every engagement
 
 ## Service area
 

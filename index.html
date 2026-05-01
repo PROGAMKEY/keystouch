@@ -1034,11 +1034,12 @@
                 Key's Touch
             </a>
             <ul class="nav-links" id="nav-menu">
-                <li><a href="#what-we-do">Services</a></li>
-                <li><a href="#proof">Results</a></li>
-                <li><a href="#calculator">ROI Calculator</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="#" class="nav-cta" onclick="openAuditModal(); return false;">Free Automation Audit</a></li>
+                <li><a href="/#what-we-do">Services</a></li>
+                <li><a href="/services/enterprise.html">Enterprise</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
                 <span></span><span></span><span></span>
@@ -1353,6 +1354,38 @@
         </div>
     </section>
 
+    <!-- ============ TECHNICAL DEPTH STRIP — for the buyer who asks how it works ============ -->
+    <section class="section" aria-labelledby="tech-depth-heading" style="padding: 96px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <span class="section-label">Under the hood</span>
+                <h2 class="section-title" id="tech-depth-heading">Production-grade AI infrastructure.</h2>
+                <p class="section-subtitle" style="margin: 16px auto 0;">Not prompt-stitching. Real architecture your CISO can sign off on.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                    <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Vector Databases &amp; RAG</h3>
+                    <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Per-tenant isolated vector stores. Production RAG with retrieval, eval, and re-ranking. No shared indexes.</p>
+                </div>
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                    <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Token Management</h3>
+                    <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Hard budgets, model routing, prompt caching. You always know what you are spending and why.</p>
+                </div>
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                    <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Security &amp; Compliance Audit</h3>
+                    <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Pre-deployment review your CISO signs off on. Data flows, access, retention, third-party LLM exposure.</p>
+                </div>
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                    <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">PII Handling &amp; Governance</h3>
+                    <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Detection at ingest, redaction or tokenization before LLM calls. HIPAA + GDPR + CCPA-aware patterns.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="/security.html" class="btn-secondary">See full security model &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ ROI CALCULATOR: Interactive tool ============ -->
     <section class="calc-section section-bg-dark" id="calculator" aria-labelledby="calc-heading">
         <div class="container">
@@ -1590,23 +1623,90 @@
         </div>
     </div>
 
-    <!-- ============ FREE AI AUDIT MODAL (lead magnet) ============ -->
+    <!-- ============ HIGH-VALUE AUDIT MODAL (multi-step qualifier) ============ -->
     <div class="exit-overlay" id="audit-overlay" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title">
-        <div class="exit-popup" id="audit-popup">
+        <div class="exit-popup" id="audit-popup" style="max-width:560px;">
             <button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>
-            <h3 id="audit-modal-title">Get your free AI Audit Guide.</h3>
-            <p>
-                The exact playbook we use to find the biggest automation wins in any business.
-                Drop your email &mdash; we'll send the PDF over and follow up with your free 30-min audit call (zero pressure).
-            </p>
-            <form class="exit-form" id="audit-form" onsubmit="submitAuditModal(event)" novalidate>
-                <input type="email" id="audit-email" placeholder="Your email" required aria-label="Email address" autocomplete="email">
-                <button type="submit" class="btn-primary" id="audit-submit">Send the guide &rarr;</button>
-            </form>
+
+            <!-- Progress indicator -->
+            <div id="audit-progress" style="display:flex;gap:6px;margin-bottom:20px;">
+                <div class="step-pip step-pip-active" data-step="1" style="flex:1;height:4px;background:var(--ember);border-radius:2px;"></div>
+                <div class="step-pip" data-step="2" style="flex:1;height:4px;background:var(--ash-700);border-radius:2px;"></div>
+                <div class="step-pip" data-step="3" style="flex:1;height:4px;background:var(--ash-700);border-radius:2px;"></div>
+            </div>
+
+            <!-- Step 1: contact -->
+            <div class="audit-step" id="audit-step-1">
+                <h3 id="audit-modal-title">Book your free High-Value Audit.</h3>
+                <p style="color:var(--ash-300);margin-bottom:20px;">
+                    A 60-minute structured diagnostic of your operations. Output: a written report showing where AI delivers measurable ROI in your business &mdash; and where it doesn't.
+                </p>
+                <form id="audit-form-step1" onsubmit="auditNextStep(event, 1)" novalidate>
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">Full name</label>
+                    <input type="text" id="audit-name" placeholder="Jane Smith" required aria-label="Full name" autocomplete="name" style="width:100%;margin-bottom:16px;">
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">Work email</label>
+                    <input type="email" id="audit-email" placeholder="jane@company.com" required aria-label="Email address" autocomplete="email" style="width:100%;margin-bottom:16px;">
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">Company</label>
+                    <input type="text" id="audit-company" placeholder="Acme Corp" required aria-label="Company name" autocomplete="organization" style="width:100%;margin-bottom:16px;">
+                    <button type="submit" class="btn-primary" style="width:100%;">Continue &rarr;</button>
+                </form>
+            </div>
+
+            <!-- Step 2: qualifier -->
+            <div class="audit-step" id="audit-step-2" style="display:none;">
+                <h3 style="margin-bottom:16px;">A few qualifying questions.</h3>
+                <p style="color:var(--ash-300);margin-bottom:20px;font-size:0.95rem;">
+                    These help us prepare for your audit and recommend the right engagement tier.
+                </p>
+                <form id="audit-form-step2" onsubmit="auditNextStep(event, 2)" novalidate>
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">Annual revenue</label>
+                    <select id="audit-revenue" required aria-label="Annual revenue" style="width:100%;margin-bottom:16px;padding:12px;background:var(--ink);color:var(--ivory);border:1px solid var(--ash-700);border-radius:8px;">
+                        <option value="">Select range</option>
+                        <option value="<500K">Under $500K</option>
+                        <option value="500K-2M">$500K &ndash; $2M</option>
+                        <option value="2M-10M">$2M &ndash; $10M</option>
+                        <option value="10M-50M">$10M &ndash; $50M</option>
+                        <option value="50M+">$50M+</option>
+                    </select>
+
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">Monthly hours lost to manual operational work</label>
+                    <select id="audit-hours" required aria-label="Monthly operational overhead" style="width:100%;margin-bottom:16px;padding:12px;background:var(--ink);color:var(--ivory);border:1px solid var(--ash-700);border-radius:8px;">
+                        <option value="">Select range</option>
+                        <option value="<40">Less than 40 hrs/mo</option>
+                        <option value="40-160">40 &ndash; 160 hrs/mo (1 FTE-ish)</option>
+                        <option value="160-500">160 &ndash; 500 hrs/mo (3 FTEs)</option>
+                        <option value="500-1500">500 &ndash; 1,500 hrs/mo (10 FTEs)</option>
+                        <option value="1500+">1,500+ hrs/mo (a full team)</option>
+                    </select>
+
+                    <label style="display:block;color:var(--ash-300);font-size:0.85rem;margin-bottom:6px;">What's the #1 process you'd automate first?</label>
+                    <textarea id="audit-process" required aria-label="Top automation candidate" placeholder="e.g., invoice reconciliation, customer support tier-1, weekly reporting" rows="3" style="width:100%;margin-bottom:16px;padding:12px;background:var(--ink);color:var(--ivory);border:1px solid var(--ash-700);border-radius:8px;font-family:inherit;"></textarea>
+
+                    <div style="display:flex;gap:12px;">
+                        <button type="button" class="btn-secondary" style="flex:1;" onclick="auditPrevStep()">&larr; Back</button>
+                        <button type="submit" class="btn-primary" style="flex:2;">Continue &rarr;</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 3: confirm + book -->
+            <div class="audit-step" id="audit-step-3" style="display:none;">
+                <h3 style="margin-bottom:16px;">Almost done.</h3>
+                <p style="color:var(--ash-300);margin-bottom:16px;font-size:0.95rem;">
+                    Pick a time on the next page or wait for our team to reach out within one business day.
+                </p>
+                <div id="audit-recommended-tier" style="background:var(--ink-soft);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid var(--ember);">
+                    <span style="color:var(--ember);font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;">Recommended tier</span>
+                    <p id="audit-tier-text" style="margin-top:8px;color:var(--ivory);font-weight:600;">&mdash;</p>
+                </div>
+                <button type="button" class="btn-primary" style="width:100%;margin-bottom:12px;" onclick="auditFinalSubmit()">Send my audit request &amp; book a call</button>
+                <button type="button" class="btn-secondary" style="width:100%;" onclick="auditFinalSubmit(true)">Just send the AI Audit Guide PDF</button>
+            </div>
+
             <p id="audit-error" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 12px; display: none;">
-                Couldn't send. Email us directly: <a href="mailto:hello@keystouch.com" style="color: var(--cyan);">hello@keystouch.com</a>
+                Couldn't send. Email us directly: <a href="mailto:sales@keystouch.com" style="color: var(--ember);">sales@keystouch.com</a>
             </p>
-            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 12px;">No spam. Unsubscribe anytime.</p>
+            <p style="font-size: 0.75rem; color: var(--ash-500); margin-top: 16px;">No spam. We respond within one business day. <a href="/privacy.html" style="color:var(--ash-500);">Privacy policy</a>.</p>
         </div>
     </div>
 
@@ -1840,11 +1940,13 @@
             }
         }, 30000);
 
-        // ===== FREE AI AUDIT MODAL =====
+        // ===== HIGH-VALUE AUDIT MODAL (multi-step) =====
+        const auditState = { step: 1, name: '', email: '', company: '', revenue: '', hours: '', process: '', tier: '' };
+
         function openAuditModal() {
             document.getElementById('audit-overlay').classList.add('active');
             setTimeout(() => {
-                const el = document.getElementById('audit-email');
+                const el = document.getElementById('audit-name');
                 if (el) el.focus();
             }, 100);
         }
@@ -1853,56 +1955,101 @@
             document.getElementById('audit-overlay').classList.remove('active');
         }
 
-        async function submitAuditModal(e) {
-            e.preventDefault();
-            const emailEl = document.getElementById('audit-email');
-            const btn = document.getElementById('audit-submit');
-            const errEl = document.getElementById('audit-error');
-            const email = emailEl.value.trim();
-            if (!email || !email.includes('@')) {
-                emailEl.focus();
-                return;
+        function showAuditStep(n) {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById('audit-step-' + i).style.display = (i === n) ? 'block' : 'none';
             }
+            document.querySelectorAll('#audit-progress .step-pip').forEach((p, i) => {
+                p.style.background = (i + 1 <= n) ? 'var(--ember)' : 'var(--ash-700)';
+            });
+            auditState.step = n;
+        }
+
+        function recommendTier(revenue, hours) {
+            if (revenue === '50M+' || hours === '1500+') return 'Digital Workforce Managed Services (Enterprise) — from $25K/mo';
+            if (revenue === '10M-50M' || hours === '500-1500') return 'Autonomous Operations Engine (Enterprise) — from $75K';
+            if (revenue === '2M-10M' || hours === '160-500') return 'Brand + Web + Ongoing — $14K setup + $2.5K/mo retainer';
+            if (revenue === '500K-2M' || hours === '40-160') return 'Brand + Web — $11K starting';
+            return 'Brand Spark — $4,500 starting';
+        }
+
+        function auditNextStep(e, fromStep) {
+            e.preventDefault();
+            if (fromStep === 1) {
+                auditState.name = document.getElementById('audit-name').value.trim();
+                auditState.email = document.getElementById('audit-email').value.trim();
+                auditState.company = document.getElementById('audit-company').value.trim();
+                if (!auditState.name || !auditState.email.includes('@') || !auditState.company) return;
+                showAuditStep(2);
+            } else if (fromStep === 2) {
+                auditState.revenue = document.getElementById('audit-revenue').value;
+                auditState.hours = document.getElementById('audit-hours').value;
+                auditState.process = document.getElementById('audit-process').value.trim();
+                if (!auditState.revenue || !auditState.hours || !auditState.process) return;
+                auditState.tier = recommendTier(auditState.revenue, auditState.hours);
+                document.getElementById('audit-tier-text').textContent = auditState.tier;
+                showAuditStep(3);
+            }
+        }
+
+        function auditPrevStep() {
+            if (auditState.step > 1) showAuditStep(auditState.step - 1);
+        }
+
+        async function auditFinalSubmit(pdfOnly) {
+            const errEl = document.getElementById('audit-error');
             errEl.style.display = 'none';
-            btn.disabled = true;
-            const originalLabel = btn.textContent;
-            btn.textContent = 'Sending...';
+            const pdfUrl = 'https://keystouch.com/assets/free-ai-audit.pdf';
             try {
-                const pdfUrl = 'https://keystouch.com/assets/free-ai-audit.pdf';
                 const res = await fetch('https://formspree.io/f/xzdkedov', {
                     method: 'POST',
                     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        email: email,
-                        _subject: 'Free AI Audit Guide Request',
-                        message: '[Lead Magnet] Free AI Audit Guide download requested from keystouch.com',
+                        name: auditState.name,
+                        email: auditState.email,
+                        company: auditState.company,
+                        annual_revenue: auditState.revenue,
+                        monthly_ops_hours: auditState.hours,
+                        top_process: auditState.process,
+                        recommended_tier: auditState.tier,
+                        wants_call: pdfOnly ? 'no' : 'yes',
+                        _subject: pdfOnly ? 'AI Audit Guide PDF Request' : 'High-Value Audit Request',
                         source: 'audit-modal',
                         pdf_url: pdfUrl
                     })
                 });
                 if (!res.ok) throw new Error('Submit failed: ' + res.status);
-                // GA4 / GTM key event — wire `lead_submit` as a key event in GA4 admin to track lead acquisition.
                 try {
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
                         event: 'lead_submit',
                         lead_source: 'audit-modal',
-                        lead_magnet: 'free-ai-audit',
-                        form_id: 'audit-form'
+                        lead_magnet: 'high-value-audit',
+                        form_id: 'audit-form',
+                        annual_revenue: auditState.revenue,
+                        monthly_ops_hours: auditState.hours,
+                        recommended_tier: auditState.tier,
+                        wants_call: pdfOnly ? 'no' : 'yes'
                     });
                 } catch (_) { /* analytics non-blocking */ }
-                const safeEmail = email.replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
-                document.getElementById('audit-popup').innerHTML =
-                    '<button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>' +
-                    '<h3>Check your inbox.</h3>' +
-                    '<p>The AI Audit Guide is on its way to <strong>' + safeEmail + '</strong>. ' +
-                    'We\'ll follow up within 1 business day to schedule your free 30-min audit call.</p>' +
-                    '<p style="margin-top: 24px;"><a href="' + pdfUrl + '" class="btn-primary" download style="display: inline-block;">Download the PDF now &rarr;</a></p>' +
-                    '<p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 16px;">No pitch deck. No follow-up spam. Just the math.</p>';
+                const safeName = (auditState.name || 'there').replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
+                if (pdfOnly) {
+                    document.getElementById('audit-popup').innerHTML =
+                        '<button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>' +
+                        '<h3>On its way, ' + safeName + '.</h3>' +
+                        '<p>The AI Audit Guide is heading to your inbox.</p>' +
+                        '<p style="margin-top: 24px;"><a href="' + pdfUrl + '" class="btn-primary" download style="display: inline-block;">Download the PDF now &rarr;</a></p>' +
+                        '<p style="font-size: 0.75rem; color: var(--ash-500); margin-top: 16px;">No spam. We respond within one business day.</p>';
+                } else {
+                    document.getElementById('audit-popup').innerHTML =
+                        '<button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>' +
+                        '<h3>Got it, ' + safeName + '. Pick a time.</h3>' +
+                        '<p>Your audit request is in. Pick a slot now or wait for our team to reach out within one business day.</p>' +
+                        '<p style="margin-top: 24px;"><a href="https://calendly.com/key-keystouch/discussion" class="btn-primary" target="_blank" rel="noopener" style="display: inline-block;">Book a slot &rarr;</a></p>' +
+                        '<p style="margin-top: 12px;"><a href="' + pdfUrl + '" download style="color:var(--ember);">Or download the AI Audit Guide PDF</a></p>';
+                }
             } catch (err) {
                 console.error('Audit modal submit error:', err);
-                btn.disabled = false;
-                btn.textContent = originalLabel;
                 errEl.style.display = 'block';
             }
         }
