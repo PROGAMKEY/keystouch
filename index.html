@@ -252,7 +252,7 @@
         .hero-split {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
+            gap: 48px;
             align-items: center;
         }
 
@@ -261,7 +261,7 @@
             height: 480px;
             border-radius: 24px;
             background: var(--dark);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--ash-700);
             overflow: hidden;
         }
 
@@ -279,7 +279,7 @@
         .terminal-bar {
             display: flex;
             gap: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             padding-bottom: 16px;
             border-bottom: 1px solid rgba(255,255,255,0.06);
         }
@@ -425,7 +425,7 @@
             gap: 0;
             background: var(--dark);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--ash-700);
             overflow: hidden;
         }
 
@@ -510,7 +510,7 @@
 
         /* ---- TESTIMONIAL: large single quote ---- */
         .quote-section {
-            padding: 100px 0;
+            padding: 96px 0;
         }
 
         .big-quote {
@@ -547,14 +547,14 @@
 
         /* ---- ROI CALCULATOR ---- */
         .calc-section {
-            padding: 100px 0;
+            padding: 96px 0;
         }
 
         .calculator {
             max-width: 700px;
             margin: 0 auto;
             background: var(--dark);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--ash-700);
             border-radius: 24px;
             padding: 48px;
         }
@@ -608,8 +608,8 @@
         }
 
         .calc-result {
-            background: rgba(0, 180, 216, 0.08);
-            border: 1px solid rgba(0, 180, 216, 0.15);
+            background: rgba(210, 125, 74, 0.12);
+            border: 1px solid rgba(210, 125, 74, 0.18);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -645,7 +645,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 8px 32px rgba(210, 125, 74, 0.25);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             color: white;
@@ -682,7 +682,7 @@
 
         .chat-header {
             padding: 20px 24px;
-            background: rgba(0, 180, 216, 0.08);
+            background: rgba(210, 125, 74, 0.12);
             border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
@@ -722,7 +722,7 @@
         .chat-option {
             padding: 10px 16px;
             background: transparent;
-            border: 1px solid rgba(0, 180, 216, 0.2);
+            border: 1px solid rgba(210, 125, 74, 0.25);
             border-radius: 10px;
             color: var(--cyan);
             font-size: 0.85rem;
@@ -733,7 +733,7 @@
         }
 
         .chat-option:hover {
-            background: rgba(0, 180, 216, 0.1);
+            background: rgba(210, 125, 74, 0.18);
             border-color: var(--cyan);
         }
 
@@ -743,7 +743,7 @@
         }
 
         .user-msg {
-            background: rgba(0, 180, 216, 0.15);
+            background: rgba(210, 125, 74, 0.18);
             border-radius: 12px 12px 4px 12px;
             padding: 10px 14px;
             font-size: 0.88rem;
@@ -1102,10 +1102,10 @@
             </a>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/#what-we-do">Services</a></li>
-                <li><a href="/services/enterprise.html">Enterprise</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/services/enterprise">Enterprise</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/case-studies">Case Studies</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
@@ -1172,7 +1172,7 @@
 
     <!-- ============ TECH PARTNER BAR (like Accenture's partner wall) ============ -->
     <section class="marquee-section" aria-label="Technology partners">
-        <div class="container" style="margin-bottom: 20px;">
+        <div class="container" style="margin-bottom: 24px;">
             <p style="text-align: center; font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 2px;">Built with</p>
         </div>
         <div class="marquee-track">
@@ -1209,7 +1209,7 @@
     </section>
 
     <!-- ============ METRICS STRIP (not cards, a single unified bar) ============ -->
-    <section style="padding: 80px 0;" aria-label="Key metrics" id="proof">
+    <section style="padding: 96px 0;" aria-label="Key metrics" id="proof">
         <div class="container">
             <div class="counter-strip">
                 <div class="counter-item">
@@ -1255,28 +1255,28 @@
                     </div>
                 </div>
                 <div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 24px; align-items: start;">
                         <div style="min-width: 44px; height: 44px; background: var(--ember-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--ember); font-size: 1.1rem;">T</div>
                         <div>
                             <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Triage</h3>
                             <p style="color: var(--gray-500); font-size: 0.85rem;">Map every workflow, tool, and bottleneck. Rank by pain &times; frequency. Find the 20% of work causing 80% of the waste.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 24px; align-items: start;">
                         <div style="min-width: 44px; height: 44px; background: var(--clay-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--clay); font-size: 1.1rem;">O</div>
                         <div>
                             <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Outline</h3>
                             <p style="color: var(--gray-500); font-size: 0.85rem;">Design the system. You see the blueprint, approve the logic, and lock the data-governance plan before any code is written.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 24px; align-items: start;">
                         <div style="min-width: 44px; height: 44px; background: var(--ember-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--ember); font-size: 1.1rem;">U</div>
                         <div>
                             <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Unify</h3>
                             <p style="color: var(--gray-500); font-size: 0.85rem;">Build it. Integrate cleanly with the tools your team already uses. Prove it works on real data before we scale.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 24px; align-items: start;">
                         <div style="min-width: 44px; height: 44px; background: var(--clay-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; color: var(--clay); font-size: 1.1rem;">C</div>
                         <div>
                             <h3 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 2px;">Calibrate</h3>
@@ -1430,25 +1430,25 @@
                 <p class="section-subtitle" style="margin: 16px auto 0;">Not prompt-stitching. Real architecture your CISO can sign off on.</p>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding: 24px;">
                     <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Vector Databases &amp; RAG</h3>
                     <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Per-tenant isolated vector stores. Production RAG with retrieval, eval, and re-ranking. No shared indexes.</p>
                 </div>
-                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding: 24px;">
                     <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Token Management</h3>
                     <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Hard budgets, model routing, prompt caching. You always know what you are spending and why.</p>
                 </div>
-                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding: 24px;">
                     <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">Security &amp; Compliance Audit</h3>
                     <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Pre-deployment review your CISO signs off on. Data flows, access, retention, third-party LLM exposure.</p>
                 </div>
-                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding:28px;">
+                <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:12px;padding: 24px;">
                     <h3 style="color:var(--ember);font-size:1.1rem;margin-bottom:8px;">PII Handling &amp; Governance</h3>
                     <p style="color:var(--ash-300);font-size:0.95rem;margin:0;">Detection at ingest, redaction or tokenization before LLM calls. HIPAA + GDPR + CCPA-aware patterns.</p>
                 </div>
             </div>
-            <div style="text-align:center;margin-top:40px;">
-                <a href="/security.html" class="btn-secondary">See full security model &rarr;</a>
+            <div style="text-align:center;margin-top: 48px;">
+                <a href="/security" class="btn-secondary">See full security model &rarr;</a>
             </div>
         </div>
     </section>
@@ -1539,22 +1539,22 @@
     </section>
 
     <!-- ============ WHY US: Differentiators (like Toptal's exclusivity) ============ -->
-    <section style="padding: 80px 0;" aria-labelledby="why-heading">
+    <section style="padding: 96px 0;" aria-labelledby="why-heading">
         <div class="container">
             <div style="text-align: center; margin-bottom: 48px;">
                 <span class="section-label">Why Key's Touch</span>
                 <h2 class="section-title" id="why-heading">What you won't get from the other agencies.</h2>
             </div>
             <div data-why-grid style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">You own everything.</h3>
                     <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">Full source code, documentation, and knowledge transfer. No vendor lock-in. No hostage situations. If you want to leave, you take it all with you.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">4-week average time to first value.</h3>
                     <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">Not 4 months of discovery. Not a 60-page strategy deck. A working system deployed in your environment, saving your team real hours, within a month.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--cyan);">We pick the right AI, not the trendy one.</h3>
                     <p style="color: var(--gray-300); font-size: 0.9rem; line-height: 1.6;">GPT-4, Claude, open-source, or a simple rule-based workflow. We use what actually solves your problem. Sometimes the answer isn't AI at all &mdash; and we'll tell you that.</p>
                 </div>
@@ -1638,8 +1638,8 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 Key's Touch. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="/privacy.html">Privacy</a>
-                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
                 </div>
             </div>
         </div>
@@ -1696,7 +1696,7 @@
             <button class="close-btn" onclick="closeAuditModal()" aria-label="Close popup">&times;</button>
 
             <!-- Progress indicator -->
-            <div id="audit-progress" style="display:flex;gap:6px;margin-bottom:20px;">
+            <div id="audit-progress" style="display:flex;gap:6px;margin-bottom: 24px;">
                 <div class="step-pip step-pip-active" data-step="1" style="flex:1;height:4px;background:var(--ember);border-radius:2px;"></div>
                 <div class="step-pip" data-step="2" style="flex:1;height:4px;background:var(--ash-700);border-radius:2px;"></div>
                 <div class="step-pip" data-step="3" style="flex:1;height:4px;background:var(--ash-700);border-radius:2px;"></div>
@@ -1705,7 +1705,7 @@
             <!-- Step 1: contact -->
             <div class="audit-step" id="audit-step-1">
                 <h3 id="audit-modal-title">Book your free High-Value Audit.</h3>
-                <p style="color:var(--ash-300);margin-bottom:20px;">
+                <p style="color:var(--ash-300);margin-bottom: 24px;">
                     A 60-minute structured diagnostic of your operations. Output: a written report showing where AI delivers measurable ROI in your business &mdash; and where it doesn't.
                 </p>
                 <form id="audit-form-step1" onsubmit="auditNextStep(event, 1)" novalidate>
@@ -1722,7 +1722,7 @@
             <!-- Step 2: qualifier -->
             <div class="audit-step" id="audit-step-2" style="display:none;">
                 <h3 style="margin-bottom:16px;">A few qualifying questions.</h3>
-                <p style="color:var(--ash-300);margin-bottom:20px;font-size:0.95rem;">
+                <p style="color:var(--ash-300);margin-bottom: 24px;font-size:0.95rem;">
                     These help us prepare for your audit and recommend the right engagement tier.
                 </p>
                 <form id="audit-form-step2" onsubmit="auditNextStep(event, 2)" novalidate>
@@ -1762,7 +1762,7 @@
                 <p style="color:var(--ash-300);margin-bottom:16px;font-size:0.95rem;">
                     Pick a time on the next page or wait for our team to reach out within one business day.
                 </p>
-                <div id="audit-recommended-tier" style="background:var(--ink-soft);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid var(--ember);">
+                <div id="audit-recommended-tier" style="background:var(--ink-soft);border-radius:12px;padding:20px;margin-bottom: 24px;border:1px solid var(--ember);">
                     <span style="color:var(--ember);font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;">Recommended tier</span>
                     <p id="audit-tier-text" style="margin-top:8px;color:var(--ivory);font-weight:600;">&mdash;</p>
                 </div>
@@ -1773,7 +1773,7 @@
             <p id="audit-error" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 12px; display: none;">
                 Couldn't send. Email us directly: <a href="mailto:sales@keystouch.com" style="color: var(--ember);">sales@keystouch.com</a>
             </p>
-            <p style="font-size: 0.75rem; color: var(--ash-500); margin-top: 16px;">No spam. We respond within one business day. <a href="/privacy.html" style="color:var(--ash-500);">Privacy policy</a>.</p>
+            <p style="font-size: 0.75rem; color: var(--ash-500); margin-top: 16px;">No spam. We respond within one business day. <a href="/privacy" style="color:var(--ash-500);">Privacy policy</a>.</p>
         </div>
     </div>
 
@@ -1810,9 +1810,9 @@
             { keys: ['process', 'how does it work', 'how do you work', 'rapid', 'steps', 'methodology'],
               reply: 'We use our <b>TOUCH Framework</b>:<br><br><b>T</b> — Triage (find the biggest waste)<br><b>O</b> — Outline (design + governance plan)<br><b>U</b> — Unify (build + integrate w/ your stack)<br><b>C</b> — Calibrate (deploy w/ monitoring & training)<br><b>H</b> — Hone (measure, iterate, expand)<br><br>First step is always a free 30-min audit. <a href="#" onclick="openAuditModal(); return false;" style="color:var(--ember)">Book one &rarr;</a>' },
             { keys: ['cost', 'price', 'pricing', 'how much', 'budget', 'expensive', 'afford', 'invest'],
-              reply: 'Every project is scoped individually based on complexity. Most automation projects start delivering value in <b>4 weeks</b>. MVPs: 6-10 weeks. Full platforms: 3-6 months.<br><br>The best way to get a number is the free audit — we\'ll give you an exact scope and timeline. <a href="/contact.html" style="color:var(--cyan)">Book the free audit &rarr;</a>' },
+              reply: 'Every project is scoped individually based on complexity. Most automation projects start delivering value in <b>4 weeks</b>. MVPs: 6-10 weeks. Full platforms: 3-6 months.<br><br>The best way to get a number is the free audit — we\'ll give you an exact scope and timeline. <a href="/contact" style="color:var(--cyan)">Book the free audit &rarr;</a>' },
             { keys: ['case stud', 'portfolio', 'examples', 'proof', 'results', 'worked on', 'built'],
-              reply: 'Check out our case studies — real projects with real ROI numbers.<br><br><a href="/case-studies.html" style="color:var(--cyan)">See the receipts &rarr;</a>' },
+              reply: 'Check out our case studies — real projects with real ROI numbers.<br><br><a href="/case-studies" style="color:var(--cyan)">See the receipts &rarr;</a>' },
             { keys: ['automat', 'workflow', 'manual', 'repetitive', 'streamline'],
               reply: 'Automation is our bread and butter. We build AI-powered workflows that eliminate repetitive tasks — data entry, reporting, customer follow-ups, you name it.<br><br>On average, our clients see <b>4.2x ROI</b> and save <b>73% of manual hours</b>.<br><br><a href="/services/automation.html" style="color:var(--cyan)">Learn more &rarr;</a>' },
             { keys: ['ai agent', 'chatbot', 'bot', 'assistant'],
@@ -1824,17 +1824,17 @@
             { keys: ['consult', 'strateg', 'readiness', 'assess'],
               reply: 'Our AI & Automation Consulting helps you figure out <b>where</b> AI creates the highest ROI in your specific business before building anything.<br><br><a href="/services/consulting.html" style="color:var(--cyan)">Learn about consulting &rarr;</a>' },
             { keys: ['about', 'who are you', 'team', 'founder', 'company'],
-              reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it — no recurring fees for the tools we create.<br><br><a href="/about.html" style="color:var(--cyan)">About us &rarr;</a>' },
+              reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it — no recurring fees for the tools we create.<br><br><a href="/about" style="color:var(--cyan)">About us &rarr;</a>' },
             { keys: ['contact', 'email', 'phone', 'reach', 'get in touch'],
-              reply: 'You can reach us at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a> or book a free 30-minute audit directly:<br><br><a href="/contact.html" style="color:var(--cyan)">Contact page &rarr;</a>' },
+              reply: 'You can reach us at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a> or book a free 30-minute audit directly:<br><br><a href="/contact" style="color:var(--cyan)">Contact page &rarr;</a>' },
             { keys: ['book', 'call', 'meeting', 'schedule', 'audit', 'free'],
-              reply: 'The audit is free, 30 minutes, zero obligation. We\'ll map your operations, find the waste, and show you the math.<br><br><a href="/contact.html" style="color:var(--cyan)">Book your free audit &rarr;</a>' },
+              reply: 'The audit is free, 30 minutes, zero obligation. We\'ll map your operations, find the waste, and show you the math.<br><br><a href="/contact" style="color:var(--cyan)">Book your free audit &rarr;</a>' },
             { keys: ['human', 'person', 'real person', 'speak', 'talk to', 'someone', 'representative', 'rep'],
               reply: 'HUMAN_HANDOFF' },
             { keys: ['hi', 'hello', 'hey', 'sup', 'yo'],
               reply: 'Hey! How can I help you today? I can answer questions about our services, process, pricing, or connect you with the team.' },
             { keys: ['thank', 'thanks', 'appreciate'],
-              reply: 'You\'re welcome! Let me know if there\'s anything else. If you\'re ready to move forward, the <a href="/contact.html" style="color:var(--cyan)">free audit</a> is the best next step.' }
+              reply: 'You\'re welcome! Let me know if there\'s anything else. If you\'re ready to move forward, the <a href="/contact" style="color:var(--cyan)">free audit</a> is the best next step.' }
         ];
 
         function getBotReply(msg) {
@@ -1886,7 +1886,7 @@
                 const body = document.getElementById('chat-body');
                 body.querySelectorAll('.chat-email-form').forEach(f => f.remove());
                 if (r.ok) {
-                    addMsg('Sent! The team will be in touch within 24 hours. In the meantime, feel free to <a href="/case-studies.html" style="color:var(--cyan)">check out our work</a>.', 'bot');
+                    addMsg('Sent! The team will be in touch within 24 hours. In the meantime, feel free to <a href="/case-studies" style="color:var(--cyan)">check out our work</a>.', 'bot');
                 } else {
                     r.json().then(d => console.error('Formspree error:', d));
                     addMsg('Something went wrong. You can email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');

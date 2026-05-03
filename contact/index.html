@@ -145,19 +145,19 @@
             color: var(--cyan);
         }
         .start-here {
-            padding: 80px 0;
+            padding: 96px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .start-here-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 24px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
         .start-here-card {
             padding: 32px;
             background: var(--dark);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--ash-700);
             border-radius: 16px;
             transition: all 0.3s ease;
         }
@@ -173,7 +173,7 @@
             justify-content: center;
             background: var(--cyan-glow);
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-size: 1.3rem;
         }
         .start-here-card h4 {
@@ -225,8 +225,8 @@
         .chat-body { padding: 20px 24px; min-height: 200px; max-height: 320px; overflow-y: auto; }
         .chat-msg { background: rgba(255,255,255,0.04); border-radius: 12px 12px 12px 4px; padding: 12px 16px; font-size: 0.9rem; color: var(--gray-300); line-height: 1.5; margin-bottom: 12px; max-width: 85%; }
         .chat-options { display: flex; flex-direction: column; gap: 8px; }
-        .chat-option { padding: 10px 16px; background: transparent; border: 1px solid rgba(0,180,216,0.2); border-radius: 10px; color: var(--cyan); font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; text-align: left; font-family: var(--font-body); }
-        .chat-option:hover { background: rgba(0,180,216,0.1); border-color: var(--cyan); }
+        .chat-option { padding: 10px 16px; background: transparent; border: 1px solid rgba(210, 125, 74, 0.25); border-radius: 10px; color: var(--cyan); font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; text-align: left; font-family: var(--font-body); }
+        .chat-option:hover { background: rgba(210, 125, 74, 0.18); border-color: var(--cyan); }
         .user-msg { background: rgba(0,180,216,0.15); border-radius: 12px 12px 4px 12px; padding: 10px 14px; font-size: 0.88rem; color: #fff; line-height: 1.5; margin-bottom: 10px; max-width: 85%; margin-left: auto; text-align: right; }
         .bot-msg { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
@@ -260,10 +260,10 @@
             </a>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/#what-we-do">Services</a></li>
-                <li><a href="/services/enterprise.html">Enterprise</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/services/enterprise">Enterprise</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/case-studies">Case Studies</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
@@ -320,7 +320,7 @@
                         });
                         </script>
 
-                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 56px;">Or send a message</h3>
+                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 48px;">Or send a message</h3>
                         <p class="section-subtitle" style="margin-bottom: 16px;">Tell us what you're trying to solve. We'll reply within 24 hours.</p>
 
                         <!-- CONTACT FORM -->
@@ -531,8 +531,8 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 Key's Touch. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="/privacy.html">Privacy</a>
-                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
                 </div>
             </div>
         </div>
@@ -638,7 +638,7 @@
             { keys: ['cost', 'price', 'pricing', 'how much', 'budget', 'expensive', 'afford', 'invest'],
               reply: 'Every project is scoped individually. Most automation projects start delivering value in <b>4 weeks</b>. MVPs: 6-10 weeks. Full platforms: 3-6 months.<br><br>Book the free audit above and we\'ll give you an exact scope and timeline.' },
             { keys: ['case stud', 'portfolio', 'examples', 'proof', 'results', 'worked on', 'built'],
-              reply: 'Check out our case studies — real projects with real ROI numbers.<br><br><a href="/case-studies.html" style="color:var(--cyan)">See the receipts &rarr;</a>' },
+              reply: 'Check out our case studies — real projects with real ROI numbers.<br><br><a href="/case-studies" style="color:var(--cyan)">See the receipts &rarr;</a>' },
             { keys: ['automat', 'workflow', 'manual', 'repetitive', 'streamline'],
               reply: 'Automation is our bread and butter. We build AI-powered workflows that eliminate repetitive tasks.<br><br>On average: <b>4.2x ROI</b> and <b>73% manual hours saved</b>.<br><br><a href="/services/automation.html" style="color:var(--cyan)">Learn more &rarr;</a>' },
             { keys: ['ai agent', 'chatbot', 'bot', 'assistant'],
@@ -650,7 +650,7 @@
             { keys: ['consult', 'strateg', 'readiness', 'assess'],
               reply: 'Our AI Consulting helps you figure out <b>where</b> AI creates the highest ROI before building anything.<br><br><a href="/services/consulting.html" style="color:var(--cyan)">Learn about consulting &rarr;</a>' },
             { keys: ['about', 'who are you', 'team', 'founder', 'company'],
-              reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it.<br><br><a href="/about.html" style="color:var(--cyan)">About us &rarr;</a>' },
+              reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it.<br><br><a href="/about" style="color:var(--cyan)">About us &rarr;</a>' },
             { keys: ['contact', 'email', 'phone', 'reach', 'get in touch'],
               reply: 'You\'re on the right page! Book a time above with Calendly, or email us at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.' },
             { keys: ['book', 'call', 'meeting', 'schedule', 'audit', 'free'],

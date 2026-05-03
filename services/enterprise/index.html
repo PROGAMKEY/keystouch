@@ -62,10 +62,10 @@
             </a>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/#what-we-do">Services</a></li>
-                <li><a href="/services/enterprise.html">Enterprise</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/services/enterprise">Enterprise</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/case-studies">Case Studies</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
@@ -87,7 +87,7 @@
                 </p>
                 <div class="hero-ctas">
                     <a href="/?audit=open" class="btn-primary">Book a High-Value Audit</a>
-                    <a href="/pricing.html" class="btn-secondary">See pricing</a>
+                    <a href="/pricing" class="btn-secondary">See pricing</a>
                 </div>
             </div>
         </div>
@@ -197,29 +197,29 @@
                 @media (max-width: 600px) { [data-diff-grid] { grid-template-columns: 1fr; } }
             </style>
             <div data-diff-grid style="margin-top: 48px;">
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">Fixed scope. Fixed price.</h3>
                     <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">Every engagement is productized. No "discovery to refine the estimate." You know what you're buying before you sign.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">Governance from day one.</h3>
                     <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">Data classification, access controls, audit logging, retention, and PII handling are designed into the architecture &mdash; not bolted on after launch.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">100% code ownership.</h3>
                     <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">You own the source, the prompts, the evals, the data layer. No vendor lock-in. Walk away whenever you want.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">Augmentation, not replacement.</h3>
                     <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">We are explicitly anti-headcount-cut. Every solution is designed to make your team faster, not smaller. Adoption sticks because employees don't fear it.</p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">Built on the TOUCH Framework.</h3>
                     <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">Triage &rarr; Outline &rarr; Unify &rarr; Calibrate &rarr; Hone. A repeatable methodology, not a sales pitch. <a href="/#touch-framework" style="color: var(--ember);">See the framework &rarr;</a></p>
                 </div>
-                <div style="padding: 32px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                <div style="padding: 32px; border: 1px solid var(--ash-700); border-radius: 16px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; color: var(--ember);">Security &amp; compliance ready.</h3>
-                    <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">SOC 2 posture, signed NDA on every engagement, RAG isolation, documented data flows. <a href="/security.html" style="color: var(--ember);">See our security model &rarr;</a></p>
+                    <p style="color: var(--ash-300); font-size: 0.9rem; line-height: 1.6;">SOC 2 posture, signed NDA on every engagement, RAG isolation, documented data flows. <a href="/security" style="color: var(--ember);">See our security model &rarr;</a></p>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
                 <div>
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="/services/enterprise.html">Enterprise Solutions</a></li>
+                        <li><a href="/services/enterprise">Enterprise Solutions</a></li>
                         <li><a href="/services/ai-agents.html">AI Agents</a></li>
                         <li><a href="/services/automation.html">Automation</a></li>
                         <li><a href="/services/saas.html">SaaS Development</a></li>
@@ -256,11 +256,11 @@
                 <div>
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/case-studies.html">Case Studies</a></li>
-                        <li><a href="/pricing.html">Pricing</a></li>
-                        <li><a href="/security.html">Security</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/security">Security</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>

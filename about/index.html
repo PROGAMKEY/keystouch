@@ -104,7 +104,7 @@
             gap: 0;
             background: var(--dark);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--ash-700);
             overflow: hidden;
         }
 
@@ -140,7 +140,7 @@
         .rapid-step {
             display: flex;
             gap: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             align-items: start;
         }
 
@@ -257,10 +257,10 @@
             </a>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/#what-we-do">Services</a></li>
-                <li><a href="/services/enterprise.html">Enterprise</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/services/enterprise">Enterprise</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/case-studies">Case Studies</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/?audit=open" class="nav-cta">Free High-Value Audit</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu" onclick="const m=document.getElementById('nav-menu');m.classList.toggle('active');this.setAttribute('aria-expanded',m.classList.contains('active'))">
@@ -296,7 +296,7 @@
         </section>
 
         <!-- ============ FOUNDER CREDIBILITY STRIP ============ -->
-        <section class="section" aria-label="Founder credentials" style="padding: 80px 0;">
+        <section class="section" aria-label="Founder credentials" style="padding: 96px 0;">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 40px;">
                     <span class="section-label">Founder credentials</span>
@@ -304,22 +304,22 @@
                     <p class="section-subtitle" style="max-width: 720px; margin: 0 auto;">Key Scales runs the business and the build. PMP-certified project management, AI/data governance specialty, full-stack engineering, and an award-winning AI Solution Architect.</p>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto;">
-                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 28px; text-align: center;">
+                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 24px; text-align: center;">
                         <div style="color: var(--ember); font-size: 2rem; margin-bottom: 8px;">🏆</div>
                         <h3 style="font-size: 1rem; margin-bottom: 6px;">1st Place AI Solution Architect</h3>
                         <p style="color: var(--ash-300); font-size: 0.9rem; margin: 0;">Recognized at industry competition</p>
                     </div>
-                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 28px; text-align: center;">
+                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 24px; text-align: center;">
                         <div style="color: var(--ember); font-size: 2rem; margin-bottom: 8px;">🎓</div>
                         <h3 style="font-size: 1rem; margin-bottom: 6px;">PMP Certified</h3>
                         <p style="color: var(--ash-300); font-size: 0.9rem; margin: 0;">Project Management Professional &mdash; PMI</p>
                     </div>
-                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 28px; text-align: center;">
+                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 24px; text-align: center;">
                         <div style="color: var(--ember); font-size: 2rem; margin-bottom: 8px;">🛡️</div>
                         <h3 style="font-size: 1rem; margin-bottom: 6px;">AI &amp; Data Governance Specialist</h3>
                         <p style="color: var(--ash-300); font-size: 0.9rem; margin: 0;">Builds with compliance from day one</p>
                     </div>
-                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 28px; text-align: center;">
+                    <div style="background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 12px; padding: 24px; text-align: center;">
                         <div style="color: var(--ember); font-size: 2rem; margin-bottom: 8px;">⚙️</div>
                         <h3 style="font-size: 1rem; margin-bottom: 6px;">Full-Stack Engineer</h3>
                         <p style="color: var(--ash-300); font-size: 0.9rem; margin: 0;">Production AI agents, data pipelines, SaaS</p>
@@ -330,7 +330,7 @@
 
         <!-- ============ TECH PARTNER BAR ============ -->
         <section class="marquee-section" aria-label="Technology partners">
-            <div class="container" style="margin-bottom: 20px;">
+            <div class="container" style="margin-bottom: 24px;">
                 <p style="text-align: center; font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 2px;">Built with</p>
             </div>
             <div class="marquee-track">
@@ -367,7 +367,7 @@
         </section>
 
         <!-- ============ BY THE NUMBERS ============ -->
-        <section style="padding: 80px 0;" aria-labelledby="numbers-heading">
+        <section style="padding: 96px 0;" aria-labelledby="numbers-heading">
             <div class="container">
                 <span class="section-label">By the numbers</span>
                 <h2 id="numbers-heading" class="section-title" style="margin-bottom: 40px;">We track outcomes, not hours.</h2>
@@ -605,8 +605,8 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 Key's Touch. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="/privacy.html">Privacy</a>
-                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
                 </div>
             </div>
         </div>
