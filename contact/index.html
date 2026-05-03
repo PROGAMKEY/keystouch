@@ -291,36 +291,44 @@
         </section>
 
         <!-- ============ CONTACT CONTENT ============ -->
-        <section class="section" aria-label="Contact form and information">
+        <!-- CALENDLY — Full width -->
+        <section class="section" aria-label="Book a call">
+            <div class="container">
+                <div class="section-header" style="text-align:center;">
+                    <span class="eyebrow">Book your free automation audit</span>
+                    <h2>Pick a time. 30 minutes. We show you the math.</h2>
+                </div>
+
+                <div class="calendly-inline-widget"
+                     data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
+                     style="min-width:320px;height:700px;margin-top:48px;">
+                </div>
+                <script type="text/javascript"
+                        src="https://assets.calendly.com/assets/external/widget.js"
+                        async>
+                </script>
+                <script>
+                window.addEventListener('message', function (e) {
+                    if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
+                        if (e.data.payload && typeof e.data.payload.height === 'number') {
+                            var widget = document.querySelector('.calendly-inline-widget');
+                            if (widget) widget.style.height = e.data.payload.height + 'px';
+                        }
+                    }
+                });
+                </script>
+            </div>
+        </section>
+
+        <!-- FORM + INFO — Two columns below -->
+        <section class="section" style="background:var(--ink-soft);" aria-label="Contact form and information">
             <div class="container">
                 <div class="contact-grid">
 
-                    <!-- LEFT: BOOKING (top) → FORM (below) -->
+                    <!-- LEFT: FORM -->
                     <div>
-                        <h2 class="section-title">Book Your Free Automation Audit</h2>
-                        <p class="section-subtitle">Pick a time. 30 minutes. We show you the math.</p>
-
-                        <div class="calendly-inline-widget"
-                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:320px;height:700px;">
-                        </div>
-                        <script type="text/javascript"
-                                src="https://assets.calendly.com/assets/external/widget.js"
-                                async>
-                        </script>
-                        <script>
-                        window.addEventListener('message', function (e) {
-                            if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
-                                if (e.data.payload && typeof e.data.payload.height === 'number') {
-                                    var widget = document.querySelector('.calendly-inline-widget');
-                                    if (widget) widget.style.height = e.data.payload.height + 'px';
-                                }
-                            }
-                        });
-                        </script>
-
-                        <h3 class="section-title" style="font-size: 1.2rem; margin-top: 48px;">Or send a message</h3>
-                        <p class="section-subtitle" style="margin-bottom: 16px;">Tell us what you're trying to solve. We'll reply within 24 hours.</p>
+                        <h2 class="section-title" style="font-size:1.5rem;">Or send a message</h2>
+                        <p class="section-subtitle" style="margin-bottom:24px;">Tell us what you're trying to solve. We'll reply within 24 hours.</p>
 
                         <!-- CONTACT FORM -->
                         <form class="contact-form" id="contact-form" role="form" aria-label="Contact form">
