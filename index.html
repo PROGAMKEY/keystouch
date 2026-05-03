@@ -217,7 +217,7 @@
         "jobTitle": "Founder & Chief AI Officer",
         "image": "https://keystouch.com/images/founder-portrait.jpg",
         "url": "https://keystouch.com/about",
-        "email": "key@keystouch.com",
+        "email": "sales@keystouch.com",
         "knowsAbout": [
             "Artificial Intelligence",
             "AI Agents",
@@ -1631,7 +1631,7 @@
                     <ul>
                         <li><a href="https://linkedin.com/company/keystouch" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                         <li><a href="https://instagram.com/keystouch" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="mailto:key@keystouch.com">key@keystouch.com</a></li>
+                        <li><a href="mailto:sales@keystouch.com">sales@keystouch.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -1826,7 +1826,7 @@
             { keys: ['about', 'who are you', 'team', 'founder', 'company'],
               reply: 'Key\'s Touch is an AI automation and software consulting agency. We build it, you own it — no recurring fees for the tools we create.<br><br><a href="/about" style="color:var(--cyan)">About us &rarr;</a>' },
             { keys: ['contact', 'email', 'phone', 'reach', 'get in touch'],
-              reply: 'You can reach us at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a> or book a free 30-minute audit directly:<br><br><a href="/contact" style="color:var(--cyan)">Contact page &rarr;</a>' },
+              reply: 'You can reach us at <a href="mailto:sales@keystouch.com" style="color:var(--cyan)">sales@keystouch.com</a> or book a free 30-minute audit directly:<br><br><a href="/contact" style="color:var(--cyan)">Contact page &rarr;</a>' },
             { keys: ['book', 'call', 'meeting', 'schedule', 'audit', 'free'],
               reply: 'The audit is free, 30 minutes, zero obligation. We\'ll map your operations, find the waste, and show you the math.<br><br><a href="/contact" style="color:var(--cyan)">Book your free audit &rarr;</a>' },
             { keys: ['human', 'person', 'real person', 'speak', 'talk to', 'someone', 'representative', 'rep'],
@@ -1889,14 +1889,14 @@
                     addMsg('Sent! The team will be in touch within 24 hours. In the meantime, feel free to <a href="/case-studies" style="color:var(--cyan)">check out our work</a>.', 'bot');
                 } else {
                     r.json().then(d => console.error('Formspree error:', d));
-                    addMsg('Something went wrong. You can email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');
+                    addMsg('Something went wrong. You can email us directly at <a href="mailto:sales@keystouch.com" style="color:var(--cyan)">sales@keystouch.com</a>.', 'bot');
                 }
                 document.getElementById('chat-input-area').style.display = 'flex';
             }).catch(err => {
                 console.error('Chat email error:', err);
                 const body = document.getElementById('chat-body');
                 body.querySelectorAll('.chat-email-form').forEach(f => f.remove());
-                addMsg('Connection error. Email us directly at <a href="mailto:key@keystouch.com" style="color:var(--cyan)">key@keystouch.com</a>.', 'bot');
+                addMsg('Connection error. Email us directly at <a href="mailto:sales@keystouch.com" style="color:var(--cyan)">sales@keystouch.com</a>.', 'bot');
                 document.getElementById('chat-input-area').style.display = 'flex';
             });
         }
