@@ -291,29 +291,77 @@
         </section>
 
         <!-- ============ CONTACT CONTENT ============ -->
-        <!-- CALENDLY — Popup widget (no dead space) -->
+        <!-- CALENDLY (left) + WHAT HAPPENS NEXT (right) — side by side -->
         <section class="section" aria-label="Book a call">
-            <div class="container" style="text-align:center;max-width:800px;">
-                <div class="section-header" style="text-align:center;">
+            <div class="container">
+                <div class="section-header" style="text-align:center;margin-bottom:48px;">
                     <span class="eyebrow">Book your free automation audit</span>
                     <h2>Pick a time. 30 minutes. We show you the math.</h2>
                 </div>
-                <p style="color:var(--ash-300);font-size:1.1rem;line-height:1.7;margin-top:24px;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;">
-                    We'll map your operations, find the biggest automation opportunities, and tell you exactly what to do &mdash; whether you hire us or not.
-                </p>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
-                    <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A'});return false;" class="btn-primary" style="font-size:1.1rem;padding:16px 48px;">
-                        Book your audit &rarr;
-                    </a>
-                    <span style="color:var(--ash-500);font-size:0.85rem;">Free &middot; 30 minutes &middot; No obligation</span>
+                <style>
+                    .booking-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start; }
+                    @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
+                </style>
+                <div class="booking-grid">
+                    <!-- LEFT: Calendly -->
+                    <div style="border:1px solid var(--ash-700);border-radius:16px;overflow:hidden;">
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&hide_event_type_details=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
+                             style="min-width:280px;height:480px;">
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: What Happens Next -->
+                    <div class="stack-gap-lg">
+                        <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:16px;padding:32px;">
+                            <h3 style="font-family:var(--font-heading);font-size:1.25rem;margin-bottom:24px;">What happens next</h3>
+                            <div style="display:flex;flex-direction:column;gap:24px;">
+                                <div style="display:flex;gap:16px;">
+                                    <div style="min-width:36px;height:36px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-weight:700;font-size:0.85rem;">T</div>
+                                    <div>
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:4px;">Triage (30 min call)</h4>
+                                        <p style="color:var(--ash-300);font-size:0.9rem;line-height:1.6;">We map your processes, tools, and bottlenecks. We find the 20% of work causing 80% of the waste.</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:16px;">
+                                    <div style="min-width:36px;height:36px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-weight:700;font-size:0.85rem;">2</div>
+                                    <div>
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:4px;">The automation audit</h4>
+                                        <p style="color:var(--ash-300);font-size:0.9rem;line-height:1.6;">A ranked list of your highest-ROI automation opportunities with estimated savings.</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:16px;">
+                                    <div style="min-width:36px;height:36px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-weight:700;font-size:0.85rem;">3</div>
+                                    <div>
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:4px;">Scope, timeline, number</h4>
+                                        <p style="color:var(--ash-300);font-size:0.9rem;line-height:1.6;">Exact scope, exact timeline, exact cost. No surprises. 4-week time to value.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:16px;padding:32px;">
+                            <h3 style="font-family:var(--font-heading);font-size:1.25rem;margin-bottom:24px;">Get in touch</h3>
+                            <div style="display:flex;flex-direction:column;gap:16px;">
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <span style="color:var(--ember);">@</span>
+                                    <a href="mailto:sales@keystouch.com" style="color:var(--ember);">sales@keystouch.com</a>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <span style="color:var(--ember);">in</span>
+                                    <a href="https://linkedin.com/company/keystouch" style="color:var(--ember);" target="_blank" rel="noopener noreferrer">linkedin.com/company/keystouch</a>
+                                </div>
+                                <p style="color:var(--ash-500);font-size:0.85rem;">Response time: under 24 hours. Usually same day.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
                 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
         </section>
 
-        <!-- FORM + INFO — Two columns below -->
-        <section class="section" style="background:var(--ink-soft);" aria-label="Contact form and information">
+        <!-- FORM + FAQ below -->
+        <section class="section" style="background:var(--ink-soft);" aria-label="Contact form and FAQ">
             <div class="container">
                 <div class="contact-grid">
 
@@ -377,64 +425,10 @@
 
                     </div>
 
-                    <!-- RIGHT: INFO -->
+                    <!-- RIGHT: FAQ -->
                     <div class="stack-gap-lg">
-                        <div class="info-card">
-                            <h3>What Happens Next</h3>
-                            <div class="stack-gap-md">
-                                <div style="display: flex; gap: 16px;">
-                                    <div class="step-indicator" aria-hidden="true">T</div>
-                                    <div>
-                                        <h4>Triage (30 min call)</h4>
-                                        <p>Step 1 of our TOUCH Framework. We map your processes, tools, and bottlenecks. We find the 20% of work causing 80% of the waste. No slides, no sales pitch &mdash; just questions.</p>
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 16px;">
-                                    <div class="step-indicator" aria-hidden="true">2</div>
-                                    <div>
-                                        <h4>The Automation Audit</h4>
-                                        <p>We deliver a ranked list of your highest-ROI automation opportunities with estimated savings. Clients typically see 3-5 areas where they're burning $50K+/year on manual work.</p>
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 16px;">
-                                    <div class="step-indicator" aria-hidden="true">3</div>
-                                    <div>
-                                        <h4>Scope, Timeline, Number</h4>
-                                        <p>If there's a fit, you get a detailed proposal. Exact scope, exact timeline, exact cost. 4-week time to value on most projects. No surprises.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-card" style="background:var(--ink-soft);border:1px solid var(--ash-700);border-radius:16px;padding:32px;">
-                            <h3 style="font-family:var(--font-heading);font-size:1.25rem;margin-bottom:24px;">Get in touch</h3>
-                            <div style="display:flex;flex-direction:column;gap:24px;">
-                                <div style="display:flex;align-items:flex-start;gap:16px;">
-                                    <div style="min-width:32px;height:32px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-size:0.85rem;font-weight:700;">@</div>
-                                    <div>
-                                        <p style="color:var(--ash-500);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;">Email</p>
-                                        <a href="mailto:sales@keystouch.com" style="color:var(--ember);font-size:1rem;">sales@keystouch.com</a>
-                                    </div>
-                                </div>
-                                <div style="display:flex;align-items:flex-start;gap:16px;">
-                                    <div style="min-width:32px;height:32px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-size:0.85rem;font-weight:700;">in</div>
-                                    <div>
-                                        <p style="color:var(--ash-500);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;">LinkedIn</p>
-                                        <a href="https://linkedin.com/company/keystouch" style="color:var(--ember);font-size:1rem;" target="_blank" rel="noopener noreferrer">linkedin.com/company/keystouch</a>
-                                    </div>
-                                </div>
-                                <div style="display:flex;align-items:flex-start;gap:16px;">
-                                    <div style="min-width:32px;height:32px;background:var(--ember-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ember);font-size:0.85rem;font-weight:700;">&lt;24h</div>
-                                    <div>
-                                        <p style="color:var(--ash-500);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;">Response time</p>
-                                        <p style="color:var(--ivory-dim);font-size:1rem;">Under 24 hours. Usually same day.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <h3>FAQ</h3>
+                        <div class="info-card" style="background:var(--ink);border:1px solid var(--ash-700);border-radius:16px;padding:32px;">
+                            <h3 style="font-family:var(--font-heading);font-size:1.25rem;margin-bottom:24px;">FAQ</h3>
                             <div class="stack-gap-sm">
                                 <div class="faq-item">
                                     <h4>How much does it cost?</h4>
