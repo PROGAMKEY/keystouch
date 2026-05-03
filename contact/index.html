@@ -301,18 +301,21 @@
 
                 <div class="calendly-inline-widget"
                      data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                     style="min-width:320px;height:700px;margin-top:48px;">
+                     style="min-width:320px;height:660px;margin-top:48px;border:1px solid var(--ash-700);border-radius:16px;overflow:hidden;">
                 </div>
                 <script type="text/javascript"
                         src="https://assets.calendly.com/assets/external/widget.js"
                         async>
                 </script>
                 <script>
+                // Auto-resize Calendly widget to fit content
                 window.addEventListener('message', function (e) {
                     if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
                         if (e.data.payload && typeof e.data.payload.height === 'number') {
                             var widget = document.querySelector('.calendly-inline-widget');
-                            if (widget) widget.style.height = e.data.payload.height + 'px';
+                            if (widget) {
+                                widget.style.height = Math.max(400, e.data.payload.height) + 'px';
+                            }
                         }
                     }
                 });
