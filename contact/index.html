@@ -292,23 +292,17 @@
 
         <!-- ============ CONTACT CONTENT ============ -->
         <!-- CALENDLY (left) + WHAT HAPPENS NEXT (right) — side by side -->
-        <section class="section" aria-label="Book a call">
+        <section style="padding:48px 0 96px;" aria-label="Book a call">
             <div class="container">
-                <div class="section-header" style="text-align:center;margin-bottom:48px;">
-                    <span class="eyebrow">Book your free automation audit</span>
-                    <h2>Pick a time. 30 minutes. We show you the math.</h2>
-                </div>
                 <style>
-                    .booking-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start; }
+                    .booking-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 32px; align-items: stretch; }
                     @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
                 </style>
                 <div class="booking-grid">
-                    <!-- LEFT: Calendly -->
-                    <div style="border:1px solid var(--ash-700);border-radius:16px;overflow:hidden;min-height:700px;">
-                        <div class="calendly-inline-widget"
-                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&hide_event_type_details=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:280px;height:100%;min-height:700px;">
-                        </div>
+                    <!-- LEFT: Calendly — full event details showing, fills the space -->
+                    <div class="calendly-inline-widget"
+                         data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
+                         style="min-width:280px;min-height:650px;border:1px solid var(--ash-700);border-radius:16px;overflow:hidden;">
                     </div>
 
                     <!-- RIGHT: What Happens Next -->
