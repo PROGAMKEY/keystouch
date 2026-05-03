@@ -291,18 +291,28 @@
         </section>
 
         <!-- ============ CONTACT CONTENT ============ -->
-        <!-- CALENDLY (left) + WHAT HAPPENS NEXT (right) — side by side -->
+        <!-- BOOKING CARD (left) + WHAT HAPPENS NEXT (right) — side by side -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <section style="padding:48px 0 96px;" aria-label="Book a call">
             <div class="container">
                 <style>
-                    .booking-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 32px; align-items: stretch; }
+                    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
                     @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
+                    .booking-card { background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 16px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: border-color 0.3s ease, transform 0.3s ease; }
+                    .booking-card:hover { border-color: var(--ember); transform: translateY(-2px); }
                 </style>
                 <div class="booking-grid">
-                    <!-- LEFT: Calendly — full event details showing, fills the space -->
-                    <div class="calendly-inline-widget"
-                         data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                         style="min-width:280px;min-height:650px;border:1px solid var(--ash-700);border-radius:16px;overflow:hidden;">
+                    <!-- LEFT: Booking card that opens Calendly popup -->
+                    <div class="booking-card" onclick="Calendly.initPopupWidget({url:'https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1'});return false;">
+                        <img src="/images/logo.png" alt="" width="64" height="63" style="margin-bottom:32px;opacity:0.8;">
+                        <span style="color:var(--ember);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Free automation audit</span>
+                        <h3 style="font-family:var(--font-heading);font-size:1.75rem;margin-bottom:12px;">Book your 30-minute call</h3>
+                        <p style="color:var(--ash-300);font-size:1rem;line-height:1.6;max-width:400px;margin-bottom:32px;">We'll map your operations, find the biggest automation wins, and give you a ranked ROI list — whether you hire us or not.</p>
+                        <div class="btn-primary" style="font-size:1rem;padding:16px 48px;">
+                            Pick a time &rarr;
+                        </div>
+                        <span style="color:var(--ash-500);font-size:0.85rem;margin-top:16px;">Free &middot; 30 minutes &middot; No obligation</span>
                     </div>
 
                     <!-- RIGHT: What Happens Next -->
