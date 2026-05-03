@@ -291,28 +291,26 @@
         </section>
 
         <!-- ============ CONTACT CONTENT ============ -->
-        <!-- BOOKING CARD (left) + WHAT HAPPENS NEXT (right) — side by side -->
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <!-- CALENDLY INLINE (left) + WHAT HAPPENS NEXT (right) — side by side -->
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <section style="padding:48px 0 96px;" aria-label="Book a call">
             <div class="container">
                 <style>
-                    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+                    .booking-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start; }
                     @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
-                    .booking-card { background: var(--ink-soft); border: 1px solid var(--ash-700); border-radius: 16px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: border-color 0.3s ease, transform 0.3s ease; }
-                    .booking-card:hover { border-color: var(--ember); transform: translateY(-2px); }
+                    /* Force Calendly iframe to render in light mode, then CSS-invert to match dark site */
+                    .calendly-dark-fix { border: 1px solid var(--ash-700); border-radius: 16px; overflow: hidden; }
+                    .calendly-dark-fix iframe {
+                        filter: invert(0.88) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+                    }
                 </style>
                 <div class="booking-grid">
-                    <!-- LEFT: Booking card that opens Calendly popup -->
-                    <div class="booking-card" onclick="Calendly.initPopupWidget({url:'https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1'});return false;">
-                        <img src="/images/logo.png" alt="" width="64" height="63" style="margin-bottom:32px;opacity:0.8;">
-                        <span style="color:var(--ember);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Free automation audit</span>
-                        <h3 style="font-family:var(--font-heading);font-size:1.75rem;margin-bottom:12px;">Book your 30-minute call</h3>
-                        <p style="color:var(--ash-300);font-size:1rem;line-height:1.6;max-width:400px;margin-bottom:32px;">We'll map your operations, find the biggest automation wins, and give you a ranked ROI list — whether you hire us or not.</p>
-                        <div class="btn-primary" style="font-size:1rem;padding:16px 48px;">
-                            Pick a time &rarr;
+                    <!-- LEFT: Calendly inline with CSS dark mode fix -->
+                    <div class="calendly-dark-fix">
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1"
+                             style="min-width:280px;height:660px;">
                         </div>
-                        <span style="color:var(--ash-500);font-size:0.85rem;margin-top:16px;">Free &middot; 30 minutes &middot; No obligation</span>
                     </div>
 
                     <!-- RIGHT: What Happens Next -->
