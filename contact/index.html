@@ -296,13 +296,33 @@
         <section style="padding:48px 0 96px;" aria-label="Book a call">
             <div class="container">
                 <style>
-                    .booking-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start; }
+                    .booking-grid {
+                        display: grid;
+                        grid-template-columns: 1.2fr 0.8fr;
+                        gap: 32px;
+                        align-items: stretch;
+                    }
                     @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
                     .calendly-shell {
                         border: 1px solid var(--ash-700);
                         border-radius: 16px;
                         overflow: hidden;
                         background: var(--ink);
+                        display: flex;
+                        flex-direction: column;
+                        min-height: 100%;
+                    }
+                    .calendly-shell .calendly-inline-widget {
+                        flex: 1 1 auto;
+                        min-height: 1000px;
+                    }
+                    .calendly-shell .calendly-inline-widget iframe {
+                        height: 100% !important;
+                        width: 100% !important;
+                        display: block;
+                    }
+                    @media (max-width: 900px) {
+                        .calendly-shell .calendly-inline-widget { min-height: 900px; }
                     }
                 </style>
                 <div class="booking-grid">
@@ -311,7 +331,7 @@
                         <div class="calendly-inline-widget"
                              id="calendly-embed"
                              data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:280px;height:820px;">
+                             style="min-width:280px;">
                         </div>
                     </div>
 
@@ -360,18 +380,7 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    // Calendly auto-resize — clamp to sane bounds so loading-state payloads don't
-                    // expand wrapper way beyond actual rendered content.
-                    window.addEventListener('message', function(e) {
-                        if (!e.data || typeof e.data !== 'object') return;
-                        if (!e.data.event || e.data.event.indexOf('calendly') !== 0) return;
-                        var h = e.data.payload && e.data.payload.height;
-                        if (typeof h !== 'number' || h < 600 || h > 1100) return;
-                        var el = document.getElementById('calendly-embed');
-                        if (el) el.style.height = h + 'px';
-                    });
-                </script>
+                <!-- height managed via CSS flex grid — Calendly iframe fills the column at 100% -->
             </div>
         </section>
 
