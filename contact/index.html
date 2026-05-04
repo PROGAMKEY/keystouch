@@ -310,8 +310,8 @@
                     <div class="calendly-shell">
                         <div class="calendly-inline-widget"
                              id="calendly-embed"
-                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
-                             style="min-width:280px;height:720px;">
+                             data-url="https://calendly.com/key-keystouch/discussion?hide_gdpr_banner=1&background_color=0F0E0C&text_color=F6F1E7&primary_color=D27D4A"
+                             style="min-width:280px;height:820px;">
                         </div>
                     </div>
 
@@ -361,16 +361,15 @@
                     </div>
                 </div>
                 <script>
-                    // Calendly auto-resize via postMessage — matches embed height to event-type content,
-                    // removes scroll-inside-iframe and dead space at bottom of date picker.
+                    // Calendly auto-resize — clamp to sane bounds so loading-state payloads don't
+                    // expand wrapper way beyond actual rendered content.
                     window.addEventListener('message', function(e) {
                         if (!e.data || typeof e.data !== 'object') return;
-                        if (e.data.event && e.data.event.indexOf('calendly') === 0) {
-                            if (e.data.payload && e.data.payload.height) {
-                                var el = document.getElementById('calendly-embed');
-                                if (el) el.style.height = e.data.payload.height + 'px';
-                            }
-                        }
+                        if (!e.data.event || e.data.event.indexOf('calendly') !== 0) return;
+                        var h = e.data.payload && e.data.payload.height;
+                        if (typeof h !== 'number' || h < 600 || h > 1100) return;
+                        var el = document.getElementById('calendly-embed');
+                        if (el) el.style.height = h + 'px';
                     });
                 </script>
             </div>
